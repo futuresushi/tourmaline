@@ -99,7 +99,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama7Desc
+	dw MistStoneDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -134,7 +134,7 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
+	dw EvioliteDesc
 	dw TeruSama10Desc
 	dw TeruSama11Desc
 	dw CharcoalDesc
@@ -642,8 +642,9 @@ BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
 
-TeruSama7Desc:
-	db   "?@"
+MistStoneDesc:
+	db   "Evolves certain"
+	next "kinds of #MON.@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -779,8 +780,9 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+EvioliteDesc:
+	db   "Raises defenses"
+	next "if unevolved.@"
 
 TeruSama10Desc:
 	db   "?@"
