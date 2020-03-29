@@ -1705,6 +1705,8 @@ INCLUDE "data/pokemon/dex_order_alpha.asm"
 
 INCLUDE "data/pokemon/dex_order_new.asm"
 
+INCLUDE "data/pokemon/dex_order_old.asm"
+
 Pokedex_DisplayModeDescription:
 	xor a
 	ldh [hBGMapMode], a
