@@ -1531,7 +1531,9 @@ Pokedex_PrintNumberIfOldMode:
 	push hl
 	ld de, -SCREEN_WIDTH
 	add hl, de
-	ld de, wTempSpecies
+	call Pokedex_GetDexNumber
+	ld de, wc296
+	
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
 	pop hl
@@ -1635,6 +1637,27 @@ Pokedex_OrderMonsByMode:
 	dec c
 	jr nz, .loopnew
 	call .FindLastSeen
+	ret
+	
+Pokedex_GetDexNumber:
+; Get the intended number of the selected Pokémon.
+	push bc
+	push hl
+	
+	ld a, [wTempSpecies] ;a = current mon (internal number)
+	ld b, a ;b = Needed mon (a and b must be matched)
+	ld c, 0 ;c = index
+	ld hl,OldPokedexOrder
+	
+.loop
+	inc c
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld a, c
+	ld [wc296], a
+	pop hl
+	pop bc
 	ret
 
 .OldMode:
