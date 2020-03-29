@@ -37,6 +37,8 @@ UNUSED_TYPES_END EQU const_value
 	const ICE
 	const DRAGON
 	const DARK
+	const FAIRY
+	const SOUND
 TYPES_END EQU const_value
 +
 +TYPE_MASK EQU %00111111
