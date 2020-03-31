@@ -1763,6 +1763,8 @@ RapidSpin:
 	checkfaint
 	buildopponentrage
 	kingsrock
+	speedup
+	statupmessage
 	endmove
 
 MorningSun:
