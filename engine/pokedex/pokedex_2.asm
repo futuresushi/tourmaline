@@ -98,7 +98,7 @@ DisplayDexEntry:
 	ld [hli], a
 	;ld de, wTempSpecies
 	call Pokedex_GetDexNumber
-	ld de, wc296
+	ld de, wCorrectDex
 	
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
