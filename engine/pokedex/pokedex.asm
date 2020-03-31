@@ -1520,6 +1520,24 @@ Pokedex_PrintListing:
 	pop hl
 	call PlaceString
 	ret
+
+Pokedex_PrintNumberIfOldMode:
+	ld a, [wCurDexMode]
+	cp DEXMODE_OLD
+	jr z, .printnum
+	ret
+
+.printnum
+	push hl
+	ld de, -SCREEN_WIDTH
+	add hl, de
+	call Pokedex_GetDexNumber
+	ld de, wc296
+	
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
+	pop hl
+	ret
 	
 Pokedex_GetDexNumber:
 ; Get the intended number of the selected Pokémon.
@@ -1540,24 +1558,6 @@ Pokedex_GetDexNumber:
 	ld [wc296], a
 	pop hl
 	pop bc
-	ret
-
-Pokedex_PrintNumberIfOldMode:
-	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
-	jr z, .printnum
-	ret
-
-.printnum
-	push hl
-	ld de, -SCREEN_WIDTH
-	add hl, de
-	call Pokedex_GetDexNumber
-	ld de, [wc296]
-	
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	call PrintNum
-	pop hl
 	ret
 
 Pokedex_PlaceCaughtSymbolIfCaught:
