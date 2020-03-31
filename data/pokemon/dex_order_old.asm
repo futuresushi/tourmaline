@@ -1,6 +1,6 @@
 ; Every Pokémon sorted in Old Pokédex (National) Order.
 
-NewPokedexOrder:
+OldPokedexOrder:
 	db BULBASAUR
 	db IVYSAUR
 	db VENUSAUR
