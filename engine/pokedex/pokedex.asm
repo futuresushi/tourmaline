@@ -1532,7 +1532,7 @@ Pokedex_PrintNumberIfOldMode:
 	ld de, -SCREEN_WIDTH
 	add hl, de
 	call Pokedex_GetDexNumber
-	ld de, wc296
+	ld de, wCorrectDex
 	
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
@@ -1555,7 +1555,7 @@ Pokedex_GetDexNumber:
 	cp b
 	jr nz, .loop
 	ld a, c
-	ld [wc296], a
+	ld [wCorrectDex], a
 	pop hl
 	pop bc
 	ret
