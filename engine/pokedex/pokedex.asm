@@ -1619,6 +1619,27 @@ Pokedex_OrderMonsByMode:
 	ld hl, .Jumptable
 	call Pokedex_LoadPointer
 	jp hl
+	
+Pokedex_GetDexNumber:
+; Get the intended number of the selected Pokémon.
+	push bc
+	push hl
+	
+	ld a, [wTempSpecies] ;a = current mon (internal number)
+	ld b, a ;b = Needed mon (a and b must be matched)
+	ld c, 0 ;c = index
+	ld hl,OldPokedexOrder
+	
+.loop
+	inc c
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld a, c
+	ld [wc296], a
+	pop hl
+	pop bc
+	ret
 
 .Jumptable:
 	dw .NewMode
@@ -1642,27 +1663,6 @@ Pokedex_OrderMonsByMode:
 .OldMode:
 	ld de, OldPokedexOrder
 	jr .do_dex
-	
-Pokedex_GetDexNumber:
-; Get the intended number of the selected Pokémon.
-	push bc
-	push hl
-	
-	ld a, [wTempSpecies] ;a = current mon (internal number)
-	ld b, a ;b = Needed mon (a and b must be matched)
-	ld c, 0 ;c = index
-	ld hl,OldPokedexOrder
-	
-.loop
-	inc c
-	ld a, [hli]
-	cp b
-	jr nz, .loop
-	ld a, c
-	ld [wc296], a
-	pop hl
-	pop bc
-	ret
 
 .FindLastSeen:
 	ld hl, wPokedexOrder + NUM_POKEMON - 1
