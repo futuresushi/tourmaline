@@ -1520,6 +1520,27 @@ Pokedex_PrintListing:
 	pop hl
 	call PlaceString
 	ret
+	
+Pokedex_GetDexNumber:
+; Get the intended number of the selected Pokémon.
+	push bc
+	push hl
+	
+	ld a, [wTempSpecies] ;a = current mon (internal number)
+	ld b, a ;b = Needed mon (a and b must be matched)
+	ld c, 0 ;c = index
+	ld hl,OldPokedexOrder
+	
+.loop
+	inc c
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld a, c
+	ld [wc296], a
+	pop hl
+	pop bc
+	ret
 
 Pokedex_PrintNumberIfOldMode:
 	ld a, [wCurDexMode]
@@ -1608,27 +1629,6 @@ Pokedex_CheckSeen:
 	call CheckSeenMon
 	pop hl
 	pop de
-	ret
-	
-Pokedex_GetDexNumber:
-; Get the intended number of the selected Pokémon.
-	push bc
-	push hl
-	
-	ld a, [wTempSpecies] ;a = current mon (internal number)
-	ld b, a ;b = Needed mon (a and b must be matched)
-	ld c, 0 ;c = index
-	ld hl,OldPokedexOrder
-	
-.loop
-	inc c
-	ld a, [hli]
-	cp b
-	jr nz, .loop
-	ld a, c
-	ld [wc296], a
-	pop hl
-	pop bc
 	ret
 
 Pokedex_OrderMonsByMode:
