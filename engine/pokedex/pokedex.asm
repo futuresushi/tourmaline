@@ -1609,16 +1609,6 @@ Pokedex_CheckSeen:
 	pop hl
 	pop de
 	ret
-
-Pokedex_OrderMonsByMode:
-	ld hl, wPokedexOrder
-	ld bc, wPokedexOrderEnd - wPokedexOrder
-	xor a
-	call ByteFill
-	ld a, [wCurDexMode]
-	ld hl, .Jumptable
-	call Pokedex_LoadPointer
-	jp hl
 	
 Pokedex_GetDexNumber:
 ; Get the intended number of the selected Pokémon.
@@ -1640,6 +1630,16 @@ Pokedex_GetDexNumber:
 	pop hl
 	pop bc
 	ret
+
+Pokedex_OrderMonsByMode:
+	ld hl, wPokedexOrder
+	ld bc, wPokedexOrderEnd - wPokedexOrder
+	xor a
+	call ByteFill
+	ld a, [wCurDexMode]
+	ld hl, .Jumptable
+	call Pokedex_LoadPointer
+	jp hl
 
 .Jumptable:
 	dw .NewMode
