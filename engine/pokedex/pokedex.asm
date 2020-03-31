@@ -1639,6 +1639,10 @@ Pokedex_OrderMonsByMode:
 	call .FindLastSeen
 	ret
 	
+.OldMode:
+	ld de, OldPokedexOrder
+	jr .do_dex
+	
 Pokedex_GetDexNumber:
 ; Get the intended number of the selected Pokémon.
 	push bc
@@ -1659,10 +1663,6 @@ Pokedex_GetDexNumber:
 	pop hl
 	pop bc
 	ret
-
-.OldMode:
-	ld de, OldPokedexOrder
-	jr .do_dex
 
 .FindLastSeen:
 	ld hl, wPokedexOrder + NUM_POKEMON - 1
