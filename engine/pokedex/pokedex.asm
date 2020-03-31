@@ -1553,7 +1553,7 @@ Pokedex_PrintNumberIfOldMode:
 	ld de, -SCREEN_WIDTH
 	add hl, de
 	call Pokedex_GetDexNumber
-	ld de, wc296
+	ld de, [wc296]
 	
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
