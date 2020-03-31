@@ -498,6 +498,19 @@ PokeBallEffect:
 
 	ld hl, Text_GotchaMonWasCaught
 	call PrintText
+	
+	ld a, [wTempSpecies]
+	ld l, a
+	ld a, [wCurPartyLevel]
+	ld h, a
+	push hl
+	farcall ApplyExperienceAfterEnemyCaught
+	pop hl
+	ld a, l
+	ld [wCurPartySpecies], a
+	ld [wTempSpecies], a
+	ld a, h
+	ld [wCurPartyLevel], a
 
 	call ClearSprites
 
@@ -2068,7 +2081,7 @@ SuperRepelEffect:
 	jr UseRepel
 
 MaxRepelEffect:
-	ld b, 250
+	ld b, 300
 	jr UseRepel
 
 RepelEffect:
@@ -2082,6 +2095,8 @@ UseRepel:
 
 	ld a, b
 	ld [wRepelEffect], a
+	ld a, [wCurItem]
+	ld [wRepelType], a
 	jp UseItemText
 
 RepelUsedEarlierIsStillInEffectText:
