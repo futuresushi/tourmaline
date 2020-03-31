@@ -39,7 +39,7 @@ wChannel8:: channel_struct wChannel8 ; c25f
 wCurTrackDuty:: db
 wCurTrackVolumeEnvelope:: db
 wCurTrackFrequency:: dw
-wUnusedBCDNumber:: db ; BCD value, dummied out
+wCorrectDex:: db ; BCD value, dummied out
 wCurNoteDuration:: db ; used in MusicE0 and LoadNote
 
 wCurMusicByte:: db ; c298
