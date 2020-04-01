@@ -1153,7 +1153,7 @@ DodrioEvosAttacks:
 	db 1, FURY_ATTACK
 	db 9, PURSUIT
 	db 13, FURY_ATTACK
-	db 21, QUICK_ATTAVK
+	db 21, QUICK_ATTACK
 	db 30, TRI_ATTACK
 	db 25, RAGE
 	db 38, DRILL_PECK
