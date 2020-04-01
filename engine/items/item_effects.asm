@@ -2081,7 +2081,7 @@ SuperRepelEffect:
 	jr UseRepel
 
 MaxRepelEffect:
-	ld b, 300
+	ld b, 255
 	jr UseRepel
 
 RepelEffect:
