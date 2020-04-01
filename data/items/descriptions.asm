@@ -425,7 +425,7 @@ SuperRepelDesc:
 
 MaxRepelDesc:
 	db   "Repels weak #-"
-	next "MON for 300 steps.@"
+	next "MON for 250 steps.@"
 
 DireHitDesc:
 	db   "Ups critical hit"
