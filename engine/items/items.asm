@@ -459,15 +459,6 @@ CheckTMHM:
 GetTMHMNumber::
 ; Return the number of a TM/HM by item id c.
 	ld a, c
-; Skip any dummy items.
-	cp ITEM_C3 ; TM04-05
-	jr c, .done
-	cp ITEM_DC ; TM28-29
-	jr c, .skip
-	dec a
-.skip
-	dec a
-.done
 	sub TM01
 	inc a
 	ld c, a
