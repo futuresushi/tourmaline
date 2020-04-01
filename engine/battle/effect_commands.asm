@@ -3042,7 +3042,7 @@ BattleCommand_DamageCalc:
 	ld [wIsConfusionDamage], a
 	; fallthrough
 
-+ConfusionDamageCalc:
+ConfusionDamageCalc:
 ; Minimum defense value is 1.
 	ld a, c
 	and a
