@@ -112,7 +112,7 @@ ENDM
 	command clearhazards            ; 69
 	command healweather             ; 6a
 	command healunused              ; 6b
-	command healunused2             ; 6c
+	command healunused              ; 6c
 	command hiddenpower             ; 6d
 	command startrain               ; 6e
 	command startsun                ; 6f
