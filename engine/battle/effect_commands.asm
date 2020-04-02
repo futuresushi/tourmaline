@@ -1413,6 +1413,7 @@ BattleCheckTypeMatchup:
 .get_type
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar ; preserves hl, de, and bc
+	and TYPE_MASK
 CheckTypeMatchup:
 	push hl
 	push de
