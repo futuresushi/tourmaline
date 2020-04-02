@@ -1766,25 +1766,25 @@ RapidSpin:
 	statupmessage
 	endmove
 
-MorningSun:
+WeatherHeal:
 	checkobedience
 	usedmovetext
 	doturn
-	healmorn
+	healweather
 	endmove
 
-Synthesis:
+Unused85:
 	checkobedience
 	usedmovetext
 	doturn
-	healday
+	healweather
 	endmove
 
-Moonlight:
+Unused86:
 	checkobedience
 	usedmovetext
 	doturn
-	healnite
+	healweather
 	endmove
 
 HiddenPower:
