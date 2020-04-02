@@ -40,6 +40,7 @@ UsedMoveText:
 
 .ok
 	ld hl, UsedMoveInsteadText
+ret
 
 UsedMoveInsteadText:
 	text_far _UsedMoveText
