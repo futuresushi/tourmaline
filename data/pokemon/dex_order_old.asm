@@ -252,4 +252,4 @@ OldPokedexOrder:
 	db LUGIA
 	db HO_OH
 	db CELEBI
-  
+  	db DIRTQUATRO

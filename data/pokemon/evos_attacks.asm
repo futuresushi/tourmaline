@@ -3362,3 +3362,15 @@ CelebiEvosAttacks:
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
 	db 0 ; no more level-up moves
+
+DirtquatroEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, WING_ATTACK ; change to Aerial Ace
+	db 1, ROCK_THROW
+	db 13, MUD_SLAP
+	db 25, AGILITY
+	db 37, RECOVER ; change to Shore Up
+	db 49, ROCK_SLIDE
+	db 61, SANDSTORM
+	db 73, EARTHQUAKE
+	db 0 ; no more level-up moves

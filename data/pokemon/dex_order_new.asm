@@ -238,6 +238,7 @@ NewPokedexOrder:
 	db ARTICUNO
 	db ZAPDOS
 	db MOLTRES
+	db DIRTQUATRO
 	db RAIKOU
 	db ENTEI
 	db SUICUNE

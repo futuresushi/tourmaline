@@ -39,6 +39,7 @@ AlphabeticalPokedexOrder:
 	db DELIBIRD
 	db DEWGONG
 	db DIGLETT
+	db DIRTQUATRO
 	db DITTO
 	db DODRIO
 	db DODUO
