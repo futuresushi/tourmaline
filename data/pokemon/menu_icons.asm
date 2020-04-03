@@ -251,5 +251,8 @@ MonMenuIcons:
 	db ICON_MONSTER     ; TYRANITAR
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HO_OH       ; HO_OH
-	db ICON_HUMANSHAPE  ; CELEBI
+	db ICON_CELEBI      ; CELEBI
 	db ICON_BIRD        ; DIRTQUATRO
+	db ICON_MONSTER     ; MON_FD
+	db ICON_EGG         ; EGG
+
