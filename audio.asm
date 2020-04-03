@@ -147,7 +147,9 @@ INCLUDE "audio/music/cipherpeonbattle.asm"
 INCLUDE "audio/music/littleroottown.asm"
 INCLUDE "audio/music/RSpokemart.asm"
 INCLUDE "audio/music/trickhouse.asm"
-INCLUDE "audio/music/dive.asm"
+
+SECTION "New Songs 2", ROMX
+INCLUDE "audio/music/friendlyshop.asm"
 
 
 SECTION "Sound Effects", ROMX
