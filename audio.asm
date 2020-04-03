@@ -140,6 +140,14 @@ SECTION "Extra Songs 2", ROMX
 
 INCLUDE "audio/music/postcredits.asm"
 
+SECTION "New Songs", ROMX
+
+INCLUDE "audio/music/abandonedship.asm"
+INCLUDE "audio/music/cipherpeonbattle.asm"
+INCLUDE "audio/music/littleroottown.asm"
+INCLUDE "audio/music/RSpokemart.asm"
+INCLUDE "audio/music/trickhouse.asm"
+
 
 SECTION "Sound Effects", ROMX
 
