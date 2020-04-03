@@ -148,9 +148,6 @@ INCLUDE "audio/music/littleroottown.asm"
 INCLUDE "audio/music/RSpokemart.asm"
 INCLUDE "audio/music/trickhouse.asm"
 
-SECTION "New Songs 2", ROMX
-INCLUDE "audio/music/friendlyshop.asm"
-
 
 SECTION "Sound Effects", ROMX
 

@@ -112,4 +112,3 @@ Music:
 	dba Music_LittlerootTown
 	dba Music_PokemonMart
 	dba Music_TrickHouse
-	dba Music_FriendlyShop
