@@ -1436,7 +1436,7 @@ JohtoGrassWildMons:
 	map_id ROUTE_38
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 16, DIRTQUATRO
+	db 16, RATTATA
 	db 16, RATICATE
 	db 16, MAGNEMITE
 	db 16, PIDGEOTTO
@@ -1444,7 +1444,7 @@ JohtoGrassWildMons:
 	db 13, MILTANK
 	db 13, MILTANK
 	; day
-	db 16, DIRTQUATRO
+	db 16, RATTATA
 	db 16, RATICATE
 	db 16, MAGNEMITE
 	db 16, PIDGEOTTO
@@ -1452,7 +1452,7 @@ JohtoGrassWildMons:
 	db 13, MILTANK
 	db 13, MILTANK
 	; nite
-	db 16, DIRTQUATRO
+	db 16, MEOWTH
 	db 16, RATICATE
 	db 16, MAGNEMITE
 	db 16, NOCTOWL
