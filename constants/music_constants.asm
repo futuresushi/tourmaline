@@ -115,6 +115,7 @@
 	const MUSIC_LITTLEROOT_TOWN              ; 69
 	const MUSIC_MART_RS                      ; 6a
 	const MUSIC_TRICK_HOUSE                  ; 6b
+	const MUSIC_DIVE                         ; 6c
 
 ; GetMapMusic picks music for these values (see home/map.asm)
 MUSIC_MAHOGANY_MART EQU $fc
