@@ -250,7 +250,7 @@ PokemonNames::
 	db "LUGIA@@@@@"
 	db "HO-OH@@@@@"
 	db "CELEBI@@@@"
-	db "?????@@@@@"
+	db "DIRTQUATRO"
 	db "?????@@@@@"
 	db "EGG@@@@@@@"
 	db "?????@@@@@"
