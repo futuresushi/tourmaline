@@ -106,3 +106,9 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
+; custom songs
+	dba Music_AbandonedShip
+	dba Music_CipherPeonBattle
+	dba Music_LittlerootTown
+	dba Music_PokemonMart
+	dba Music_TrickHouse
