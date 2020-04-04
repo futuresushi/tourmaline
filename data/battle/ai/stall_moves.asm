@@ -33,4 +33,6 @@ StallMoves:
 	db CONVERSION
 	db SUBSTITUTE
 	db FLAME_WHEEL
+	db CALM_MIND
+	db NASTY_PLOT
 	db -1 ; end
