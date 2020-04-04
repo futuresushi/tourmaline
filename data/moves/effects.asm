@@ -2076,3 +2076,21 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	calmmind
+	endmove
+
+WillOWisp:
+	checkobedience
+	usedmovetext
+	doturn
+	pressure
+	checkhit
+	typematchup
+	checksafeguard
+	burn
+	endmove
