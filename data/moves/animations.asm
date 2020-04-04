@@ -2473,8 +2473,11 @@ BattleAnim_DrainingKiss:
 	anim_3gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS, ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
-	anim_obj ANIM_OBJ_SWEET_KISS, 96, 40, $0
-	anim_wait 32
+	anim_obj ANIM_OBJ_SWEET_KISS, 152, 40, $0
+	anim_wait 16
+	anim_sound 0, 1, SFX_LICK
+	anim_obj ANIM_OBJ_HEART, 128, 40, $0
+	anim_wait 20
 .loop
 	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
@@ -4277,7 +4280,7 @@ BattleAnim_RapidSpin:
 BattleAnim_FairyWind:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
 	anim_sound 0, 0, SFX_FLASH
-	anim_bgeffect ANIM_BG_06, 0, 2, 0
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
 	anim_wait 2
 	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
