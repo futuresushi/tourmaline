@@ -4002,7 +4002,7 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	call CheckIfTargetIsFireType ; Don't burn a Fire-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -4071,7 +4071,7 @@ BattleCommand_FreezeTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	call CheckIfTargetIsIceType ; Don't freeze an Ice-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -4120,6 +4120,8 @@ BattleCommand_ParalyzeTarget:
 	ret nz
 	ld a, [wTypeModifier]
 	and $7f
+	ret z
+	call CheckIfTargetIsElectricType ; Don't paralyze an Electric-type
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -5996,6 +5998,51 @@ CheckMoveTypeMatchesTarget:
 	pop hl
 	ret
 
+CheckIfTargetIsFireType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp FIRE
+	ret z
+	ld a, [de]
+	cp FIRE
+	ret
+	
+CheckIfTargetIsIceType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp ICE
+	ret z
+	ld a, [de]
+	cp ICE
+	ret
+
+CheckIfTargetIsElectricType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp ELECTRIC
+	ret z
+	ld a, [de]
+	cp ELECTRIC
+	ret
+
 INCLUDE "engine/battle/move_effects/substitute.asm"
 
 BattleCommand_RechargeNextTurn:
@@ -6410,6 +6457,7 @@ BattleCommand_Defrost:
 	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/curse.asm"
+INCLUDE "engine/battle/move_effects/calmmind.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
 
