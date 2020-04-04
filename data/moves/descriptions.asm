@@ -4,13 +4,13 @@ MoveDescriptions::
 	dw KarateChopDescription
 	dw DoubleslapDescription
 	dw CometPunchDescription
-	dw MegaPunchDescription
+	dw DrainPunchDescription
 	dw PayDayDescription
 	dw FirePunchDescription
 	dw IcePunchDescription
 	dw ThunderpunchDescription
 	dw ScratchDescription
-	dw VicegripDescription
+	dw FairyWindDescription
 	dw GuillotineDescription
 	dw RazorWindDescription
 	dw SwordsDanceDescription
@@ -24,9 +24,9 @@ MoveDescriptions::
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
-	dw MegaKickDescription
+	dw BassTremorDescription
 	dw JumpKickDescription
-	dw RollingKickDescription
+	dw PlayRoughDescription
 	dw SandAttackDescription
 	dw HeadbuttDescription
 	dw HornAttackDescription
@@ -124,14 +124,14 @@ MoveDescriptions::
 	dw LickDescription
 	dw SmogDescription
 	dw SludgeDescription
-	dw BoneClubDescription
+	dw PowerBalladDescription
 	dw FireBlastDescription
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
 	dw SkullBashDescription
 	dw SpikeCannonDescription
-	dw ConstrictDescription
+	dw NoisePulseDescription
 	dw AmnesiaDescription
 	dw KinesisDescription
 	dw SoftboiledDescription
@@ -139,9 +139,9 @@ MoveDescriptions::
 	dw GlareDescription
 	dw DreamEaterDescription
 	dw PoisonGasDescription
-	dw BarrageDescription
+	dw DazzlingleamDescription
 	dw LeechLifeDescription
-	dw LovelyKissDescription
+	dw DrainingKissDescription
 	dw SkyAttackDescription
 	dw TransformDescription
 	dw BubbleDescription
@@ -158,7 +158,7 @@ MoveDescriptions::
 	dw RestDescription
 	dw RockSlideDescription
 	dw HyperFangDescription
-	dw SharpenDescription
+	dw HyperVoiceDescription
 	dw ConversionDescription
 	dw TriAttackDescription
 	dw SuperFangDescription
@@ -280,9 +280,9 @@ CometPunchDescription:
 	db   "Repeatedly punches"
 	next "2-5 times.@"
 
-MegaPunchDescription:
-	db   "A powerful punch"
-	next "thrown very hard.@"
+DrainPunchDescription:
+	db   "Steals 1/2 of the"
+	next "damage inflicted.@"
 
 PayDayDescription:
 	db   "Throws coins. Gets"
@@ -304,9 +304,9 @@ ScratchDescription:
 	db   "Scratches with"
 	next "sharp claws.@"
 
-VicegripDescription:
-	db   "Grips with power-"
-	next "ful pincers.@"
+FairyWindDescription:
+	db   "Strikes the target"
+	next "with a fairy wind.@"
 
 GuillotineDescription:
 	db   "A one-hit KO,"
@@ -360,17 +360,17 @@ DoubleKickDescription:
 	db   "A double kicking"
 	next "attack.@"
 
-MegaKickDescription:
-	db   "A powerful kicking"
-	next "attack.@"
+BaseTremorDescription:
+	db   "A powerful sound"
+	next "based attack.@"
 
 JumpKickDescription:
 	db   "May miss, damaging"
 	next "the user.@"
 
-RollingKickDescription:
-	db   "A fast, spinning"
-	next "kick.@"
+PlayRoughDescription:
+	db   "An attack that may"
+	next "lower ATTACK.@"
 
 SandAttackDescription:
 	db   "Reduces accuracy"
@@ -760,9 +760,9 @@ SludgeDescription:
 	db   "An attack that may"
 	next "poison the foe.@"
 
-BoneClubDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+PowerBalladDescription:
+	db   "Always increases"
+	next "physical ATTACK.@"
 
 FireBlastDescription:
 	db   "An attack that"
@@ -788,9 +788,9 @@ SpikeCannonDescription:
 	db   "Fires spikes to"
 	next "hit 2-5 times.@"
 
-ConstrictDescription:
+NoisePulseDescription:
 	db   "An attack that may"
-	next "lower SPEED.@"
+	next "confuse the foe.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
@@ -820,17 +820,17 @@ PoisonGasDescription:
 	db   "A move that may"
 	next "poison the foe.@"
 
-BarrageDescription:
-	db   "Throws orbs to hit"
-	next "2-5 times.@"
+DazzlingleamDescription:
+	db   "Dazzles the foe"
+	next "with a flash.@"
 
 LeechLifeDescription:
 	db   "Steals 1/2 of the"
 	next "damage inflicted.@"
 
-LovelyKissDescription:
-	db   "May cause the foe"
-	next "to fall asleep.@"
+DrainingKissDescription:
+	db   "Steals the foe's"
+	next "HP with a kiss.@"
 
 SkyAttackDescription:
 	db   "1st turn: Prepare"
@@ -896,9 +896,9 @@ HyperFangDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
 
-SharpenDescription:
-	db   "A move that raises"
-	next "the user's ATTACK.@"
+HyperVoiceDescription:
+	db   "Uses a destructive"
+	next "blast of sound.@"
 
 ConversionDescription:
 	db   "Change user's type"
