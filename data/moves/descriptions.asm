@@ -360,7 +360,7 @@ DoubleKickDescription:
 	db   "A double kicking"
 	next "attack.@"
 
-BaseTremorDescription:
+BassTremorDescription:
 	db   "A powerful sound"
 	next "based attack.@"
 
