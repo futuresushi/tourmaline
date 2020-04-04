@@ -3,13 +3,10 @@ INCLUDE "constants.asm"
 
 SECTION "Egg Moves", ROMX
 
-; All instances of Charm, Steel Wing, Sweet Scent, and Lovely Kiss were
-; removed from egg move lists in Crystal.
-; Sweet Scent and Steel Wing were redundant since they're TMs, and
-; Charm and Lovely Kiss were unobtainable.
-
-; Staryu's egg moves were removed in Crystal, because Staryu is genderless
-; and can only breed with Ditto.
+; Removed several egg moves from canon.
+; Removed: Mega Punch, Rolling Kick, Present
+; Added: Drain Punch, Play Rough, Hyper Voice, 
+; DrainingKiss
 
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
@@ -150,6 +147,7 @@ MeowthEggMoves:
 	db CHARM
 	db HYPNOSIS
 	db AMNESIA
+	db HYPER_VOICE
 	db -1 ; end
 
 PsyduckEggMoves:
@@ -197,7 +195,6 @@ AbraEggMoves:
 MachopEggMoves:
 	db LIGHT_SCREEN
 	db MEDITATE
-	db ROLLING_KICK
 	db ENCORE
 	db -1 ; end
 
@@ -218,7 +215,7 @@ TentacoolEggMoves:
 	db -1 ; end
 
 GeodudeEggMoves:
-	db MEGA_PUNCH
+	db DRAIN_PUNCH
 	db ROCK_SLIDE
 	db -1 ; end
 
@@ -344,7 +341,6 @@ RhyhornEggMoves:
 	db -1 ; end
 
 ChanseyEggMoves:
-	db PRESENT
 	db METRONOME
 	db HEAL_BELL
 	db -1 ; end
@@ -491,6 +487,7 @@ LedybaEggMoves:
 	db PSYBEAM
 	db BIDE
 	db LIGHT_SCREEN
+	db DRAIN_PUNCH
 	db -1 ; end
 
 SpinarakEggMoves:
@@ -510,32 +507,31 @@ ChinchouEggMoves:
 PichuEggMoves:
 	db REVERSAL
 	db BIDE
-	db PRESENT
 	db ENCORE
 	db DOUBLESLAP
+	db DRAININGKISS
 	db -1 ; end
 
 CleffaEggMoves:
-	db PRESENT
 	db METRONOME
 	db AMNESIA
 	db BELLY_DRUM
 	db SPLASH
 	db MIMIC
+	db HYPER_VOICE
 	db -1 ; end
 
 IgglybuffEggMoves:
 	db PERISH_SONG
-	db PRESENT
 	db FAINT_ATTACK
 	db -1 ; end
 
 TogepiEggMoves:
-	db PRESENT
 	db MIRROR_MOVE
 	db PECK
 	db FORESIGHT
 	db FUTURE_SIGHT
+	db HYPER_VOICE
 	db -1 ; end
 
 NatuEggMoves:
@@ -557,7 +553,6 @@ MareepEggMoves:
 
 MarillEggMoves:
 	db LIGHT_SCREEN
-	db PRESENT
 	db AMNESIA
 	db FUTURE_SIGHT
 	db BELLY_DRUM
@@ -651,11 +646,11 @@ SnubbullEggMoves:
 	db METRONOME
 	db FAINT_ATTACK
 	db REFLECT
-	db PRESENT
 	db CRUNCH
 	db HEAL_BELL
 	db LICK
 	db LEER
+	db HYPER_VOICE
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -690,6 +685,7 @@ TeddiursaEggMoves:
 	db FOCUS_ENERGY
 	db COUNTER
 	db METAL_CLAW
+	db PLAY_ROUGH
 	db -1 ; end
 
 SlugmaEggMoves:
@@ -757,6 +753,7 @@ PhanpyEggMoves:
 	db BODY_SLAM
 	db ANCIENTPOWER
 	db WATER_GUN
+	db PLAY_ROUGH
 	db -1 ; end
 
 StantlerEggMoves:
@@ -781,21 +778,20 @@ SmoochumEggMoves:
 ElekidEggMoves:
 	db KARATE_CHOP
 	db BARRIER
-	db ROLLING_KICK
+	db DRAIN_PUNCH
 	db MEDITATE
 	db CROSS_CHOP
 	db -1 ; end
 
 MagbyEggMoves:
 	db KARATE_CHOP
-	db MEGA_PUNCH
+	db DRAIN_PUNCH
 	db BARRIER
 	db SCREECH
 	db CROSS_CHOP
 	db -1 ; end
 
 MiltankEggMoves:
-	db PRESENT
 	db REVERSAL
 	db SEISMIC_TOSS
 	db -1 ; end
