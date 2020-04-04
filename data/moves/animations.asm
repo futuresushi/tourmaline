@@ -2450,6 +2450,7 @@ BattleAnim_DrainingKiss:
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
 	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
 	anim_wait 32
+.loop
 	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
 	anim_wait 6
