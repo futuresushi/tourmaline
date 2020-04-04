@@ -2,7 +2,7 @@
 Report the "Strongest Move" for each category (Physical/Special) of each type (Grass/Water/Fire...)
 
 Strongest Move Requirements
-- Accuracy greater than 90
+- Accuracy greater than 85
 - Effect Can't...
 	- Be exclusive to a legendary
 	- Require a cooldown turn after use
@@ -95,7 +95,7 @@ class MoveAnalyzer:
 	@staticmethod
 	def is_move_stronger(move1, move2):
 		return int(move1.power) < int(move2.power) \
-				and int(move2.accuracy) >= 90 \
+				and int(move2.accuracy) >= 85 \
 				and move2.name not in MoveAnalyzer.get_moves_to_ignore()
 
 	@staticmethod
