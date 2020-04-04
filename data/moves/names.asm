@@ -242,7 +242,7 @@ MoveNames::
 	db "SUNNY DAY@"
 	db "CRUNCH@"
 	db "MIRROR COAT@"
-	db "PSYCH UP@"
+	db "CALM MIND@" ; Changed from Psych Up
 	db "EXTREMESPEED@"
 	db "ANCIENTPOWER@"
 	db "SHADOW BALL@"
@@ -250,3 +250,5 @@ MoveNames::
 	db "ROCK SMASH@"
 	db "WHIRLPOOL@"
 	db "BEAT UP@"
+	db "NASTY PLOT@" ; new
+	db "WILL-O-WISP@" ; new
