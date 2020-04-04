@@ -244,7 +244,7 @@ BattleAnimations::
 	dw BattleAnim_SunnyDay
 	dw BattleAnim_Crunch
 	dw BattleAnim_MirrorCoat
-	dw BattleAnim_PsychUp
+	dw BattleAnim_CalmMind
 	dw BattleAnim_Extremespeed
 	dw BattleAnim_Ancientpower
 	dw BattleAnim_ShadowBall
@@ -252,8 +252,8 @@ BattleAnimations::
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
 	dw BattleAnim_BeatUp
-	dw BattleAnim_252
-	dw BattleAnim_253
+	dw BattleAnim_NastyPlot
+	dw BattleAnim_WillOWisp
 	dw BattleAnim_254
 	dw BattleAnim_SweetScent2
 ; $100
@@ -878,6 +878,7 @@ BattleAnim_SuperFang:
 	anim_loop 3, .loop
 	anim_ret
 
+BattleAnim_WillOWisp:
 BattleAnim_Ember:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
@@ -2937,6 +2938,7 @@ BattleAnim_QuickAttack:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_CalmMind:
 BattleAnim_Meditate:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
@@ -4563,6 +4565,7 @@ BattleAnim_MirrorCoat:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_NastyPlot:
 BattleAnim_PsychUp:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row
