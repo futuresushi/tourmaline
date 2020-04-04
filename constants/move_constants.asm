@@ -249,7 +249,7 @@
 	const SUNNY_DAY    ; f1
 	const CRUNCH       ; f2
 	const MIRROR_COAT  ; f3
-	const PSYCH_UP     ; f4
+	const CALM_MIND    ; f4
 	const EXTREMESPEED ; f5
 	const ANCIENTPOWER ; f6
 	const SHADOW_BALL  ; f7
@@ -257,10 +257,10 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
+	const NASTY_PLOT   ; fc
+	const WILL-O-WISP  ; fd
 NUM_ATTACKS EQU const_value - 1
 
-	const MOVE_OR_ANIM_FC ; fc
-	const MOVE_OR_ANIM_FD ; fd
 	const MOVE_OR_ANIM_FE ; fe
 
 ; Battle animations use the same constants as the moves up to this point
