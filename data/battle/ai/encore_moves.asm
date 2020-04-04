@@ -30,4 +30,6 @@ EncoreMoves:
 	db AEROBLAST
 	db COTTON_SPORE
 	db POWDER_SNOW
+	db NASTY_PLOT
+	db CALM_MIND
 	db -1 ; end
