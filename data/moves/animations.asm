@@ -5,13 +5,13 @@ BattleAnimations::
 	dw BattleAnim_KarateChop
 	dw BattleAnim_Doubleslap
 	dw BattleAnim_CometPunch
-	dw BattleAnim_MegaPunch
+	dw BattleAnim_DrainPunch
 	dw BattleAnim_PayDay
 	dw BattleAnim_FirePunch
 	dw BattleAnim_IcePunch
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_Scratch
-	dw BattleAnim_Vicegrip
+	dw BattleAnim_FairyWind
 	dw BattleAnim_Guillotine
 	dw BattleAnim_RazorWind
 	dw BattleAnim_SwordsDance
@@ -25,9 +25,9 @@ BattleAnimations::
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
 	dw BattleAnim_DoubleKick
-	dw BattleAnim_MegaKick
+	dw BattleAnim_BassTremor
 	dw BattleAnim_JumpKick
-	dw BattleAnim_RollingKick
+	dw BattleAnim_PlayRough
 	dw BattleAnim_SandAttack
 	dw BattleAnim_Headbutt
 	dw BattleAnim_HornAttack
@@ -125,14 +125,14 @@ BattleAnimations::
 	dw BattleAnim_Lick
 	dw BattleAnim_Smog
 	dw BattleAnim_Sludge
-	dw BattleAnim_BoneClub
+	dw BattleAnim_PowerBallad
 	dw BattleAnim_FireBlast
 	dw BattleAnim_Waterfall
 	dw BattleAnim_Clamp
 	dw BattleAnim_Swift
 	dw BattleAnim_SkullBash
 	dw BattleAnim_SpikeCannon
-	dw BattleAnim_Constrict
+	dw BattleAnim_NoisePulse
 	dw BattleAnim_Amnesia
 	dw BattleAnim_Kinesis
 	dw BattleAnim_Softboiled
@@ -140,9 +140,9 @@ BattleAnimations::
 	dw BattleAnim_Glare
 	dw BattleAnim_DreamEater
 	dw BattleAnim_PoisonGas
-	dw BattleAnim_Barrage
+	dw BattleAnim_Dazzlingleam
 	dw BattleAnim_LeechLife
-	dw BattleAnim_LovelyKiss
+	dw BattleAnim_DrainingKiss
 	dw BattleAnim_SkyAttack
 	dw BattleAnim_Transform
 	dw BattleAnim_Bubble
@@ -159,7 +159,7 @@ BattleAnimations::
 	dw BattleAnim_Rest
 	dw BattleAnim_RockSlide
 	dw BattleAnim_HyperFang
-	dw BattleAnim_Sharpen
+	dw BattleAnim_HyperVoice
 	dw BattleAnim_Conversion
 	dw BattleAnim_TriAttack
 	dw BattleAnim_SuperFang
@@ -713,6 +713,26 @@ BattleAnim_CometPunch:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_DrainPunch:
+	anim_1gfx ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_1F, $40, $2, $0
+	anim_wait 48
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+.loop
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_06, 136, 56, $0
+	anim_obj ANIM_OBJ_00, 136, 56, $0
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
+	anim_wait 6
+	anim_loop 3, .loop
+	anim_wait 32
+	anim_ret
+	
 BattleAnim_MegaPunch:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_1F, $40, $2, $0
@@ -1314,6 +1334,7 @@ BattleAnim_RazorWind:
 	anim_wait 24
 	anim_ret
 
+BattleAnim_NoisePulse
 BattleAnim_Sonicboom_JP:
 	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
 .loop
@@ -1437,6 +1458,23 @@ BattleAnim_RockSlide:
 BattleAnim_Sing:
 	anim_1gfx ANIM_GFX_NOISE
 	anim_sound 16, 2, SFX_SING
+.loop
+	anim_obj ANIM_OBJ_SING, 64, 92, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_SING, 64, 92, $1
+	anim_wait 8
+	anim_obj ANIM_OBJ_SING, 64, 92, $2
+	anim_wait 8
+	anim_obj ANIM_OBJ_SING, 64, 92, $0
+	anim_wait 8
+	anim_obj ANIM_OBJ_SING, 64, 92, $2
+	anim_wait 8
+	anim_loop 4, .loop
+	anim_wait 64
+	anim_ret
+	
+BattleAnim_PowerBallad:
+	anim_sound 0, 0, SFX_SNORE
 .loop
 	anim_obj ANIM_OBJ_SING, 64, 92, $0
 	anim_wait 8
@@ -1817,6 +1855,7 @@ BattleAnim_Constrict:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_BassTremor:
 BattleAnim_Earthquake:
 	anim_bgeffect ANIM_BG_1F, $60, $4, $10
 .loop
@@ -1881,6 +1920,7 @@ BattleAnim_Supersonic:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_HyperVoice:
 BattleAnim_Screech:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_1F, $8, $1, $20
@@ -2080,6 +2120,7 @@ BattleAnim_Headbutt:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_PlayRough:
 BattleAnim_Tackle:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
@@ -2404,6 +2445,24 @@ BattleAnim_Mimic:
 	anim_wait 48
 	anim_ret
 
+BattleAnim_DrainingKiss:
+	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
+	anim_wait 32
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
+	anim_wait 6
+	anim_loop 5, .loop
+	anim_wait 32
+	anim_ret
+	
 BattleAnim_LovelyKiss:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
@@ -2523,6 +2582,7 @@ BattleAnim_Guillotine:
 	anim_wait 32
 	anim_ret
 
+BattleAnim_Dazzlingleam:
 BattleAnim_Flash:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_sound 0, 1, SFX_FLASH
