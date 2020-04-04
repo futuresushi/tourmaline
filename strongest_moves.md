@@ -50,9 +50,9 @@
 - Move Count: 3
 ### Special
 - Strongest Move:
-  - Name: Flamethrower
-  - Power: 90
-  - Accuracy: 100
+  - Name: Fire Blast
+  - Power: 110
+  - Accuracy: 85
 - Move Count: 4
 ---
 ## Ice:
@@ -170,9 +170,9 @@
 ## Bug:
 ### Physical
 - Strongest Move:
-  - Name: Fury Cutter
-  - Power: 40
-  - Accuracy: 95
+  - Name: Megahorn
+  - Power: 120
+  - Accuracy: 85
 - Move Count: 5
 ### Special
 - Strongest Move:
