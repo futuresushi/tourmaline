@@ -715,6 +715,7 @@ BattleAnim_CometPunch:
 
 BattleAnim_DrainPunch:
 	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_1F, $40, $2, $0
 	anim_wait 48
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
@@ -1334,7 +1335,6 @@ BattleAnim_RazorWind:
 	anim_wait 24
 	anim_ret
 
-BattleAnim_NoisePulse
 BattleAnim_Sonicboom_JP:
 	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
 .loop
@@ -1857,6 +1857,13 @@ BattleAnim_Constrict:
 	anim_ret
 
 BattleAnim_BassTremor:
+	anim_bgeffect ANIM_BG_1F, $60, $4, $10
+.loop
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_wait 24
+	anim_loop 4, .loop
+	anim_ret
+
 BattleAnim_Earthquake:
 	anim_bgeffect ANIM_BG_1F, $60, $4, $10
 .loop
@@ -1922,6 +1929,16 @@ BattleAnim_Supersonic:
 	anim_ret
 
 BattleAnim_HyperVoice:
+	anim_1gfx ANIM_GFX_PSYCHIC
+	anim_bgeffect ANIM_BG_1F, $8, $1, $20
+	anim_cry $0
+.loop
+	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
+	anim_wait 2
+	anim_loop 2, .loop
+	anim_wait 64
+	anim_ret
+
 BattleAnim_Screech:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_1F, $8, $1, $20
@@ -2122,6 +2139,16 @@ BattleAnim_Headbutt:
 	anim_ret
 
 BattleAnim_PlayRough:
+	anim_1gfx ANIM_GFX_OBJECTS
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_HEART, 136, 48, $0
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
 BattleAnim_Tackle:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
@@ -2448,6 +2475,7 @@ BattleAnim_Mimic:
 
 BattleAnim_DrainingKiss:
 	anim_2gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS
+	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
 	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
 	anim_wait 32
@@ -2762,6 +2790,7 @@ BattleAnim_Harden:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_NoisePulse:
 BattleAnim_Psywave:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_PSYCHIC, $0, $0, $0
@@ -4235,6 +4264,15 @@ BattleAnim_RapidSpin:
 	anim_ret
 
 BattleAnim_FairyWind:
+	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
+	anim_sound 0, 0, SFX_SWEET_SCENT
+	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
+	anim_wait 96
+	anim_obp0 $54
+	anim_ret
+
 BattleAnim_SweetScent:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
 	anim_sound 0, 0, SFX_SWEET_SCENT
