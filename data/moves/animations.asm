@@ -1483,12 +1483,8 @@ BattleAnim_PowerBallad:
 	anim_wait 8
 	anim_obj ANIM_OBJ_SING, 64, 92, $2
 	anim_wait 8
-	anim_obj ANIM_OBJ_SING, 64, 92, $0
-	anim_wait 8
-	anim_obj ANIM_OBJ_SING, 64, 92, $2
-	anim_wait 8
 	anim_loop 4, .loop
-	anim_wait 24
+	anim_wait 8
 	anim_ret
 
 BattleAnim_Poisonpowder:
@@ -2477,7 +2473,7 @@ BattleAnim_DrainingKiss:
 	anim_3gfx ANIM_GFX_OBJECTS, ANIM_GFX_ANGELS, ANIM_GFX_CHARGE
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
-	anim_obj ANIM_OBJ_LOVELY_KISS, 152, 40, $0
+	anim_obj ANIM_OBJ_SWEET_KISS, 96, 40, $0
 	anim_wait 32
 .loop
 	anim_sound 6, 3, SFX_WATER_GUN
@@ -4281,10 +4277,11 @@ BattleAnim_RapidSpin:
 BattleAnim_FairyWind:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
 	anim_sound 0, 0, SFX_FLASH
+	anim_bgeffect ANIM_BG_06, 0, 2, 0
 	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
 	anim_wait 2
 	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
-	anim_wait 96
+	anim_wait 16
 	anim_obp0 $54
 	anim_ret
 
