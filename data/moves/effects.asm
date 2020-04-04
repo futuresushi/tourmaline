@@ -2092,5 +2092,5 @@ WillOWisp:
 	checkhit
 	typematchup
 	checksafeguard
-	burn
+	burntarget
 	endmove
