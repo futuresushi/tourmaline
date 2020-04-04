@@ -1474,6 +1474,7 @@ BattleAnim_Sing:
 	anim_ret
 	
 BattleAnim_PowerBallad:
+	anim_1gfx ANIM_GFX_NOISE
 	anim_sound 0, 0, SFX_SNORE
 .loop
 	anim_obj ANIM_OBJ_SING, 64, 92, $0
