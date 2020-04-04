@@ -38,7 +38,7 @@ EvolutionMoves::
 	db NO_MOVE      ; VULPIX
 	db NO_MOVE      ; NINETALES
 	db NO_MOVE      ; JIGGLYPUFF
-	db NO_MOVE      ; WIGGLYTUFF
+	db PLAY_ROUGH   ; WIGGLYTUFF
 	db NO_MOVE      ; ZUBAT
 	db NO_MOVE      ; GOLBAT
 	db NO_MOVE      ; ODDISH
@@ -174,7 +174,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CLEFFA
 	db NO_MOVE      ; IGGLYBUFF
 	db NO_MOVE      ; TOGEPI
-	db NO_MOVE      ; TOGETIC
+	db FAIRY_WIND   ; TOGETIC
 	db NO_MOVE      ; NATU
 	db NO_MOVE      ; XATU
 	db NO_MOVE      ; MAREEP
@@ -235,7 +235,7 @@ EvolutionMoves::
 	db NO_MOVE      ; STANTLER
 	db NO_MOVE      ; SMEARGLE
 	db NO_MOVE      ; TYROGUE
-	db ROLLING_KICK ; HITMONTOP
+	db TRIPLE_KICK  ; HITMONTOP
 	db NO_MOVE      ; SMOOCHUM
 	db NO_MOVE      ; ELEKID
 	db NO_MOVE      ; MAGBY
