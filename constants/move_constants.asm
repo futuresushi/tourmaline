@@ -258,7 +258,7 @@
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
 	const NASTY_PLOT   ; fc
-	const WILL-O-WISP  ; fd
+	const WILL_O_WISP  ; fd
 NUM_ATTACKS EQU const_value - 1
 
 	const MOVE_OR_ANIM_FE ; fe
