@@ -63,7 +63,7 @@ EvolutionMoves::
 	db SUBMISSION   ; POLIWRATH
 	db NO_MOVE      ; ABRA
 	db KINESIS      ; KADABRA
-	db KINESIS      ; ALAKAZAM
+	db CALM_MIND    ; ALAKAZAM
 	db NO_MOVE      ; MACHOP
 	db NO_MOVE      ; MACHOKE
 	db STRENGTH     ; MACHAMP
