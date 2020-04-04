@@ -33,13 +33,13 @@
   - Name: Play Rough
   - Power: 90
   - Accuracy: 90
-- Move Count: 4
+- Move Count: 3
 ### Special
 - Strongest Move:
-  - Name: Drainingkiss
-  - Power: 50
+  - Name: Dazzlingleam
+  - Power: 80
   - Accuracy: 100
-- Move Count: 2
+- Move Count: 3
 ---
 ## Fire:
 ### Physical
