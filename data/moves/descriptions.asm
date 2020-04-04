@@ -243,7 +243,7 @@ MoveDescriptions::
 	dw SunnyDayDescription
 	dw CrunchDescription
 	dw MirrorCoatDescription
-	dw PsychUpDescription
+	dw CalmMindDescription
 	dw ExtremespeedDescription
 	dw AncientpowerDescription
 	dw ShadowBallDescription
@@ -251,14 +251,12 @@ MoveDescriptions::
 	dw RockSmashDescription
 	dw WhirlpoolDescription
 	dw BeatUpDescription
-	dw MoveFCDescription
-	dw MoveFDDescription
+	dw NastyPlotDescription
+	dw WillOWispDescription
 	dw MoveFEDescription
 	dw MoveFFDescription
 	dw Move00Description
 
-MoveFCDescription:
-MoveFDDescription:
 MoveFEDescription:
 MoveFFDescription:
 Move00Description:
@@ -1236,9 +1234,9 @@ MirrorCoatDescription:
 	db   "Counters a SPCL."
 	next "ATK move double.@"
 
-PsychUpDescription:
-	db   "Copies the foe's"
-	next "stat changes.@"
+CalmMindDescription:
+	db   "Raises a #MON's"
+	next "SPECIAL stats.@"
 
 ExtremespeedDescription:
 	db   "A powerful first-"
@@ -1267,3 +1265,11 @@ WhirlpoolDescription:
 BeatUpDescription:
 	db   "Party #MON join"
 	next "in the attack.@"
+
+NastyPlotDescription:
+	db   "Sharply raises"
+	next "SPECIAL ATTACK.@"
+
+WillOWispDescription:
+	db   "Inflicts a burn"
+	next "on the foe.@"
