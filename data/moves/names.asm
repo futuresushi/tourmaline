@@ -3,13 +3,13 @@ MoveNames::
 	db "KARATE CHOP@"
 	db "DOUBLESLAP@"
 	db "COMET PUNCH@"
-	db "MEGA PUNCH@"
+	db "DRAIN PUNCH@" ; changed from Mega Punch
 	db "PAY DAY@"
 	db "FIRE PUNCH@"
 	db "ICE PUNCH@"
 	db "THUNDERPUNCH@"
 	db "SCRATCH@"
-	db "VICEGRIP@"
+	db "FAIRY WIND@" ; changed from Vice Grip
 	db "GUILLOTINE@"
 	db "RAZOR WIND@"
 	db "SWORDS DANCE@"
@@ -23,9 +23,9 @@ MoveNames::
 	db "VINE WHIP@"
 	db "STOMP@"
 	db "DOUBLE KICK@"
-	db "MEGA KICK@"
+	db "BASS TREMOR@" ; changed from Mega Kick
 	db "JUMP KICK@"
-	db "ROLLING KICK@"
+	db "PLAY ROUGH@" ; changed from Rolling Kick
 	db "SAND-ATTACK@"
 	db "HEADBUTT@"
 	db "HORN ATTACK@"
@@ -123,14 +123,14 @@ MoveNames::
 	db "LICK@"
 	db "SMOG@"
 	db "SLUDGE@"
-	db "BONE CLUB@"
+	db "POWER BALLAD@" ; Changed from Bone Club
 	db "FIRE BLAST@"
 	db "WATERFALL@"
 	db "CLAMP@"
 	db "SWIFT@"
 	db "SKULL BASH@"
 	db "SPIKE CANNON@"
-	db "CONSTRICT@"
+	db "NOISE PULSE@" ; Changed from Constrict
 	db "AMNESIA@"
 	db "KINESIS@"
 	db "SOFTBOILED@"
@@ -138,9 +138,9 @@ MoveNames::
 	db "GLARE@"
 	db "DREAM EATER@"
 	db "POISON GAS@"
-	db "BARRAGE@"
+	db "DAZZLINGLEAM@" ; Changed from Barrage
 	db "LEECH LIFE@"
-	db "LOVELY KISS@"
+	db "DRAININGKISS@" ; Changed from Lovely Kiss
 	db "SKY ATTACK@"
 	db "TRANSFORM@"
 	db "BUBBLE@"
@@ -157,7 +157,7 @@ MoveNames::
 	db "REST@"
 	db "ROCK SLIDE@"
 	db "HYPER FANG@"
-	db "SHARPEN@"
+	db "HYPER VOICE@" ; Changed from Sharpen
 	db "CONVERSION@"
 	db "TRI ATTACK@"
 	db "SUPER FANG@"
