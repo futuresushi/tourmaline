@@ -109,6 +109,7 @@ ZubatEggMoves:
 	db FAINT_ATTACK
 	db GUST
 	db WHIRLWIND
+	db NASTY_PLOT
 	db -1 ; end
 
 OddishEggMoves:
@@ -288,6 +289,7 @@ OnixEggMoves:
 DrowzeeEggMoves:
 	db LIGHT_SCREEN
 	db BARRIER
+	db NASTY_PLOT
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -328,6 +330,7 @@ KoffingEggMoves:
 	db PSYBEAM
 	db DESTINY_BOND
 	db PAIN_SPLIT
+	db WILL_O_WISP
 	db -1 ; end
 
 RhyhornEggMoves:
@@ -380,6 +383,7 @@ MrMimeEggMoves:
 	db FUTURE_SIGHT
 	db HYPNOSIS
 	db MIMIC
+	db NASTY_PLOT
 	db -1 ; end
 
 ScytherEggMoves:
@@ -532,6 +536,7 @@ TogepiEggMoves:
 	db FORESIGHT
 	db FUTURE_SIGHT
 	db HYPER_VOICE
+	db NASTY_PLOT
 	db -1 ; end
 
 NatuEggMoves:
@@ -610,6 +615,7 @@ MurkrowEggMoves:
 MisdreavusEggMoves:
 	db SCREECH
 	db DESTINY_BOND
+	db NASTY_PLOT
 	db -1 ; end
 
 GirafarigEggMoves:
@@ -745,7 +751,8 @@ HoundourEggMoves:
 	db COUNTER
 	db SPITE
 	db REVERSAL
-	db BEAT_UP
+	db NASTY_PLOT
+	db WILL_O_WISP
 	db -1 ; end
 
 PhanpyEggMoves:
@@ -772,7 +779,7 @@ TyrogueEggMoves:
 	db -1 ; end
 
 SmoochumEggMoves:
-	db MEDITATE
+	db NASTY_PLOT
 	db -1 ; end
 
 ElekidEggMoves:
