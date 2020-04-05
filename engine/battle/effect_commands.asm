@@ -6457,7 +6457,6 @@ BattleCommand_Defrost:
 	jp StdBattleTextbox
 
 INCLUDE "engine/battle/move_effects/curse.asm"
-INCLUDE "engine/battle/move_effects/calmmind.asm"
 
 INCLUDE "engine/battle/move_effects/protect.asm"
 
