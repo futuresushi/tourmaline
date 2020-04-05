@@ -92,7 +92,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CLOYSTER
 	db NO_MOVE      ; GASTLY
 	db NO_MOVE      ; HAUNTER
-	db NO_MOVE      ; GENGAR
+	db NASTY_PLOT   ; GENGAR
 	db NO_MOVE      ; ONIX
 	db NO_MOVE      ; DROWZEE
 	db NO_MOVE      ; HYPNO
