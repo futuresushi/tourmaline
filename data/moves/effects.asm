@@ -2088,7 +2088,6 @@ WillOWisp:
 	checkobedience
 	usedmovetext
 	doturn
-	pressure
 	checkhit
 	typematchup
 	checksafeguard
