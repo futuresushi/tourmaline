@@ -879,16 +879,13 @@ BattleAnim_SuperFang:
 BattleAnim_WillOWisp:
 	anim_3gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE, ANIM_GFX_FIRE
 	anim_sound 0, 0, SFX_CURSE
-	anim_obj ANIM_OBJ_SHADOW_BALL, 64, 96, $2
-	anim_wait 2
-	anim_obj ANIM_OBJ_SHADOW_BALL, 64, 80, $2
-	anim_wait 96
+	anim_obj ANIM_OBJ_SHADOW_BALL, 64, 88, $0
+	anim_wait 32
 	anim_obp0 $54
 	anim_sound 6, 2, SFX_EMBER
 	anim_obj ANIM_OBJ_EMBER, 136, 40, $15
 	anim_obj ANIM_OBJ_EMBER, 136, 40, $2a
-	anim_obj ANIM_OBJ_EMBER, 136, 40, $3f
-	anim_wait 128
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Ember:
