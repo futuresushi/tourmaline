@@ -158,4 +158,4 @@ MoveEffectsPointers:
 	dw Fly
 	dw DefenseCurl
 	dw CalmMind
-	dw WillOWisp
+	dw DoBurn
