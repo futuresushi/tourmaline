@@ -6061,7 +6061,6 @@ ld a, BATTLE_VARS_STATUS_OPP
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 	call UpdateBattleHuds
-	call PrintBurn
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
