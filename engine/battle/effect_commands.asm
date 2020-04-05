@@ -3766,7 +3766,9 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckIfTargetIsPoisonType
+	call CheckIfTargetIsPoisonType ; Can't poison a poison
+	ret z
+	call CheckIfTargetIsSteelType ; Can't poison a steel either
 	ret z
 	call GetOpponentItem
 	ld a, b
@@ -3798,6 +3800,9 @@ BattleCommand_Poison:
 	jp z, .failed
 
 	call CheckIfTargetIsPoisonType
+	jp z, .failed
+	
+	call CheckIfTargetIsSteelType
 	jp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -3875,6 +3880,21 @@ CheckIfTargetIsPoisonType:
 	ret z
 	ld a, [de]
 	cp POISON
+	ret
+	
+CheckIfTargetIsSteelType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp STEEL
+	ret z
+	ld a, [de]
+	cp STEEL
 	ret
 
 PoisonOpponent:
@@ -5941,6 +5961,10 @@ BattleCommand_Paralyze:
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
 	jr nz, .no_item_protection
+	
+	call CheckIfTargetIsElectricType
+	jp z, .failed
+	
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
@@ -5953,6 +5977,45 @@ BattleCommand_Paralyze:
 .paralyzed
 	call AnimateFailedMove
 	ld hl, AlreadyParalyzedText
+	jp StdBattleTextbox
+
+.failed
+	jp PrintDidntAffect2
+
+.didnt_affect
+	call AnimateFailedMove
+	jp PrintDoesntAffect
+	
+BattleCommand_Burn:
+; burn
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit PAR, a
+	jr nz, .burned
+	ld a, [wTypeModifier]
+	and $7f
+	jr z, .didnt_affect
+	call GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_BURN
+	jr nz, .no_item_protection
+	
+	call CheckIfTargetIsFireType
+	jp z, .failed
+	
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	call AnimateFailedMove
+	ld hl, ProtectedByText
+	jp StdBattleTextbox
+
+.no_item_protection
+
+.burned
+	call AnimateFailedMove
+	ld hl, AlreadyBurnedText
 	jp StdBattleTextbox
 
 .failed
