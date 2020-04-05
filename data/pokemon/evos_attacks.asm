@@ -1275,6 +1275,7 @@ GengarEvosAttacks:
 	db 1, HYPNOSIS
 	db 1, LICK
 	db 1, SPITE
+	db 1, NASTY_PLOT
 	db 8, SPITE
 	db 13, MEAN_LOOK
 	db 16, WILL_O_WISP
