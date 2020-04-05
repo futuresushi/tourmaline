@@ -2092,7 +2092,7 @@ CalmMind:
 	statupfailtext
 	endmove
 
-WillOWisp:
+DoBurn:
 	checkobedience
 	usedmovetext
 	doturn
