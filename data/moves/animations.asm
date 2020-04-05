@@ -281,8 +281,6 @@ BattleAnimations::
 	dw BattleAnim_HitConfusion
 
 BattleAnim_0:
-BattleAnim_252:
-BattleAnim_253:
 BattleAnim_254:
 BattleAnim_MirrorMove:
 	anim_ret
@@ -879,6 +877,20 @@ BattleAnim_SuperFang:
 	anim_ret
 
 BattleAnim_WillOWisp:
+	anim_3gfx ANIM_GFX_EGG, ANIM_GFX_SMOKE, ANIM_GFX_FIRE
+	anim_sound 0, 0, SFX_CURSE
+	anim_obj ANIM_OBJ_SHADOW_BALL, 64, 96, $2
+	anim_wait 2
+	anim_obj ANIM_OBJ_SHADOW_BALL, 64, 80, $2
+	anim_wait 96
+	anim_obp0 $54
+	anim_sound 6, 2, SFX_EMBER
+	anim_obj ANIM_OBJ_EMBER, 136, 40, $15
+	anim_obj ANIM_OBJ_EMBER, 136, 40, $2a
+	anim_obj ANIM_OBJ_EMBER, 136, 40, $3f
+	anim_wait 128
+	anim_ret
+
 BattleAnim_Ember:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
@@ -1760,6 +1772,7 @@ BattleAnim_Softboiled:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_CalmMind:
 BattleAnim_FocusEnergy:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row
@@ -2938,7 +2951,6 @@ BattleAnim_QuickAttack:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_CalmMind:
 BattleAnim_Meditate:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
@@ -4566,6 +4578,21 @@ BattleAnim_MirrorCoat:
 	anim_ret
 
 BattleAnim_NastyPlot:
+	anim_1gfx ANIM_GFX_STATUS
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_sound 0, 0, SFX_PSYBEAM
+	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $0
+	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $10
+	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $20
+	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $30
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_sound 0, 1, SFX_FORESIGHT
+	anim_wait 16
+	anim_ret
+
 BattleAnim_PsychUp:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row
