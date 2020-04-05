@@ -2089,7 +2089,6 @@ WillOWisp:
 	usedmovetext
 	doturn
 	checkhit
-	typematchup
 	checksafeguard
 	burntarget
 	endmove
