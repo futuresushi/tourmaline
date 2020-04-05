@@ -6017,7 +6017,7 @@ BattleCommand_Burn:
 	call GetBattleVar
 	ld b, a
 	ld hl, AlreadyBurnedText
-	and 1 << PSN
+	and 1 << BRN
 	jp nz, .failed
 
 	ld a, [wTypeModifier]
@@ -6030,7 +6030,7 @@ BattleCommand_Burn:
 	jr nz, .no_item_protection
 	
 	call CheckIfTargetIsFireType
-	jp z, .failed
+	jp z, .didnt_affect
 	
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
@@ -6060,7 +6060,13 @@ ld a, BATTLE_VARS_STATUS_OPP
 	call UpdateOpponentInParty
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
+	
+		ld de, ANIM_BRN
+		call PlayOpponentBattleAnim
+		
 	call UpdateBattleHuds
+	ld hl, WasBurnedText
+	call StdBattleTextbox
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
 
