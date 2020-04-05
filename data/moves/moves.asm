@@ -264,4 +264,4 @@ Moves: ; 41afb
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,         SPECIAL,   85, 15,   0
 	move BEAT_UP,      EFFECT_BEAT_UP,            10, DARK,          PHYSICAL, 100, 10,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,          STATUS,   100, 20,   0
-	move WILL_O_WISP,  EFFECT_WILL_O_WISP,         0, FIRE,          STATUS,    85, 15,   0
+	move WILL_O_WISP,  EFFECT_BURN,                0, FIRE,          STATUS,    85, 15,   0
