@@ -2081,17 +2081,13 @@ CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	moveanim
-	specialattackup
 	lowersub
 	statupanim
 	raisesub
+	specialattackup
 	statupmessage
 	statupfailtext
 	specialdefenseup
-	lowersub
-	statupanim
-	raisesub
 	statupmessage
 	statupfailtext
 	endmove
