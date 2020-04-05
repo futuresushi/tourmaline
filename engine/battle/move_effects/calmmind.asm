@@ -1,6 +1,17 @@
 BattleCommand_CalmMind:
 ; calm mind
 
+	ld de, wBattleMonType1
+	ld bc, wPlayerStatLevels
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld de, wEnemyMonType1
+	ld bc, wEnemyStatLevels
+
+.go
+
+
 ; Attack
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
