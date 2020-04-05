@@ -2060,7 +2060,8 @@ MewEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 10, TRANSFORM
-	db 20, NASTY_PLOT
+	db 22, NASTY_PLOT ; switch back to 20
+	db 22, WILL_O_WISP ; temp, remove once tested
 	db 30, METRONOME
 	db 40, PSYCHIC_M
 	db 50, ANCIENTPOWER
