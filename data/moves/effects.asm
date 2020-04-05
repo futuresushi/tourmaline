@@ -2091,4 +2091,5 @@ WillOWisp:
 	checkhit
 	checksafeguard
 	burntarget
+	moveanim
 	endmove
