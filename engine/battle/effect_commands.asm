@@ -5950,20 +5950,20 @@ BattleCommand_Confuse_CheckSnore_Swagger_ConfuseHit:
 BattleCommand_Paralyze:
 ; paralyze
 
+	call CheckIfTargetIsElectricType
+	jp z, .failed
+	
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
-	bit PAR, a
-	jr nz, .paralyzed
-	ld a, [wTypeModifier]
-	and $7f
-	jr z, .didnt_affect
+	ld b, a
+	ld hl, AlreadyParalyzedText
+	and 1 << PAR
+	jp nz, .failed
+	
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
 	jr nz, .no_item_protection
-	
-	call CheckIfTargetIsElectricType
-	jp z, .failed
 	
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
@@ -5973,6 +5973,30 @@ BattleCommand_Paralyze:
 	jp StdBattleTextbox
 
 .no_item_protection
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	call CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set PAR, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyPrzEffectOnSpeed
+	call CallBattleCore
+	call UpdateBattleHuds
+	call PrintParalyze
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore
 
 .paralyzed
 	call AnimateFailedMove
@@ -5991,11 +6015,15 @@ BattleCommand_Burn:
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
-	bit PAR, a
-	jr nz, .burned
+	ld b, a
+	ld hl, AlreadyBurnedText
+	and 1 << PSN
+	jp nz, .failed
+
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
+	
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_BURN
@@ -6012,6 +6040,30 @@ BattleCommand_Burn:
 	jp StdBattleTextbox
 
 .no_item_protection
+ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	call CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	call UpdateBattleHuds
+	call PrintBurn
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore
 
 .burned
 	call AnimateFailedMove
