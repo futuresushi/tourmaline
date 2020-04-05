@@ -2081,7 +2081,14 @@ CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	calmmind
+	moveanim
+	specialattackup
+	specialdefenseup
+	lowersub
+	statupanim
+	raisesub
+	statupmessage
+	statupfailtext
 	endmove
 
 WillOWisp:
@@ -2090,6 +2097,6 @@ WillOWisp:
 	doturn
 	checkhit
 	checksafeguard
-	burntarget
 	moveanim
+	burntarget
 	endmove
