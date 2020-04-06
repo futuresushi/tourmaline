@@ -33,8 +33,8 @@ FishGroups:
 .Shore_Super:
 	db  40 percent,     KRABBY,     40
 	db  70 percent,     time_group 1
-	db  90 percent + 1, KRABBY,     40
-	db 100 percent,     KINGLER,    40
+	db  90 percent + 1, KINGLER,    40
+	db 100 percent,     CHINCHOU,   40
 
 .Ocean_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -48,7 +48,7 @@ FishGroups:
 .Ocean_Super:
 	db  40 percent,     CHINCHOU,   40
 	db  70 percent,     time_group 3
-	db  90 percent + 1, TENTACRUEL, 40
+	db  90 percent + 1, REMORAID,   40
 	db 100 percent,     LANTURN,    40
 
 .Lake_Old:

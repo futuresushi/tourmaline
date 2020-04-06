@@ -22,9 +22,9 @@ JohtoWaterWildMons:
 
 	map_id UNION_CAVE_B2F
 	db 4 percent ; encounter rate
-	db 15, TENTACOOL
+	db 15, MARILL
 	db 20, QUAGSIRE
-	db 20, TENTACRUEL
+	db 20, AZUMARILL
 
 	map_id SLOWPOKE_WELL_B1F
 	db 2 percent ; encounter rate
@@ -84,7 +84,7 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 35, SEAKING
 	db 35, GOLDUCK
-	db 35, GOLDEEN
+	db 35, AZUMARILL
 
 	map_id DARK_CAVE_VIOLET_ENTRANCE
 	db 2 percent ; encounter rate
@@ -112,13 +112,13 @@ JohtoWaterWildMons:
 
 	map_id ROUTE_30
 	db 2 percent ; encounter rate
-	db 20, POLIWAG
+	db 20, MARILL
 	db 15, POLIWAG
 	db 20, POLIWHIRL
 
 	map_id ROUTE_31
 	db 2 percent ; encounter rate
-	db 20, POLIWAG
+	db 20, MARILL
 	db 15, POLIWAG
 	db 20, POLIWHIRL
 
@@ -137,7 +137,7 @@ JohtoWaterWildMons:
 	map_id ROUTE_35
 	db 4 percent ; encounter rate
 	db 20, PSYDUCK
-	db 15, PSYDUCK
+	db 15, MARILL
 	db 20, GOLDUCK
 
 	map_id ROUTE_40
@@ -191,7 +191,7 @@ JohtoWaterWildMons:
 	map_id VIOLET_CITY
 	db 2 percent ; encounter rate
 	db 20, POLIWAG
-	db 15, POLIWAG
+	db 15, MARILL
 	db 20, POLIWHIRL
 
 	map_id CIANWOOD_CITY
@@ -209,7 +209,7 @@ JohtoWaterWildMons:
 	map_id ECRUTEAK_CITY
 	db 2 percent ; encounter rate
 	db 20, POLIWAG
-	db 15, POLIWAG
+	db 15, MARILL
 	db 20, POLIWHIRL
 
 	map_id LAKE_OF_RAGE
@@ -227,7 +227,7 @@ JohtoWaterWildMons:
 	map_id SILVER_CAVE_OUTSIDE
 	db 2 percent ; encounter rate
 	db 35, POLIWHIRL
-	db 40, POLIWHIRL
+	db 40, AZUMARILL
 	db 35, POLIWAG
 
 	db -1 ; end
