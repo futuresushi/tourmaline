@@ -1172,7 +1172,7 @@ JohtoGrassWildMons:
 	db 25, URSARING
 	db 20, TEDDIURSA
 	db 23, GOLBAT
-	db 23, GOLBAT
+	db 23, MISDREAVUS
 	; day
 	db 23, GEODUDE
 	db 23, ZUBAT
@@ -1180,7 +1180,7 @@ JohtoGrassWildMons:
 	db 25, URSARING
 	db 30, URSARING
 	db 23, GOLBAT
-	db 23, GOLBAT
+	db 23, MISDREAVUS
 	; nite
 	db 23, GEODUDE
 	db 23, ZUBAT
