@@ -5209,6 +5209,16 @@ TryPlayerSwitch:
 	jp BattleMenuPKMN_Loop
 
 .check_trapped
+	; Check if Ghost-type, if so, skip trap checks
+	ld de, wBattleMonType1
+	ld a, [de]
+	inc de
+	cp GHOST
+	jr z, .try_switch
+	ld a, [de]
+	cp GHOST
+	jr z, .try_switch
+	; Trap checks
 	ld a, [wPlayerWrapCount]
 	and a
 	jr nz, .trapped
