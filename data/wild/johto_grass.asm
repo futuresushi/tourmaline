@@ -1493,7 +1493,7 @@ JohtoGrassWildMons:
 	db 13, SENTRET
 	db 14, SPEAROW
 	db 15, MAREEP
-	db 16, FLAAFY
+	db 16, FLAAFFY
 	db 15, ARBOK
 	db 16, FEAROW
 	db 16, FEAROW
