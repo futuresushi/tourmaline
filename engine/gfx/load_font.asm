@@ -58,7 +58,7 @@ LoadFrame:
 	call AddNTimes
 	ld d, h
 	ld e, l
-	ld hl, vTiles2 tile "┌" ; $79
+	ld hl, vTiles0 tile "┌" ; $ba
 	lb bc, BANK(Frames), 6 ; "┌" to "┘"
 	call Get1bpp_2
 	ld hl, vTiles2 tile " " ; $7f
