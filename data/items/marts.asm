@@ -150,7 +150,7 @@ MartOlivine:
 	db -1 ; end
 
 MartEcruteak:
-	db 13 ; # items
+	db 14 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db POTION
@@ -164,6 +164,7 @@ MartEcruteak:
 	db AMPLIFIER
 	db POLKADOT_BOW
 	db MIST_STONE
+	db EVIOLITE
 	db -1 ; end
 
 MartMahogany1:
