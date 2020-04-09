@@ -6546,6 +6546,21 @@ BattleCommand_ArenaTrap:
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
+	
+CheckIfTargetIsGhostType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp GHOST
+	ret z
+	ld a, [de]
+	cp GHOST
+	ret
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 
