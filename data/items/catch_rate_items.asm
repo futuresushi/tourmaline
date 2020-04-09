@@ -14,5 +14,5 @@ TimeCapsule_CatchRateItems:
 	db TM_CALM_MIND, SITRUS_BERRY
 	db TM_ICE_PUNCH, SITRUS_BERRY
 	db TM_DETECT, SITRUS_BERRY
-	db -1,      BERRY
+	db -1,      ORAN_BERRY
 	db 0 ; end
