@@ -68,7 +68,6 @@ MoveEffectsPointers:
 	dw Reflect
 	dw DoPoison
 	dw DoParalyze
-	dw DoBurn
 	dw AttackDownHit
 	dw DefenseDownHit
 	dw SpeedDownHit
@@ -159,3 +158,4 @@ MoveEffectsPointers:
 	dw Fly
 	dw DefenseCurl
 	dw CalmMind
+	dw DoBurn
