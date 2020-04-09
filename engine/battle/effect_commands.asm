@@ -6013,16 +6013,15 @@ BattleCommand_Paralyze:
 BattleCommand_Burn:
 ; burn
 
+	call CheckIfTargetIsFireType
+	jp z, .didnt_affect
+
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
 	ld b, a
 	ld hl, AlreadyBurnedText
 	and 1 << BRN
 	jp nz, .failed
-
-	ld a, [wTypeModifier]
-	and $7f
-	jr z, .didnt_affect
 	
 	call GetOpponentItem
 	ld a, b
