@@ -345,4 +345,4 @@ TilesetMuseumMeta:
 INCBIN "data/tilesets/museum_metatiles.bin"
 
 TilesetMuseumColl:
-INCLUDE "data/tilesets/museum_collision.asm"
+INCBIN "data/tilesets/museum_collision.asm"
