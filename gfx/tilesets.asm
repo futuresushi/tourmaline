@@ -338,11 +338,11 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 TilesetAerodactylWordRoomMeta::
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
 
-TilesetMuseumGFX:
+TilesetMuseumGFX::
 INCBIN "gfx/tilesets/museum.2bpp.lz"
 
-TilesetMuseumMeta:
+TilesetMuseumMeta::
 INCBIN "data/tilesets/museum_metatiles.bin"
 
-TilesetMuseumColl:
+TilesetMuseumColl::
 INCBIN "data/tilesets/museum_collision.asm"
