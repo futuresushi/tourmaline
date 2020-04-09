@@ -1053,6 +1053,17 @@ DoParalyze:
 	checksafeguard
 	paralyze
 	endmove
+	
+
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checksafeguard
+	burn
+	endmove
 
 SkyAttack:
 	checkcharge
@@ -2090,14 +2101,4 @@ CalmMind:
 	specialdefenseup
 	statupmessage
 	statupfailtext
-	endmove
-
-DoBurn:
-	checkobedience
-	usedmovetext
-	doturn
-	stab
-	checkhit
-	checksafeguard
-	burn
 	endmove
