@@ -6523,6 +6523,11 @@ BattleCommand_ArenaTrap:
 
 	call CheckHiddenOpponent
 	jr nz, .failed
+	
+; Can't trap a Ghost-type
+
+	call CheckIfTargetIsGhostType
+	jp z, .failed	
 
 ; Don't trap if the opponent is already trapped.
 
