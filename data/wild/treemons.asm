@@ -8,6 +8,8 @@ TreeMons:
 	dw TreeMonSet_Lake
 	dw TreeMonSet_Forest
 	dw TreeMonSet_Rock
+	dw TreeMonSet_Dark
+	dw TreeMonSet_Cave
 	dw TreeMonSet_City
 
 ; Two tables each (common, rare).
@@ -127,4 +129,16 @@ TreeMonSet_Rock:
 	db 80, KRABBY,     15
 	db 15, SHUCKLE,    15
 	db  5, CORSOLA,    15
+	db -1
+	
+TreeMonSet_Dark:
+	db 80, DUNSPARCE,  6
+	db 15, GEODUDE,    6
+	db  5, SLUGMA,    10
+	db -1
+	
+TreeMonSet_Cave:
+	db 80, GEODUDE,    15
+	db 19, GRAVELER,   25
+	db  1, GOLEM,      35
 	db -1
