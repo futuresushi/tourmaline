@@ -147,7 +147,7 @@ MoveNames::
 	db "DIZZY PUNCH@"
 	db "SPORE@"
 	db "FLASH@"
-	db "BUG BUZZ@" : Changed from Psywave
+	db "BUG BUZZ@" ; Changed from Psywave
 	db "SPLASH@"
 	db "ACID ARMOR@"
 	db "CRABHAMMER@"
