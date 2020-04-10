@@ -1081,20 +1081,6 @@ BattleCommand_DoTurn:
 	db EFFECT_RAMPAGE
 	db -1
 
-.player
-	ld c, a
-	ld a, MON_MOVES
-	call UserPartyAttr
-
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-;
-	ld b, 0
-	add hl, bc
-	ld a, [hl]
-	scf
-	ret
-
 BattleCommand_Critical:
 ; critical
 
