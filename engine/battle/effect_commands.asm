@@ -1668,8 +1668,8 @@ BattleCommand_CheckHit:
 	ret
 
 .LockOn:
-; Return nz if we are locked-on and aren't trying to use Earthquake,
-; Fissure or Magnitude on a monster that is flying.
+; Return nz if we are locked-on and aren't trying to use Earthquake
+; or Magnitude on a monster that is flying.
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_LOCK_ON, [hl]
@@ -1685,8 +1685,6 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 
 	cp EARTHQUAKE
-	ret z
-	cp FISSURE
 	ret z
 	cp MAGNITUDE
 	ret z
@@ -1743,8 +1741,6 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 
 	cp EARTHQUAKE
-	ret z
-	cp FISSURE
 	ret z
 	cp MAGNITUDE
 	ret
