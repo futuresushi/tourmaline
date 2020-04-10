@@ -853,6 +853,7 @@ PoliwrathEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, SUBMISSION
 	db 51, LOCK_ON
+	db 60, BASS_TREMOR
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
