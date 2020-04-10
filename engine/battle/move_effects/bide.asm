@@ -5,3 +5,7 @@ BattleCommand_StoreEnergy:
 BattleCommand_UnleashEnergy:
 ; unleashenergy - null, unused until i can figure out how to cleanly replace
 	jp EndMoveEffect
+
+BattleCommand_BideFailText:
+	jp PrintButItFailed
+	
