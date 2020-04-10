@@ -1179,6 +1179,8 @@ INCLUDE "engine/battle/move_effects/triple_kick.asm"
 
 INCLUDE "engine/battle/move_effects/beat_up.asm"
 
+INCLUDE "engine/battle/move_effects/bide.asm"
+
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
