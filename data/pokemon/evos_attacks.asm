@@ -372,6 +372,7 @@ SandshrewEvosAttacks:
 	db 1, SCRATCH
 	db 6, DEFENSE_CURL
 	db 11, SAND_ATTACK
+	db 13, RAPID_SPIN
 	db 17, POISON_STING
 	db 23, SLASH
 	db 30, SWIFT
@@ -386,6 +387,7 @@ SandslashEvosAttacks:
 	db 1, SAND_ATTACK
 	db 6, DEFENSE_CURL
 	db 11, SAND_ATTACK
+	db 13, RAPID_SPIN
 	db 17, POISON_STING
 	db 24, SLASH
 	db 33, SWIFT
@@ -1395,6 +1397,7 @@ VoltorbEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 9, SCREECH
+	db 13, RAPID_SPIN
 	db 17, SONICBOOM
 	db 23, SELFDESTRUCT
 	db 29, ROLLOUT
@@ -1413,6 +1416,7 @@ ElectrodeEvosAttacks:
 	db 1, SONICBOOM
 	db 1, SELFDESTRUCT
 	db 9, SCREECH
+	db 13, RAPID_SPIN
 	db 17, SONICBOOM
 	db 23, SELFDESTRUCT
 	db 29, ROLLOUT
