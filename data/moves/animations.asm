@@ -4,7 +4,7 @@ BattleAnimations::
 	dw BattleAnim_Pound
 	dw BattleAnim_KarateChop
 	dw BattleAnim_Doubleslap
-	dw BattleAnim_CometPunch
+	dw BattleAnim_AerialAce
 	dw BattleAnim_DrainPunch
 	dw BattleAnim_PayDay
 	dw BattleAnim_FirePunch
@@ -12,15 +12,15 @@ BattleAnimations::
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_Scratch
 	dw BattleAnim_FairyWind
-	dw BattleAnim_Guillotine
-	dw BattleAnim_RazorWind
+	dw BattleAnim_IronHead
+	dw BattleAnim_Hurricane
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
 	dw BattleAnim_Gust
 	dw BattleAnim_WingAttack
 	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
-	dw BattleAnim_Bind
+	dw BattleAnim_FlashCannon
 	dw BattleAnim_Slam
 	dw BattleAnim_VineWhip
 	dw BattleAnim_Stomp
@@ -31,8 +31,8 @@ BattleAnimations::
 	dw BattleAnim_SandAttack
 	dw BattleAnim_Headbutt
 	dw BattleAnim_HornAttack
-	dw BattleAnim_FuryAttack
-	dw BattleAnim_HornDrill
+	dw BattleAnim_PoisonJab
+	dw BattleAnim_FlareBlitz
 	dw BattleAnim_Tackle
 	dw BattleAnim_BodySlam
 	dw BattleAnim_Wrap
@@ -72,7 +72,7 @@ BattleAnimations::
 	dw BattleAnim_SeismicToss
 	dw BattleAnim_Strength
 	dw BattleAnim_Absorb
-	dw BattleAnim_MegaDrain
+	dw BattleAnim_FocusBlast
 	dw BattleAnim_LeechSeed
 	dw BattleAnim_Growth
 	dw BattleAnim_RazorLeaf
@@ -90,19 +90,19 @@ BattleAnimations::
 	dw BattleAnim_Thunder
 	dw BattleAnim_RockThrow
 	dw BattleAnim_Earthquake
-	dw BattleAnim_Fissure
+	dw BattleAnim_SeedBomb
 	dw BattleAnim_Dig
 	dw BattleAnim_Toxic
 	dw BattleAnim_Confusion
 	dw BattleAnim_PsychicM
 	dw BattleAnim_Hypnosis
-	dw BattleAnim_Meditate
+	dw BattleAnim_ShadowClaw
 	dw BattleAnim_Agility
 	dw BattleAnim_QuickAttack
 	dw BattleAnim_Rage
 	dw BattleAnim_Teleport
 	dw BattleAnim_NightShade
-	dw BattleAnim_Mimic
+	dw BattleAnim_XScissor
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
@@ -117,11 +117,11 @@ BattleAnimations::
 	dw BattleAnim_Haze
 	dw BattleAnim_Reflect
 	dw BattleAnim_FocusEnergy
-	dw BattleAnim_Bide
+	dw BattleAnim_EarthPower
 	dw BattleAnim_Metronome
-	dw BattleAnim_MirrorMove
+	dw BattleAnim_Astonish
 	dw BattleAnim_Selfdestruct
-	dw BattleAnim_EggBomb
+	dw BattleAnim_BraveBird
 	dw BattleAnim_Lick
 	dw BattleAnim_Smog
 	dw BattleAnim_Sludge
@@ -134,7 +134,7 @@ BattleAnimations::
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_NoisePulse
 	dw BattleAnim_Amnesia
-	dw BattleAnim_Kinesis
+	dw BattleAnim_ZenHeadbutt
 	dw BattleAnim_Softboiled
 	dw BattleAnim_HiJumpKick
 	dw BattleAnim_Glare
@@ -149,7 +149,7 @@ BattleAnimations::
 	dw BattleAnim_DizzyPunch
 	dw BattleAnim_Spore
 	dw BattleAnim_Flash
-	dw BattleAnim_Psywave
+	dw BattleAnim_BugBuzz
 	dw BattleAnim_Splash
 	dw BattleAnim_AcidArmor
 	dw BattleAnim_Crabhammer
@@ -170,7 +170,7 @@ BattleAnimations::
 	dw BattleAnim_TripleKick
 	dw BattleAnim_Thief
 	dw BattleAnim_SpiderWeb
-	dw BattleAnim_MindReader
+	dw BattleAnim_WildCharge
 	dw BattleAnim_Nightmare
 	dw BattleAnim_FlameWheel
 	dw BattleAnim_Snore
@@ -233,7 +233,7 @@ BattleAnimations::
 	dw BattleAnim_SweetScent
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
-	dw BattleAnim_VitalThrow
+	dw BattleAnim_IcicleCrash
 	dw BattleAnim_MorningSun
 	dw BattleAnim_Synthesis
 	dw BattleAnim_Moonlight
@@ -251,10 +251,10 @@ BattleAnimations::
 	dw BattleAnim_FutureSight
 	dw BattleAnim_RockSmash
 	dw BattleAnim_Whirlpool
-	dw BattleAnim_BeatUp
+	dw BattleAnim_DarkPulse
 	dw BattleAnim_NastyPlot
 	dw BattleAnim_WillOWisp
-	dw BattleAnim_254
+	dw BattleAnim_Moonblast
 	dw BattleAnim_SweetScent2
 ; $100
 	dw BattleAnim_ThrowPokeBall
@@ -281,8 +281,6 @@ BattleAnimations::
 	dw BattleAnim_HitConfusion
 
 BattleAnim_0:
-BattleAnim_254:
-BattleAnim_MirrorMove:
 	anim_ret
 
 BattleAnim_SweetScent2:
@@ -2173,6 +2171,25 @@ BattleAnim_PlayRough:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_AerialAce:
+BattleAnim_IronHead:
+BattleAnim_Hurricane:
+BattleAnim_FlashCannon:
+BattleAnim_PoisonJab:
+BattleAnim_FlareBlitz:
+BattleAnim_FocusBlast:
+BattleAnim_SeedBomb:
+BattleAnim_ShadowClaw:
+BattleAnim_XScissor:
+BattleAnim_EarthPower:
+BattleAnim_Astonish:
+BattleAnim_BraveBird:
+BattleAnim_ZenHeadbutt:
+BattleAnim_BugBuzz:
+BattleAnim_WildCharge:
+BattleAnim_IcicleCrash:
+BattleAnim_DarkPulse:
+BattleAnim_Moonblast:
 BattleAnim_Tackle:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
