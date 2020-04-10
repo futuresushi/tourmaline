@@ -911,14 +911,7 @@ AI_Smart_ResetStats:
 	ret
 
 AI_Smart_Bide:
-; 90% chance to discourage this move unless enemy's HP is full.
-
-	call AICheckEnemyMaxHP
-	ret c
-	call Random
-	cp 10 percent
-	ret c
-	inc [hl]
+; now unused
 	ret
 
 AI_Smart_ForceSwitch:
