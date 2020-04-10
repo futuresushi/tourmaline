@@ -178,10 +178,6 @@ DreamEater:
 	endmove
 
 MirrorMove:
-	checkobedience
-	usedmovetext
-	doturn
-	mirrormove
 	endmove
 
 AttackUp:
@@ -790,19 +786,6 @@ ResetStats:
 	endmove
 
 Bide:
-	storeenergy
-	checkobedience
-	doturn
-	usedmovetext
-	unleashenergy
-	resettypematchup
-	checkhit
-	moveanim
-	bidefailtext
-	applydamage
-	checkfaint
-	buildopponentrage
-	kingsrock
 	endmove
 
 Rampage:
@@ -912,18 +895,6 @@ FlinchHit:
 	endmove
 
 OHKOHit:
-	checkobedience
-	usedmovetext
-	doturn
-	stab
-	ohko
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
 	endmove
 
 RecoilHit:
@@ -1128,11 +1099,6 @@ Rage:
 	endmove
 
 Mimic:
-	checkobedience
-	usedmovetext
-	doturn
-	checkhit
-	mimic
 	endmove
 
 Metronome:
@@ -1166,25 +1132,6 @@ Disable:
 	endmove
 
 RazorWind:
-	checkcharge
-	checkobedience
-	doturn
-	charge
-	usedmovetext
-	critical
-	damagestats
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
 	endmove
 
 Fly:
@@ -2038,30 +1985,6 @@ Teleport:
 	endmove
 
 BeatUp:
-	checkobedience
-	usedmovetext
-	movedelay
-	doturn
-	startloop
-	lowersub
-	checkhit
-	critical
-	beatup
-	damagecalc
-	damagevariation
-	clearmissdamage
-	moveanimnosub
-	failuretext
-	applydamage
-	criticaltext
-	cleartext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	endloop
-	beatupfailtext
-	raisesub
-	kingsrock
 	endmove
 
 DefenseCurl:
