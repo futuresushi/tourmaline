@@ -1722,7 +1722,7 @@ ScytherEvosAttacks:
 	db 30, AERIAL_ACE
 	db 36, SLASH
 	db 42, SWORDS_DANCE
-	db 48, X-SCISSOR
+	db 48, X_SCISSOR
 	db 0 ; no more level-up moves
 
 JynxEvosAttacks:
