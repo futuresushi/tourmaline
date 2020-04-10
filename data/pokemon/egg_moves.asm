@@ -4,9 +4,12 @@ INCLUDE "constants.asm"
 SECTION "Egg Moves", ROMX
 
 ; Removed several egg moves from canon.
-; Removed: Mega Punch, Rolling Kick, Present
+; Removed: Mega Punch, Rolling Kick, 
+; Present, Beat Up, Razor Wind, Meditate,
+; Mind Reader, Psywave, Mega Drain, Mimic,
+; Fury Attack, Bide
 ; Added: Drain Punch, Play Rough, Hyper Voice, 
-; DrainingKiss
+; DrainingKiss, 
 
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
@@ -14,7 +17,6 @@ BulbasaurEggMoves:
 	db LIGHT_SCREEN
 	db SKULL_BASH
 	db SAFEGUARD
-	db RAZOR_WIND
 	db PETAL_DANCE
 	db -1 ; end
 
@@ -24,7 +26,6 @@ CharmanderEggMoves:
 	db ROCK_SLIDE
 	db BITE
 	db OUTRAGE
-	db BEAT_UP
 	db -1 ; end
 
 SquirtleEggMoves:
@@ -63,7 +64,6 @@ EkansEggMoves:
 	db PURSUIT
 	db SLAM
 	db SPITE
-	db BEAT_UP
 	db CRUNCH
 	db -1 ; end
 
@@ -82,7 +82,6 @@ NidoranFEggMoves:
 	db FOCUS_ENERGY
 	db CHARM
 	db COUNTER
-	db BEAT_UP
 	db -1 ; end
 
 NidoranMEggMoves:
@@ -92,7 +91,6 @@ NidoranMEggMoves:
 	db CONFUSION
 	db AMNESIA
 	db COUNTER
-	db BEAT_UP
 	db -1 ; end
 
 VulpixEggMoves:
@@ -140,7 +138,6 @@ DiglettEggMoves:
 	db SCREECH
 	db ANCIENTPOWER
 	db PURSUIT
-	db BEAT_UP
 	db -1 ; end
 
 MeowthEggMoves:
@@ -165,10 +162,8 @@ PsyduckEggMoves:
 MankeyEggMoves:
 	db ROCK_SLIDE
 	db FORESIGHT
-	db MEDITATE
 	db COUNTER
 	db REVERSAL
-	db BEAT_UP
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -184,7 +179,7 @@ PoliwagEggMoves:
 	db SPLASH
 	db BUBBLEBEAM
 	db HAZE
-	db MIND_READER
+	db LOCK_ON
 	db -1 ; end
 
 AbraEggMoves:
@@ -195,7 +190,6 @@ AbraEggMoves:
 
 MachopEggMoves:
 	db LIGHT_SCREEN
-	db MEDITATE
 	db ENCORE
 	db -1 ; end
 
@@ -276,7 +270,7 @@ ShellderEggMoves:
 	db -1 ; end
 
 GastlyEggMoves:
-	db PSYWAVE
+	db PSYBEAM
 	db PERISH_SONG
 	db HAZE
 	db -1 ; end
@@ -304,7 +298,7 @@ ExeggcuteEggMoves:
 	db SYNTHESIS
 	db MOONLIGHT
 	db REFLECT
-	db MEGA_DRAIN
+	db ABSORB
 	db ANCIENTPOWER
 	db -1 ; end
 
@@ -326,7 +320,6 @@ LickitungEggMoves:
 
 KoffingEggMoves:
 	db SCREECH
-	db PSYWAVE
 	db PSYBEAM
 	db DESTINY_BOND
 	db PAIN_SPLIT
@@ -351,7 +344,7 @@ ChanseyEggMoves:
 TangelaEggMoves:
 	db FLAIL
 	db CONFUSION
-	db MEGA_DRAIN
+	db ABSORB
 	db REFLECT
 	db AMNESIA
 	db -1 ; end
@@ -382,7 +375,6 @@ GoldeenEggMoves:
 MrMimeEggMoves:
 	db FUTURE_SIGHT
 	db HYPNOSIS
-	db MIMIC
 	db NASTY_PLOT
 	db -1 ; end
 
@@ -390,13 +382,11 @@ ScytherEggMoves:
 	db COUNTER
 	db SAFEGUARD
 	db BATON_PASS
-	db RAZOR_WIND
 	db REVERSAL
 	db LIGHT_SCREEN
 	db -1 ; end
 
 PinsirEggMoves:
-	db FURY_ATTACK
 	db FLAIL
 	db -1 ; end
 
@@ -466,7 +456,6 @@ TotodileEggMoves:
 	db THRASH
 	db HYDRO_PUMP
 	db ANCIENTPOWER
-	db RAZOR_WIND
 	db ROCK_SLIDE
 	db -1 ; end
 
@@ -489,7 +478,6 @@ HoothootEggMoves:
 
 LedybaEggMoves:
 	db PSYBEAM
-	db BIDE
 	db LIGHT_SCREEN
 	db DRAIN_PUNCH
 	db -1 ; end
@@ -510,7 +498,6 @@ ChinchouEggMoves:
 
 PichuEggMoves:
 	db REVERSAL
-	db BIDE
 	db ENCORE
 	db DOUBLESLAP
 	db DRAININGKISS
@@ -521,7 +508,6 @@ CleffaEggMoves:
 	db AMNESIA
 	db BELLY_DRUM
 	db SPLASH
-	db MIMIC
 	db HYPER_VOICE
 	db -1 ; end
 
@@ -588,7 +574,6 @@ AipomEggMoves:
 	db SPITE
 	db SLAM
 	db DOUBLESLAP
-	db BEAT_UP
 	db -1 ; end
 
 YanmaEggMoves:
@@ -623,7 +608,6 @@ GirafarigEggMoves:
 	db AMNESIA
 	db FORESIGHT
 	db FUTURE_SIGHT
-	db BEAT_UP
 	db -1 ; end
 
 PinecoEggMoves:
@@ -634,7 +618,6 @@ PinecoEggMoves:
 	db -1 ; end
 
 DunsparceEggMoves:
-	db BIDE
 	db ANCIENTPOWER
 	db ROCK_SLIDE
 	db BITE
@@ -644,7 +627,6 @@ DunsparceEggMoves:
 GligarEggMoves:
 	db METAL_CLAW
 	db WING_ATTACK
-	db RAZOR_WIND
 	db COUNTER
 	db -1 ; end
 
@@ -672,7 +654,6 @@ ShuckleEggMoves:
 
 HeracrossEggMoves:
 	db HARDEN
-	db BIDE
 	db FLAIL
 	db -1 ; end
 
@@ -775,7 +756,7 @@ TyrogueEggMoves:
 	db RAPID_SPIN
 	db HI_JUMP_KICK
 	db MACH_PUNCH
-	db MIND_READER
+	db LOCK_ON
 	db -1 ; end
 
 SmoochumEggMoves:
@@ -786,7 +767,6 @@ ElekidEggMoves:
 	db KARATE_CHOP
 	db BARRIER
 	db DRAIN_PUNCH
-	db MEDITATE
 	db CROSS_CHOP
 	db -1 ; end
 
