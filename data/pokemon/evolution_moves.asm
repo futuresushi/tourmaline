@@ -62,7 +62,7 @@ EvolutionMoves::
 	db NO_MOVE      ; POLIWHIRL
 	db SUBMISSION   ; POLIWRATH
 	db NO_MOVE      ; ABRA
-	db KINESIS      ; KADABRA
+	db CONFUSION    ; KADABRA
 	db CALM_MIND    ; ALAKAZAM
 	db NO_MOVE      ; MACHOP
 	db NO_MOVE      ; MACHOKE
@@ -76,7 +76,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GRAVELER
 	db NO_MOVE      ; GOLEM
 	db NO_MOVE      ; PONYTA
-	db FURY_ATTACK  ; RAPIDASH
+	db FLARE_BLITZ  ; RAPIDASH
 	db NO_MOVE      ; SLOWPOKE
 	db WITHDRAW     ; SLOWBRO
 	db NO_MOVE      ; MAGNEMITE
@@ -105,7 +105,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CUBONE
 	db NO_MOVE      ; MAROWAK
 	db DOUBLE_KICK  ; HITMONLEE
-	db COMET_PUNCH  ; HITMONCHAN
+	db SUBMISSION   ; HITMONCHAN
 	db NO_MOVE      ; LICKITUNG
 	db NO_MOVE      ; KOFFING
 	db NO_MOVE      ; WEEZING
@@ -219,7 +219,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SLUGMA
 	db NO_MOVE      ; MAGCARGO
 	db NO_MOVE      ; SWINUB
-	db FURY_ATTACK  ; PILOSWINE
+	db ICICLE_CRASH ; PILOSWINE
 	db NO_MOVE      ; CORSOLA
 	db NO_MOVE      ; REMORAID
 	db OCTAZOOKA    ; OCTILLERY
@@ -230,7 +230,7 @@ EvolutionMoves::
 	db NO_MOVE      ; HOUNDOOM
 	db NO_MOVE      ; KINGDRA
 	db NO_MOVE      ; PHANPY
-	db FURY_ATTACK  ; DONPHAN
+	db EARTH_POWER  ; DONPHAN
 	db NO_MOVE      ; PORYGON2
 	db NO_MOVE      ; STANTLER
 	db NO_MOVE      ; SMEARGLE
@@ -250,6 +250,5 @@ EvolutionMoves::
 	db NO_MOVE      ; LUGIA
 	db NO_MOVE      ; HO-OH
 	db NO_MOVE      ; CELEBI
-	db NO_MOVE      ; 252
+	db NO_MOVE      ; DIRTQUATRO
 	db NO_MOVE      ; 253
-
