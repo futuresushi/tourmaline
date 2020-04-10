@@ -1082,13 +1082,11 @@ BattleCommand_DoTurn:
 	ret
 
 .continuousmoves
-	db EFFECT_RAZOR_WIND
 	db EFFECT_SKY_ATTACK
 	db EFFECT_SKULL_BASH
 	db EFFECT_SOLARBEAM
 	db EFFECT_FLY
 	db EFFECT_ROLLOUT
-	db EFFECT_BIDE
 	db EFFECT_RAMPAGE
 	db -1
 
@@ -1907,8 +1905,6 @@ BattleCommand_LowerSub:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_RAZOR_WIND
-	jr z, .charge_turn
 	cp EFFECT_SKY_ATTACK
 	jr z, .charge_turn
 	cp EFFECT_SKULL_BASH
@@ -2290,16 +2286,6 @@ FailText_CheckOpponentProtect:
 .not_protected
 	jp StdBattleTextbox
 
-BattleCommand_BideFailText:
-	ld a, [wAttackMissed]
-	and a
-	ret z
-
-	ld a, [wTypeModifier]
-	and $7f
-	jp z, PrintDoesntAffect
-	jp PrintButItFailed
-
 BattleCommand_CriticalText:
 ; criticaltext
 ; Prints the message for critical hits or one-hit KOs.
@@ -2446,8 +2432,6 @@ BattleCommand_CheckFaint:
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_TRIPLE_KICK
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_BEAT_UP
 	jr nz, .finish
 
 .multiple_hit_raise_sub
@@ -2970,8 +2954,6 @@ EnemyAttackDamage:
 	and a
 	ret
 
-INCLUDE "engine/battle/move_effects/beat_up.asm"
-
 BattleCommand_ClearMissDamage:
 ; clearmissdamage
 	ld a, [wAttackMissed]
@@ -3280,8 +3262,6 @@ BattleCommand_ConstantDamage:
 
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_PSYWAVE
-	jr z, .psywave
 
 	cp EFFECT_SUPER_FANG
 	jr z, .super_fang
@@ -3293,21 +3273,6 @@ BattleCommand_ConstantDamage:
 	call GetBattleVar
 	ld b, a
 	ld a, $0
-	jr .got_power
-
-.psywave
-	ld a, b
-	srl a
-	add b
-	ld b, a
-.psywave_loop
-	call BattleRandom
-	and a
-	jr z, .psywave_loop
-	cp b
-	jr nc, .psywave_loop
-	ld b, a
-	ld a, 0
 	jr .got_power
 
 .super_fang
@@ -3659,8 +3624,6 @@ DoSubstituteDamage:
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .ok
 	cp EFFECT_TRIPLE_KICK
-	jr z, .ok
-	cp EFFECT_BEAT_UP
 	jr z, .ok
 	xor a
 	ld [hl], a
@@ -5332,8 +5295,6 @@ BattleCommand_EndLoop:
 	ld a, 1
 	jr z, .double_hit
 	ld a, [hl]
-	cp EFFECT_BEAT_UP
-	jr z, .beat_up
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .not_triple_kick
 .reject_triple_kick_sample
@@ -5345,33 +5306,6 @@ BattleCommand_EndLoop:
 	ld a, 1
 	ld [bc], a
 	jr .done_loop
-
-.beat_up
-	ldh a, [hBattleTurn]
-	and a
-	jr nz, .check_ot_beat_up
-	ld a, [wPartyCount]
-	cp 1
-	jp z, .only_one_beatup
-	dec a
-	jr .double_hit
-
-.check_ot_beat_up
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	jp z, .only_one_beatup
-	ld a, [wOTPartyCount]
-	cp 1
-	jp z, .only_one_beatup
-	dec a
-	jr .double_hit
-
-.only_one_beatup
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	res SUBSTATUS_IN_LOOP, [hl]
-	call BattleCommand_BeatUpFailText
-	jp EndMoveEffect
 
 .not_triple_kick
 	call BattleRandom
@@ -5412,15 +5346,7 @@ BattleCommand_EndLoop:
 	push bc
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
-	cp EFFECT_BEAT_UP
-	jr z, .beat_up_2
 	call StdBattleTextbox
-.beat_up_2
-
-	pop bc
-	xor a
-	ld [bc], a
-	ret
 
 .loop_back_to_critical
 	ld a, [wBattleScriptBufferAddress + 1]
@@ -5523,49 +5449,7 @@ BattleCommand_HeldFlinch:
 	ret
 
 BattleCommand_OHKO:
-; ohko
-
-	call ResetDamage
-	ld a, [wTypeModifier]
-	and $7f
-	jr z, .no_effect
-	ld hl, wEnemyMonLevel
-	ld de, wBattleMonLevel
-	ld bc, wPlayerMoveStruct + MOVE_ACC
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_move_accuracy
-	push hl
-	ld h, d
-	ld l, e
-	pop de
-	ld bc, wEnemyMoveStruct + MOVE_ACC
-.got_move_accuracy
-	ld a, [de]
-	sub [hl]
-	jr c, .no_effect
-	add a
-	ld e, a
-	ld a, [bc]
-	add e
-	jr nc, .finish_ohko
-	ld a, $ff
-.finish_ohko
-	ld [bc], a
-	call BattleCommand_CheckHit
-	ld hl, wCurDamage
-	ld a, $ff
-	ld [hli], a
-	ld [hl], a
-	ld a, $2
-	ld [wCriticalHit], a
-	ret
-
-.no_effect
-	ld a, $ff
-	ld [wCriticalHit], a
-	ld a, $1
-	ld [wAttackMissed], a
+; ohko, unused
 	ret
 
 BattleCommand_CheckCharge:
@@ -5666,9 +5550,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .BattleMadeWhirlwindText
-	jr z, .done
 
 	cp SOLARBEAM
 	ld hl, .BattleTookSunlightText
