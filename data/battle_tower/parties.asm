@@ -1,3 +1,4 @@
+
 BattleTowerMons:
 ; 10 groups of 21 mons.
 
@@ -1597,7 +1598,7 @@ BattleTowerMons3:
 
 	db FEAROW
 	db BRIGHTPOWDER
-	db MIRROR_MOVE, PURSUIT, PECK, SWIFT
+	db BRAVE_BIRD, PURSUIT, PECK, SWIFT
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -2094,7 +2095,7 @@ BattleTowerMons4:
 
 	db EXEGGUTOR
 	db BRIGHTPOWDER
-	db EGG_BOMB, STOMP, CALM_MIND, CONFUSION
+	db EXPLOSION, STOMP, CALM_MIND, CONFUSION
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -4657,7 +4658,7 @@ BattleTowerMons9:
 
 	db MACHAMP
 	db QUICK_CLAW
-	db CROSS_CHOP, VITAL_THROW, FIRE_BLAST, EARTHQUAKE
+	db CROSS_CHOP, SUBMISSION, FIRE_BLAST, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4972,7 +4973,7 @@ BattleTowerMons10:
 
 	db MACHAMP
 	db QUICK_CLAW
-	db CROSS_CHOP, EARTHQUAKE, HYPER_BEAM, VITAL_THROW
+	db CROSS_CHOP, EARTHQUAKE, HYPER_BEAM, SUBMISSION
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
