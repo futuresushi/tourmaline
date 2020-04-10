@@ -150,6 +150,7 @@ ParasEggMoves:
 	db FLAIL
 	db LIGHT_SCREEN
 	db PURSUIT
+	db AERIAL_ACE
 	db -1 ; end
 
 VenonatEggMoves:
