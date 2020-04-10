@@ -2,7 +2,7 @@ MoveNames::
 	db "POUND@"
 	db "KARATE CHOP@"
 	db "DOUBLESLAP@"
-	db "COMET PUNCH@"
+	db "AERIAL ACE@" ; Changed from Comet Punch
 	db "DRAIN PUNCH@" ; changed from Mega Punch
 	db "PAY DAY@"
 	db "FIRE PUNCH@"
@@ -10,15 +10,15 @@ MoveNames::
 	db "THUNDERPUNCH@"
 	db "SCRATCH@"
 	db "FAIRY WIND@" ; changed from Vice Grip
-	db "GUILLOTINE@"
-	db "RAZOR WIND@"
+	db "IRON HEAD@" ; Changed from Guillotine
+	db "HURRICANE@" ; Changed from Razor Wind
 	db "SWORDS DANCE@"
 	db "CUT@"
 	db "GUST@"
 	db "WING ATTACK@"
 	db "WHIRLWIND@"
 	db "FLY@"
-	db "BIND@"
+	db "FLASH CANNON@" ; Changed from Bind
 	db "SLAM@"
 	db "VINE WHIP@"
 	db "STOMP@"
@@ -29,8 +29,8 @@ MoveNames::
 	db "SAND-ATTACK@"
 	db "HEADBUTT@"
 	db "HORN ATTACK@"
-	db "FURY ATTACK@"
-	db "HORN DRILL@"
+	db "POISON JAB@" ; Changed from Fury Attack
+	db "FLARE BLITZ@" ; Changed from Horn Drill
 	db "TACKLE@"
 	db "BODY SLAM@"
 	db "WRAP@"
@@ -70,7 +70,7 @@ MoveNames::
 	db "SEISMIC TOSS@"
 	db "STRENGTH@"
 	db "ABSORB@"
-	db "MEGA DRAIN@"
+	db "FOCUS BLAST@" ; Changed from Mega Drain
 	db "LEECH SEED@"
 	db "GROWTH@"
 	db "RAZOR LEAF@"
@@ -88,19 +88,19 @@ MoveNames::
 	db "THUNDER@"
 	db "ROCK THROW@"
 	db "EARTHQUAKE@"
-	db "FISSURE@"
+	db "SEED BOMB@" ; Changed from Fissure
 	db "DIG@"
 	db "TOXIC@"
 	db "CONFUSION@"
 	db "PSYCHIC@"
 	db "HYPNOSIS@"
-	db "MEDITATE@"
+	db "SHADOW CLAW@" ; Changed from Meditate
 	db "AGILITY@"
 	db "QUICK ATTACK@"
 	db "RAGE@"
 	db "TELEPORT@"
 	db "NIGHT SHADE@"
-	db "MIMIC@"
+	db "X-SCISSOR@" ; Changed from Mimic
 	db "SCREECH@"
 	db "DOUBLE TEAM@"
 	db "RECOVER@"
@@ -115,11 +115,11 @@ MoveNames::
 	db "HAZE@"
 	db "REFLECT@"
 	db "FOCUS ENERGY@"
-	db "BIDE@"
+	db "EARTH POWER@" ; Changed from Bide
 	db "METRONOME@"
-	db "MIRROR MOVE@"
+	db "ASTONISH@" ; Changed from Mirror Move
 	db "SELFDESTRUCT@"
-	db "EGG BOMB@"
+	db "BRAVE BIRD@" ; Changed from Egg Bomb
 	db "LICK@"
 	db "SMOG@"
 	db "SLUDGE@"
@@ -132,7 +132,7 @@ MoveNames::
 	db "SPIKE CANNON@"
 	db "NOISE PULSE@" ; Changed from Constrict
 	db "AMNESIA@"
-	db "KINESIS@"
+	db "ZEN HEADBUTT@" ; Change from Kinesis
 	db "SOFTBOILED@"
 	db "HI JUMP KICK@"
 	db "GLARE@"
@@ -147,7 +147,7 @@ MoveNames::
 	db "DIZZY PUNCH@"
 	db "SPORE@"
 	db "FLASH@"
-	db "PSYWAVE@"
+	db "BUG BUZZ@" : Changed from Psywave
 	db "SPLASH@"
 	db "ACID ARMOR@"
 	db "CRABHAMMER@"
@@ -168,7 +168,7 @@ MoveNames::
 	db "TRIPLE KICK@"
 	db "THIEF@"
 	db "SPIDER WEB@"
-	db "MIND READER@"
+	db "WILD CHARGE@" ; Changed from Mind Reader
 	db "NIGHTMARE@"
 	db "FLAME WHEEL@"
 	db "SNORE@"
@@ -183,7 +183,7 @@ MoveNames::
 	db "PROTECT@"
 	db "MACH PUNCH@"
 	db "SCARY FACE@"
-	db "FAINT ATTACK@"
+	db "FEINT ATTACK@"
 	db "SWEET KISS@"
 	db "BELLY DRUM@"
 	db "SLUDGE BOMB@"
@@ -231,7 +231,7 @@ MoveNames::
 	db "SWEET SCENT@"
 	db "IRON TAIL@"
 	db "METAL CLAW@"
-	db "VITAL THROW@"
+	db "ICICLE CRASH@" ; Changed from Vital Throw
 	db "MORNING SUN@"
 	db "SYNTHESIS@"
 	db "MOONLIGHT@"
@@ -249,6 +249,7 @@ MoveNames::
 	db "FUTURE SIGHT@"
 	db "ROCK SMASH@"
 	db "WHIRLPOOL@"
-	db "BEAT UP@"
+	db "DARK PULSE @" ; Changed from Beat Up
 	db "NASTY PLOT@" ; new
 	db "WILL-O-WISP@" ; new
+	db "MOONBLAST" ; new
