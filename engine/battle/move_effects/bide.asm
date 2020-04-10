@@ -1,3 +1,5 @@
+; this whole thing is unused but the game throws a shit fit if i take it out so
+
 BattleCommand_StoreEnergy:
 ; storeenergy
 
