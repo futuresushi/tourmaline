@@ -2101,3 +2101,49 @@ DoBurn:
 	checksafeguard
 	burn
 	endmove
+
+Hurricane:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	thunderaccuracy
+	checkhit
+	effectchance
+	stab
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	confusetarget
+	endmove
+
+FlareBlitz:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	recoil
+	checkfaint
+	buildopponentrage
+	defrostopponent
+	burntarget
+	kingsrock
+	endmove
