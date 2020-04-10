@@ -7,7 +7,7 @@ EvolutionMoves::
 	db WING_ATTACK  ; CHARIZARD
 	db NO_MOVE      ; SQUIRTLE
 	db NO_MOVE      ; WARTORTLE
-	db NO_MOVE      ; BLASTOISE
+	db FLASH_CANNON ; BLASTOISE
 	db NO_MOVE      ; CATERPIE
 	db HARDEN       ; METAPOD
 	db CONFUSION    ; BUTTERFREE
@@ -91,7 +91,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SHELLDER
 	db NO_MOVE      ; CLOYSTER
 	db NO_MOVE      ; GASTLY
-	db NO_MOVE      ; HAUNTER
+	db SHADOW_CLAW  ; HAUNTER
 	db NASTY_PLOT   ; GENGAR
 	db NO_MOVE      ; ONIX
 	db NO_MOVE      ; DROWZEE
