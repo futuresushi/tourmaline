@@ -159,3 +159,5 @@ MoveEffectsPointers:
 	dw DefenseCurl
 	dw CalmMind
 	dw DoBurn
+	dw Hurricane
+	dw FlareBlitz
