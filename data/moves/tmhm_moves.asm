@@ -51,6 +51,7 @@ TMHMMoves:
 	db FIRE_PUNCH
 	db FURY_CUTTER
 	db NIGHTMARE
+	db FOCUS_BLAST
 ; HMs
 	db CUT
 	db FLY
@@ -59,6 +60,7 @@ TMHMMoves:
 	db FLASH
 	db WHIRLPOOL
 	db WATERFALL
+	db SOFTBOILED
 ; Move tutor
 	db FLAMETHROWER
 	db THUNDERBOLT
