@@ -22,4 +22,5 @@ IsHMMove::
 	db FLASH
 	db WATERFALL
 	db WHIRLPOOL
+	db SOFTBOILED
 	db -1 ; end
