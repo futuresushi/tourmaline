@@ -4940,8 +4940,6 @@ CalcBattleStats:
 
 	ret
 
-INCLUDE "engine/battle/move_effects/bide.asm"
-
 BattleCommand_CheckRampage:
 ; checkrampage
 
@@ -6051,8 +6049,6 @@ DoubleDamage:
 .quit
 	ret
 
-INCLUDE "engine/battle/move_effects/mimic.asm"
-
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
 INCLUDE "engine/battle/move_effects/splash.asm"
@@ -6311,8 +6307,6 @@ CheckSubstituteOpp:
 	ret
 
 INCLUDE "engine/battle/move_effects/selfdestruct.asm"
-
-INCLUDE "engine/battle/move_effects/mirror_move.asm"
 
 INCLUDE "engine/battle/move_effects/metronome.asm"
 
@@ -6609,8 +6603,6 @@ INCLUDE "engine/battle/move_effects/rain_dance.asm"
 INCLUDE "engine/battle/move_effects/sunny_day.asm"
 
 INCLUDE "engine/battle/move_effects/belly_drum.asm"
-
-INCLUDE "engine/battle/move_effects/psych_up.asm"
 
 INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
