@@ -6013,6 +6013,8 @@ DoubleDamage:
 	ld [hl], a
 .quit
 	ret
+	
+INCLUDE "engine/battle/move_effects/mimic.asm"
 
 INCLUDE "engine/battle/move_effects/leech_seed.asm"
 
