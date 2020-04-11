@@ -840,9 +840,9 @@ MultiHit:
 	supereffectivelooptext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endloop
 	raisesub
-	kingsrock
 	endmove
 
 PoisonMultiHit:
@@ -867,10 +867,10 @@ PoisonMultiHit:
 	supereffectivelooptext
 	checkfaint
 	buildopponentrage
-	endloop
-	raisesub
 	kingsrock
 	poisontarget
+	endloop
+	raisesub
 	endmove
 
 FlinchHit:
@@ -1709,6 +1709,7 @@ RapidSpin:
 	checkfaint
 	buildopponentrage
 	kingsrock
+	endturn
 	speedup
 	statupmessage
 	endmove
@@ -2063,9 +2064,10 @@ FlareBlitz:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defrostopponent
+	defrost
 	recoil
 	checkfaint
 	buildopponentrage
+	kingsrock
 	burntarget
 	endmove
