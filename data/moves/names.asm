@@ -252,4 +252,4 @@ MoveNames::
 	db "DARK PULSE @" ; Changed from Beat Up
 	db "NASTY PLOT@" ; new
 	db "WILL-O-WISP@" ; new
-	db "MOONBLAST" ; new
+	db "MOONBLAST@" ; new
