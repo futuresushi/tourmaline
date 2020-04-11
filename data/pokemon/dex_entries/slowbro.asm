@@ -1,4 +1,4 @@
-	db "HERMITCRAB@" ; species name
+	db "SQUATTER@" ; species name
 	dw 503, 1730 ; height, weight
 
 	db   "An attached"
