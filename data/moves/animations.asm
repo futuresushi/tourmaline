@@ -2176,7 +2176,6 @@ BattleAnim_IronHead:
 BattleAnim_Hurricane:
 BattleAnim_FlashCannon:
 BattleAnim_PoisonJab:
-BattleAnim_FlareBlitz:
 BattleAnim_FocusBlast:
 BattleAnim_SeedBomb:
 BattleAnim_ShadowClaw:
@@ -2235,6 +2234,21 @@ BattleAnim_TakeDown:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
+BattleAnim_FlareBlitz:
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_FIRE
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_FIRE_BLAST, 128, 48, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_TACKLE
+	anim_obj ANIM_OBJ_FIRE_BLAST, 144, 48, $0
+	anim_wait 3
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+	
 BattleAnim_DoubleEdge:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_1Row
