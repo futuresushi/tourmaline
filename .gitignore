@@ -51,3 +51,4 @@ gfx/pokemon/*/frames.asm
 !gfx/pokemon/unown/frames.asm
 00extra/backup/00source.txt
 00builds/dirt.rar
+*.pk2
