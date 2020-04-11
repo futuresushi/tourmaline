@@ -260,8 +260,7 @@ ENDM
 	add_tm FIRE_PUNCH   ; f0
 	add_tm FURY_CUTTER  ; f1
 	add_tm NIGHTMARE    ; f2
-	add_tm FOCUS_BLAST
-NUM_TMS EQU const_value - TM01 ; 
+NUM_TMS EQU const_value - TM01 ; discount ITEM_C3 and ITEM_DC
 
 add_hm: MACRO
 if !DEF(HM01)
@@ -279,7 +278,6 @@ ENDM
 	add_hm FLASH        ; f7
 	add_hm WHIRLPOOL    ; f8
 	add_hm WATERFALL    ; f9
-	add_hm SOFTBOILED
 NUM_HMS EQU const_value - HM01
 
 add_mt: MACRO
