@@ -81,6 +81,12 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .dont_evolve_2
 
 	ld a, b
+	cp EVOLVE_HOLDING
+	jp z, .holding
+	cp EVOLVE_LOCATION
+	jp z, .location
+	cp EVOLVE_MOVE
+	jp z, .move
 	cp EVOLVE_LEVEL
 	jp z, .level
 
@@ -180,6 +186,50 @@ EvolveAfterBattle_MasterLoop:
 	and a
 	jp nz, .dont_evolve_3
 	jr .proceed
+	
+.holding
+	ld a, [hli]
+	ld b, a
+	ld a, [wTempMonItem]
+	cp b
+	jp nz, .dont_evolve_3
+	xor a
+	ld [wTempMonItem], a
+	jp .proceed
+
+.location
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	push hl
+	call GetWorldMapLocation
+	pop hl
+	ld b, a
+	ld a, [hli]
+	cp b
+	jp nz, .dont_evolve_3
+	jp .proceed
+
+.move
+	ld a, [hli]
+	push hl
+	push bc
+	ld b, a
+	ld hl, wTempMonMoves
+rept NUM_MOVES
+	ld a, [hli]
+	cp b
+	jp z, .move_proceed
+endr
+	pop bc
+	pop hl
+	jp .dont_evolve_3
+
+.move_proceed
+	pop bc
+	pop hl
+	jp .proceed
 
 .level
 	ld a, [hli]
