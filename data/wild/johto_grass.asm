@@ -283,7 +283,7 @@ JohtoGrassWildMons:
 	db 15, RATICATE
 	db 15, RATICATE
 	; day
-	db 13, RATTATA
+	db 13, VULPIX
 	db 14, KOFFING
 	db 15, RATTATA
 	db 14, ZUBAT
@@ -1491,20 +1491,20 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 13, SENTRET
-	db 14, SPEAROW
+	db 14, MANKEY
 	db 15, MAREEP
 	db 16, FLAAFFY
 	db 15, ARBOK
 	db 16, FEAROW
-	db 16, FEAROW
+	db 16, PRIMEAPE
 	; day
 	db 13, EKANS
-	db 14, SPEAROW
+	db 14, MANKEY
 	db 15, MAREEP
 	db 16, FLAAFFY
 	db 15, ARBOK
 	db 16, FEAROW
-	db 16, FEAROW
+	db 16, PRIMEAPE
 	; nite
 	db 13, RATTATA
 	db 14, ZUBAT
