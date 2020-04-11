@@ -5,13 +5,13 @@
   - Name: Skull Bash
   - Power: 130
   - Accuracy: 100
-- Move Count: 39
+- Move Count: 31
 ### Special
 - Strongest Move:
-  - Name: Razor Wind
+  - Name: Tri Attack
   - Power: 80
   - Accuracy: 100
-- Move Count: 6
+- Move Count: 5
 ---
 ## Fighting:
 ### Physical
@@ -25,7 +25,7 @@
   - Name: N/A
   - Power: 0
   - Accuracy: 0
-- Move Count: 0
+- Move Count: 1
 ---
 ## Fairy:
 ### Physical
@@ -36,18 +36,32 @@
 - Move Count: 3
 ### Special
 - Strongest Move:
-  - Name: Dazzlingleam
-  - Power: 80
+  - Name: Moonblast
+  - Power: 95
+  - Accuracy: 100
+- Move Count: 4
+---
+## Flying:
+### Physical
+- Strongest Move:
+  - Name: Brave Bird
+  - Power: 120
+  - Accuracy: 100
+- Move Count: 7
+### Special
+- Strongest Move:
+  - Name: Gust
+  - Power: 40
   - Accuracy: 100
 - Move Count: 3
 ---
 ## Fire:
 ### Physical
 - Strongest Move:
-  - Name: Fire Punch
-  - Power: 75
+  - Name: Flare Blitz
+  - Power: 120
   - Accuracy: 100
-- Move Count: 3
+- Move Count: 4
 ### Special
 - Strongest Move:
   - Name: Fire Blast
@@ -58,10 +72,10 @@
 ## Ice:
 ### Physical
 - Strongest Move:
-  - Name: Ice Punch
-  - Power: 75
-  - Accuracy: 100
-- Move Count: 1
+  - Name: Icicle Crash
+  - Power: 85
+  - Accuracy: 90
+- Move Count: 2
 ### Special
 - Strongest Move:
   - Name: Ice Beam
@@ -72,10 +86,10 @@
 ## Electric:
 ### Physical
 - Strongest Move:
-  - Name: Thunderpunch
-  - Power: 75
+  - Name: Wild Charge
+  - Power: 90
   - Accuracy: 100
-- Move Count: 2
+- Move Count: 3
 ### Special
 - Strongest Move:
   - Name: Thunderbolt
@@ -86,44 +100,30 @@
 ## Steel:
 ### Physical
 - Strongest Move:
-  - Name: Steel Wing
-  - Power: 70
-  - Accuracy: 90
-- Move Count: 4
-### Special
-- Strongest Move:
-  - Name: N/A
-  - Power: 0
-  - Accuracy: 0
-- Move Count: 0
----
-## Flying:
-### Physical
-- Strongest Move:
-  - Name: Drill Peck
+  - Name: Iron Head
   - Power: 80
   - Accuracy: 100
 - Move Count: 5
 ### Special
 - Strongest Move:
-  - Name: Gust
-  - Power: 40
+  - Name: Flash Cannon
+  - Power: 80
   - Accuracy: 100
-- Move Count: 2
+- Move Count: 1
 ---
 ## Grass:
 ### Physical
 - Strongest Move:
-  - Name: Razor Leaf
-  - Power: 55
-  - Accuracy: 95
-- Move Count: 2
+  - Name: Seed Bomb
+  - Power: 80
+  - Accuracy: 100
+- Move Count: 3
 ### Special
 - Strongest Move:
   - Name: Petal Dance
   - Power: 120
   - Accuracy: 100
-- Move Count: 5
+- Move Count: 4
 ---
 ## Sound:
 ### Physical
@@ -145,21 +145,21 @@
   - Name: Earthquake
   - Power: 100
   - Accuracy: 100
-- Move Count: 6
+- Move Count: 5
 ### Special
 - Strongest Move:
-  - Name: Mud Slap
-  - Power: 20
+  - Name: Earth Power
+  - Power: 90
   - Accuracy: 100
-- Move Count: 1
+- Move Count: 2
 ---
 ## Poison:
 ### Physical
 - Strongest Move:
-  - Name: Poison Sting
-  - Power: 15
+  - Name: Poison Jab
+  - Power: 80
   - Accuracy: 100
-- Move Count: 1
+- Move Count: 2
 ### Special
 - Strongest Move:
   - Name: Sludge Bomb
@@ -173,13 +173,13 @@
   - Name: Megahorn
   - Power: 120
   - Accuracy: 85
-- Move Count: 5
+- Move Count: 6
 ### Special
 - Strongest Move:
-  - Name: N/A
-  - Power: 0
-  - Accuracy: 0
-- Move Count: 0
+  - Name: Bug Buzz
+  - Power: 90
+  - Accuracy: 100
+- Move Count: 1
 ---
 ## Dark:
 ### Physical
@@ -187,13 +187,13 @@
   - Name: Crunch
   - Power: 80
   - Accuracy: 100
-- Move Count: 6
+- Move Count: 5
 ### Special
 - Strongest Move:
-  - Name: N/A
-  - Power: 0
-  - Accuracy: 0
-- Move Count: 0
+  - Name: Dark Pulse
+  - Power: 80
+  - Accuracy: 100
+- Move Count: 1
 ---
 ## Water:
 ### Physical
@@ -212,16 +212,16 @@
 ## Psychic_Type:
 ### Physical
 - Strongest Move:
-  - Name: N/A
-  - Power: 0
-  - Accuracy: 0
-- Move Count: 0
+  - Name: Zen Headbutt
+  - Power: 80
+  - Accuracy: 100
+- Move Count: 1
 ### Special
 - Strongest Move:
   - Name: Future Sight
   - Power: 120
   - Accuracy: 100
-- Move Count: 7
+- Move Count: 6
 ---
 ## Dragon:
 ### Physical
@@ -254,10 +254,10 @@
 ## Ghost:
 ### Physical
 - Strongest Move:
-  - Name: Lick
-  - Power: 30
+  - Name: Shadow Claw
+  - Power: 70
   - Accuracy: 100
-- Move Count: 1
+- Move Count: 3
 ### Special
 - Strongest Move:
   - Name: Shadow Ball
