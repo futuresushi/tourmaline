@@ -2067,6 +2067,5 @@ FlareBlitz:
 	recoil
 	checkfaint
 	buildopponentrage
-	kingsrock
 	burntarget
 	endmove
