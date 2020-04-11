@@ -5632,9 +5632,9 @@ BattleCommand_Recoil:
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
 .got_hp
-	; ld a, BATTLE_VARS_MOVE_ANIM
-	; call GetBattleVar
-	; ld d, a
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	ld d, a
 ; get 1/4 damage or 1 HP, whichever is higher
 	ld a, [wCurDamage]
 	ld b, a
