@@ -36,7 +36,7 @@ EvolutionMoves::
 	db NO_MOVE      ; CLEFAIRY
 	db NO_MOVE      ; CLEFABLE
 	db NO_MOVE      ; VULPIX
-	db NO_MOVE      ; NINETALES
+	db NASTY_PLOT   ; NINETALES
 	db NO_MOVE      ; JIGGLYPUFF
 	db PLAY_ROUGH   ; WIGGLYTUFF
 	db NO_MOVE      ; ZUBAT
@@ -45,7 +45,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GLOOM
 	db NO_MOVE      ; VILEPLUME
 	db NO_MOVE      ; PARAS
-	db NO_MOVE      ; PARASECT
+	db SHADOW_CLAW  ; PARASECT
 	db NO_MOVE      ; VENONAT
 	db GUST         ; VENOMOTH
 	db NO_MOVE      ; DIGLETT
@@ -57,7 +57,7 @@ EvolutionMoves::
 	db NO_MOVE      ; MANKEY
 	db RAGE         ; PRIMEAPE
 	db NO_MOVE      ; GROWLITHE
-	db NO_MOVE      ; ARCANINE
+	db EXTREMESPEED ; ARCANINE
 	db NO_MOVE      ; POLIWAG
 	db NO_MOVE      ; POLIWHIRL
 	db SUBMISSION   ; POLIWRATH
@@ -89,7 +89,7 @@ EvolutionMoves::
 	db NO_MOVE      ; GRIMER
 	db NO_MOVE      ; MUK
 	db NO_MOVE      ; SHELLDER
-	db NO_MOVE      ; CLOYSTER
+	db SPIKES       ; CLOYSTER
 	db NO_MOVE      ; GASTLY
 	db SHADOW_CLAW  ; HAUNTER
 	db NASTY_PLOT   ; GENGAR
@@ -103,7 +103,7 @@ EvolutionMoves::
 	db NO_MOVE      ; EXEGGCUTE
 	db STOMP        ; EXEGGUTOR
 	db NO_MOVE      ; CUBONE
-	db NO_MOVE      ; MAROWAK
+	db SWORDS_DANCE ; MAROWAK
 	db DOUBLE_KICK  ; HITMONLEE
 	db SUBMISSION   ; HITMONCHAN
 	db NO_MOVE      ; LICKITUNG
@@ -155,10 +155,10 @@ EvolutionMoves::
 	db PETAL_DANCE  ; MEGANIUM
 	db NO_MOVE      ; CYNDAQUIL
 	db NO_MOVE      ; QUILAVA
-	db NO_MOVE      ; TYPHLOSION
+	db FIRE_PUNCH   ; TYPHLOSION
 	db NO_MOVE      ; TOTODILE
 	db NO_MOVE      ; CROCONAW
-	db NO_MOVE      ; FERALIGATR
+	db SHADOW_CLAW  ; FERALIGATR make it night slash later
 	db NO_MOVE      ; SENTRET
 	db AGILITY      ; FURRET
 	db NO_MOVE      ; HOOTHOOT
@@ -167,7 +167,7 @@ EvolutionMoves::
 	db NO_MOVE      ; LEDIAN
 	db NO_MOVE      ; SPINARAK
 	db SWORDS_DANCE ; ARIADOS
-	db NO_MOVE      ; CROBAT
+	db X_SCISSOR    ; CROBAT
 	db NO_MOVE      ; CHINCHOU
 	db NO_MOVE      ; LANTURN
 	db NO_MOVE      ; PICHU
@@ -203,7 +203,7 @@ EvolutionMoves::
 	db NO_MOVE      ; WOBBUFFET
 	db NO_MOVE      ; GIRAFARIG
 	db NO_MOVE      ; PINECO
-	db NO_MOVE      ; FORRETRESS
+	db FLASH_CANNON ; FORRETRESS
 	db NO_MOVE      ; DUNSPARCE
 	db NO_MOVE      ; GLIGAR
 	db IRON_TAIL    ; STEELIX
@@ -228,7 +228,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SKARMORY
 	db NO_MOVE      ; HOUNDOUR
 	db NO_MOVE      ; HOUNDOOM
-	db NO_MOVE      ; KINGDRA
+	db DRAGONBREATH ; KINGDRA
 	db NO_MOVE      ; PHANPY
 	db EARTH_POWER  ; DONPHAN
 	db NO_MOVE      ; PORYGON2
