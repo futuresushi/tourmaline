@@ -26,7 +26,7 @@ Moves: ; 41afb
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, STEEL,         PHYSICAL, 100, 15,  30
 	move HURRICANE,    EFFECT_HURRICANE,         110, FLYING,        SPECIAL,   70, 10,  30
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,        STATUS,   100, 20,   0
-	move CUT,          EFFECT_NORMAL_HIT,         60, STEEL,         PHYSICAL,  95, 30,   0
+	move CUT,          EFFECT_NORMAL_HIT,         60, STEEL,         PHYSICAL,  95, 30,   0 ; buffed
 	move GUST,         EFFECT_GUST,               40, FLYING,        SPECIAL,  100, 35,   0
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,        PHYSICAL, 100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,        STATUS,   100, 20,   0
@@ -77,11 +77,11 @@ Moves: ; 41afb
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,        SPECIAL,   90,  5,   0
 	move PECK,         EFFECT_NORMAL_HIT,         35, FLYING,        PHYSICAL, 100, 35,   0
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,        PHYSICAL, 100, 20,   0
-	move SUBMISSION,   EFFECT_RECOIL_HIT,         80, FIGHTING,      PHYSICAL,  80, 20,   0
+	move SUBMISSION,   EFFECT_RECOIL_HIT,        120, FIGHTING,      PHYSICAL,  80, 20,   0 ; buffed
 	move LOW_KICK,     EFFECT_FLINCH_HIT,         50, FIGHTING,      PHYSICAL, 100, 20,  30
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,      PHYSICAL, 100, 20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING,      PHYSICAL, 100, 20,   0
-	move STRENGTH,     EFFECT_NORMAL_HIT,         80, NORMAL,        PHYSICAL, 100, 15,   0
+	move STRENGTH,     EFFECT_NORMAL_HIT,         80, FIGHTING,      PHYSICAL, 100, 15,   0 ; type change
 	move ABSORB,       EFFECT_LEECH_HIT,          40, GRASS,         SPECIAL,  100, 15,   0
 	move FOCUS_BLAST,  EFFECT_SP_DEF_DOWN_HIT,   120, FIGHTING,      SPECIAL,   70,  5,  10
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,         STATUS,    90, 10,   0
@@ -260,7 +260,7 @@ Moves: ; 41afb
 	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,          SPECIAL,  100,  5,  10
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,         SPECIAL,  100, 15,  20
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC_TYPE,  SPECIAL,  100, 10,   0
-	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   20, FIGHTING,      PHYSICAL, 100, 15,  50
+	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING,      PHYSICAL, 100, 15,  50 ; buffed
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,         SPECIAL,   85, 15,   0
 	move DARK_PULSE,   EFFECT_FLINCH_HIT,         80, DARK,          SPECIAL,  100, 15,  20
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,          STATUS,   100, 20,   0 ; new slot
