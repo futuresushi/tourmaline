@@ -2063,8 +2063,8 @@ FlareBlitz:
 	applydamage
 	criticaltext
 	supereffectivetext
-	recoil
 	defrostopponent
+	recoil
 	checkfaint
 	buildopponentrage
 	kingsrock
