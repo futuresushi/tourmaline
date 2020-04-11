@@ -1692,6 +1692,8 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 
+	cp HURRICANE
+	ret z
 	cp GUST
 	ret z
 	cp WHIRLWIND
@@ -1715,6 +1717,8 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_THUNDER
+	ret nz
+	cp EFFECT_HURRICANE
 	ret nz
 
 	ld a, [wBattleWeather]
@@ -5628,9 +5632,9 @@ BattleCommand_Recoil:
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
 .got_hp
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld d, a
+	; ld a, BATTLE_VARS_MOVE_ANIM
+	; call GetBattleVar
+	; ld d, a
 ; get 1/4 damage or 1 HP, whichever is higher
 	ld a, [wCurDamage]
 	ld b, a
