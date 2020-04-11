@@ -2241,11 +2241,15 @@ BattleAnim_FlareBlitz:
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
 	anim_wait 3
 	anim_sound 0, 1, SFX_TACKLE
-	anim_obj ANIM_OBJ_FIRE_BLAST, 128, 48, $0
-	anim_wait 6
+	anim_obj ANIM_OBJ_00, 128, 48, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_BURNED, 128, 48, $0
+	anim_wait 12
 	anim_sound 0, 1, SFX_TACKLE
-	anim_obj ANIM_OBJ_FIRE_BLAST, 144, 48, $0
-	anim_wait 3
+	anim_obj ANIM_OBJ_00, 144, 48, $0
+	anim_wait 2
+	anim_obj ANIM_OBJ_BURNED, 128, 48, $0
+	anim_wait 12
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 	
