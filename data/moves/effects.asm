@@ -2052,21 +2052,21 @@ FlareBlitz:
 	usedmovetext
 	doturn
 	critical
+	effectchance
 	damagestats
 	damagecalc
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
 	recoil
+	defrostopponent
 	checkfaint
 	buildopponentrage
-	defrostopponent
-	burntarget
 	kingsrock
+	burntarget
 	endmove
