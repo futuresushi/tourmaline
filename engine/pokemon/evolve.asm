@@ -65,9 +65,6 @@ EvolveAfterBattle_MasterLoop:
 
 	ld b, a
 
-	cp EVOLVE_TRADE
-	jr z, .trade
-
 	ld a, [wLinkMode]
 	and a
 	jp nz, .dont_evolve_2
@@ -145,31 +142,6 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp z, .dont_evolve_3
-	jr .proceed
-
-.trade
-	ld a, [wLinkMode]
-	and a
-	jp z, .dont_evolve_2
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_2
-
-	ld a, [hli]
-	ld b, a
-	inc a
-	jr z, .proceed
-
-	ld a, [wLinkMode]
-	cp LINK_TIMECAPSULE
-	jp z, .dont_evolve_3
-
-	ld a, [wTempMonItem]
-	cp b
-	jp nz, .dont_evolve_3
-
-	xor a
-	ld [wTempMonItem], a
 	jr .proceed
 
 .item
