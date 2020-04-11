@@ -4344,7 +4344,7 @@ BattleAnim_FairyWind:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
 	anim_sound 0, 0, SFX_FLASH
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_wait 64
+	anim_wait 128
 	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
 	anim_wait 2
 	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
