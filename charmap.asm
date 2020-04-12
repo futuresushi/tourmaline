@@ -48,14 +48,6 @@
 
 ; Actual characters (from other graphics files)
 
-	; needed for _LoadFontsExtra1 (see engine/load_font.asm)
-	charmap "■",         $60 ; gfx/font/black.2bpp
-	charmap "▲",         $61 ; gfx/font/up_arrow.png
-	charmap "☎",         $62 ; gfx/font/phone_icon.2bpp
-
-	; needed for MagikarpHouseSign (see engine/events/magikarp.asm)
-	charmap "′",         $6e ; gfx/font/feet_inches.png
-	charmap "″",         $6f ; gfx/font/feet_inches.png
 	charmap " ",         $7f ; gfx/frames/space.png
 
 	; needed for StatsScreen_PlaceShinyIcon and PrintPartyMonPage1
