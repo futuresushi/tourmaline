@@ -6474,17 +6474,17 @@ INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 
 BattleCommand_HealSun:
 ; healsun
-	ld b, WEATHER_SUN ; 2
+	ld b, WEATHER_SUN
 	jr BattleCommand_WeatherBasedHealContinue
 
 BattleCommand_HealSand:
 ; healsand
-	ld b, WEATHER_SANDSTORM ; 3
+	ld b, WEATHER_SANDSTORM
 	jr BattleCommand_WeatherBasedHealContinue
 
 BattleCommand_HealRain:
 ; healrain
-	ld b, WEATHER_RAIN ; 1
+	ld b, WEATHER_RAIN
 	; fallthrough
 
 BattleCommand_WeatherBasedHealContinue:
@@ -6501,7 +6501,7 @@ BattleCommand_WeatherBasedHealContinue:
 .start
 ; Index for .Multipliers
 ; Default restores half max HP.
-	callfar GetHalfMaxHP
+	ld c, 1
 
 ; Don't bother healing if HP is already full.
 	push bc
@@ -6520,16 +6520,22 @@ BattleCommand_WeatherBasedHealContinue:
 	jr z, .Heal ; if good weather is sandstorm, there isn't a bad heal
 ; bad heal
 ; load quarter HP
-	callfar GetQuarterMaxHP
+	ld c, 0
 	jr .Heal
 	
 .goodheal 
-	; load two-third HP
-	callfar GetThirdMaxHP
-	sla c
+; load two-third HP
+	ld c, 2
 
 .Heal:
 	ld b, 0
+	ld hl, .Multipliers
+	add hl, bc
+	add hl, bc
+
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
 	ld a, BANK(GetMaxHP)
 	rst FarCall
 
@@ -6551,6 +6557,12 @@ BattleCommand_WeatherBasedHealContinue:
 ; 'hp is full!'
 	ld hl, HPIsFullText
 	jp StdBattleTextbox
+
+.Multipliers:
+	dw GetQuarterMaxHP ; 0
+	dw GetHalfMaxHP ; 1
+	dw GetTwoThirdMaxHP ; 2
+	dw GetMaxHP ; 3
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
 
