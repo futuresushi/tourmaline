@@ -6533,7 +6533,7 @@ BattleCommand_WeatherBasedHealContinue:
 	jr z, .Heal ; if good weather is sandstorm, there isn't a bad heal
 ; bad heal - load quarter HP
 	ld c, 0
-	jr .Heal
+	jr, .Heal
 	
 .goodheal - load two-third HP
 	ld c, 2
