@@ -1969,6 +1969,12 @@ GetHalfMaxHP:
 	inc c
 .end
 	ret
+	
+GetTwoThirdMaxHP:
+; output: bc
+	call GetThirdMaxHP
+	sla c
+	ret
 
 GetMaxHP:
 ; output: bc, wBuffer1-2
