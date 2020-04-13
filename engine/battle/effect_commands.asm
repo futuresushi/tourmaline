@@ -6492,22 +6492,22 @@ BattleCommand_WeatherBasedHealContinue:
 
 	ld hl, wBattleMonMaxHP
 	ld de, wBattleMonHP
+	; Jump if HP full
+	call CompareBytes
+	jr z, .Full
 	ldh a, [hBattleTurn]
 	and a
 	jr z, .start
 	ld hl, wEnemyMonMaxHP
 	ld de, wEnemyMonHP
+	; Jump if enemy HP full
+	call CompareBytes
+	jr z, .Full
 
 .start
 ; Index for .Multipliers
 ; Default restores half max HP.
 	ld c, 1
-
-; Don't bother healing if HP is already full.
-;	push bc
-;	call CompareBytes
-;	pop bc
-;	jr z, .Full
 
 ; Compare weather
 	ld a, [wBattleWeather]
