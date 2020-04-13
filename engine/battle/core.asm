@@ -1033,13 +1033,8 @@ ResidualDamage:
 
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
-	and 1 << PSN 
-	jr z, .did_psn
-	
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and 1 << BRN
-	jr z, .did_brn	
+	and 1 << PSN | 1 << BRN
+	jr z, .did_psn_brn
 
 	ld hl, HurtByPoisonText
 	ld de, ANIM_PSN
@@ -1082,7 +1077,8 @@ ResidualDamage:
 .did_toxic
 
 	call SubtractHPFromUser
-.did_psn
+.did_psn_brn
+
 	call HasUserFainted
 	jp z, .fainted
 
@@ -1108,33 +1104,6 @@ ResidualDamage:
 	call RestoreHP
 	ld hl, LeechSeedSapsText
 	call StdBattleTextbox
-.did_brn	
-	call HasUserFainted
-	jp z, .fainted
-
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVarAddr
-	bit SUBSTATUS_LEECH_SEED, [hl]
-	jr z, .not_seeded
-
-	call SwitchTurnCore
-	xor a
-	ld [wNumHits], a
-	ld de, ANIM_SAP
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
-	call z, Call_PlayBattleAnim_OnlyIfVisible
-	call SwitchTurnCore
-
-	call GetSixteenthMaxHP
-	call SubtractHPFromUser
-	ld a, $1
-	ldh [hBGMapMode], a
-	call RestoreHP
-	ld hl, LeechSeedSapsText
-	call StdBattleTextbox
-
 .not_seeded
 
 	call HasUserFainted
