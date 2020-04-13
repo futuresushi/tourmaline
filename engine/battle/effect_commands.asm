@@ -6475,29 +6475,16 @@ INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 BattleCommand_HealSun:
 ; healsun
 	ld b, WEATHER_SUN
-	ld a, [wBattleWeather]
-	and a
-	jr z, .Heal
-	cp WEATHER_SUN
-	jr nz, .goodheal
 	jr BattleCommand_WeatherBasedHealContinue
 
 BattleCommand_HealSand:
 ; healsand
 	ld b, WEATHER_SANDSTORM
-	and a
-	jr z, .Heal
-	cp WEATHER_SANDSTORM
-	jr nz, .goodheal
 	jr BattleCommand_WeatherBasedHealContinue
 
 BattleCommand_HealRain:
 ; healrain
 	ld b, WEATHER_RAIN
-	and a
-	jr z, .Heal
-	cp WEATHER_RAIN
-	jr nz, .goodheal
 	; fallthrough
 
 BattleCommand_WeatherBasedHealContinue:
@@ -6531,11 +6518,13 @@ BattleCommand_WeatherBasedHealContinue:
 	ld a, WEATHER_SANDSTORM 
 	cp b
 	jr z, .Heal ; if good weather is sandstorm, there isn't a bad heal
-; bad heal - load quarter HP
+; bad heal
+; load quarter HP
 	ld c, 0
 	jr, .Heal
 	
-.goodheal - load two-third HP
+.goodheal 
+; load two-third HP
 	ld c, 2
 
 .Heal:
