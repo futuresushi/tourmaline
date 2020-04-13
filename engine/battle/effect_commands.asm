@@ -6521,7 +6521,7 @@ BattleCommand_WeatherBasedHealContinue:
 ; bad heal
 ; load quarter HP
 	ld c, 0
-	jr, .Heal
+	jr .Heal
 	
 .goodheal 
 ; load two-third HP
