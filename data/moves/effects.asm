@@ -1718,21 +1718,21 @@ MorningSun:
 	checkobedience
 	usedmovetext
 	doturn
-	healmorn
+	healsun
 	endmove
 
 Synthesis:
 	checkobedience
 	usedmovetext
 	doturn
-	healday
+	healsand
 	endmove
 
 Moonlight:
 	checkobedience
 	usedmovetext
 	doturn
-	healnite
+	healrain
 	endmove
 
 HiddenPower:
