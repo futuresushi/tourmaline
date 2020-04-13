@@ -6504,10 +6504,10 @@ BattleCommand_WeatherBasedHealContinue:
 	ld c, 1
 
 ; Don't bother healing if HP is already full.
-	push bc
-	call CompareBytes
-	pop bc
-	jr z, .Full
+;	push bc
+;	call CompareBytes
+;	pop bc
+;	jr z, .Full
 
 ; Compare weather
 	ld a, [wBattleWeather]
