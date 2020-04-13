@@ -13,6 +13,6 @@ BattleCommand_StartSun:
 	ld hl, SunGotBrightText
 	jp StdBattleTextbox
 	
-	.failed
+.failed
 	call AnimateFailedMove
 	jp PrintButItFailed
