@@ -6472,23 +6472,36 @@ INCLUDE "engine/battle/move_effects/pursuit.asm"
 
 INCLUDE "engine/battle/move_effects/rapid_spin.asm"
 
-BattleCommand_HealMorn:
-; healmorn
-	ld b, MORN_F
-	jr BattleCommand_TimeBasedHealContinue
+BattleCommand_HealSun:
+; healsun
+	ld b, WEATHER_SUN
+	ld a, [wBattleWeather]
+	and a
+	jr z, .Heal
+	cp WEATHER_SUN
+	jr nz, .goodheal
+	jr BattleCommand_WeatherBasedHealContinue
 
-BattleCommand_HealDay:
-; healday
-	ld b, DAY_F
-	jr BattleCommand_TimeBasedHealContinue
+BattleCommand_HealSand:
+; healsand
+	ld b, WEATHER_SANDSTORM
+	and a
+	jr z, .Heal
+	cp WEATHER_SANDSTORM
+	jr nz, .goodheal
+	jr BattleCommand_WeatherBasedHealContinue
 
-BattleCommand_HealNite:
-; healnite
-	ld b, NITE_F
+BattleCommand_HealRain:
+; healrain
+	ld b, WEATHER_RAIN
+	and a
+	jr z, .Heal
+	cp WEATHER_RAIN
+	jr nz, .goodheal
 	; fallthrough
 
-BattleCommand_TimeBasedHealContinue:
-; Time- and weather-sensitive heal.
+BattleCommand_WeatherBasedHealContinue:
+; Weather-sensitive heal.
 
 	ld hl, wBattleMonMaxHP
 	ld de, wBattleMonHP
@@ -6501,7 +6514,7 @@ BattleCommand_TimeBasedHealContinue:
 .start
 ; Index for .Multipliers
 ; Default restores half max HP.
-	ld c, 2
+	ld c, 1
 
 ; Don't bother healing if HP is already full.
 	push bc
@@ -6509,28 +6522,21 @@ BattleCommand_TimeBasedHealContinue:
 	pop bc
 	jr z, .Full
 
-; Don't factor in time of day in link battles.
-	ld a, [wLinkMode]
-	and a
-	jr nz, .Weather
-
-	ld a, [wTimeOfDay]
-	cp b
-	jr z, .Weather
-	dec c ; double
-
-.Weather:
+; Compare weather
 	ld a, [wBattleWeather]
+	cp b
+	jr z, .goodheal
 	and a
 	jr z, .Heal
-
-; x2 in sun
-; /2 in rain/sandstorm
-	inc c
-	cp WEATHER_SUN
-	jr z, .Heal
-	dec c
-	dec c
+	ld a, WEATHER_SANDSTORM 
+	cp b
+	jr z, .Heal ; if good weather is sandstorm, there isn't a bad heal
+; bad heal - load quarter HP
+	ld c, 0
+	jr .Heal
+	
+.goodheal - load two-third HP
+	ld c, 2
 
 .Heal:
 	ld b, 0
@@ -6564,10 +6570,10 @@ BattleCommand_TimeBasedHealContinue:
 	jp StdBattleTextbox
 
 .Multipliers:
-	dw GetEighthMaxHP
-	dw GetQuarterMaxHP
-	dw GetHalfMaxHP
-	dw GetMaxHP
+	dw GetQuarterMaxHP ; 0
+	dw GetHalfMaxHP ; 1
+	dw GetTwoThirdMaxHP ; 2
+	dw GetMaxHP ; 3
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
 
