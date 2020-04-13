@@ -6501,13 +6501,13 @@ BattleCommand_WeatherBasedHealContinue:
 .start
 ; Index for .Multipliers
 ; Default restores half max HP.
-	ld c, 1
+	ld c, 2
 
 ; Don't bother healing if HP is already full.
-;	push bc
-;	call CompareBytes
-;	pop bc
-;	jr z, .Full
+	push bc
+	call CompareBytes
+	pop bc
+	jr z, .Full
 
 ; Compare weather
 	ld a, [wBattleWeather]
@@ -6525,7 +6525,7 @@ BattleCommand_WeatherBasedHealContinue:
 	
 .goodheal 
 ; load two-third HP
-	ld c, 2
+	ld c, 1
 
 .Heal:
 	ld b, 0
@@ -6560,8 +6560,8 @@ BattleCommand_WeatherBasedHealContinue:
 
 .Multipliers:
 	dw GetQuarterMaxHP ; 0
-	dw GetHalfMaxHP ; 1
-	dw GetTwoThirdMaxHP ; 2
+	dw GetTwoThirdMaxHP ; 1
+	dw GetHalfMaxHP ; 2
 	dw GetMaxHP ; 3
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
