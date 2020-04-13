@@ -13,6 +13,6 @@ BattleCommand_StartRain:
 	ld hl, DownpourText
 	jp StdBattleTextbox
 	
-	.failed
+.failed
 	call AnimateFailedMove
 	jp PrintButItFailed
