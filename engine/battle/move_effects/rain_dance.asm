@@ -3,7 +3,7 @@ BattleCommand_StartRain:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
-	jr z, .failed
+	jp z, .failed
 	
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
