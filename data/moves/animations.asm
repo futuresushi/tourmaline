@@ -234,9 +234,9 @@ BattleAnimations::
 	dw BattleAnim_IronTail
 	dw BattleAnim_MetalClaw
 	dw BattleAnim_IcicleCrash
-	dw BattleAnim_MorningSun
-	dw BattleAnim_Synthesis
-	dw BattleAnim_Moonlight
+	dw BattleAnim_LuxRestore
+	dw BattleAnim_ShoreUp
+	dw BattleAnim_DrillRun
 	dw BattleAnim_HiddenPower
 	dw BattleAnim_CrossChop
 	dw BattleAnim_Twister
@@ -2390,6 +2390,7 @@ BattleAnim_FuryAttack:
 	anim_wait 8
 	anim_ret
 
+BattleAnim_DrillRun:
 BattleAnim_HornDrill:
 	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $40
@@ -3849,6 +3850,7 @@ BattleAnim_Outrage:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_ShoreUp:
 BattleAnim_Sandstorm:
 	anim_1gfx ANIM_GFX_POWDER
 	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
@@ -4441,6 +4443,7 @@ BattleAnim_MorningSun:
 	anim_call BattleAnimSub_Glimmer2
 	anim_ret
 
+BattleAnim_LuxRestore:
 BattleAnim_Synthesis:
 	anim_1gfx ANIM_GFX_SHINE
 	anim_call BattleAnim_TargetObj_1Row
