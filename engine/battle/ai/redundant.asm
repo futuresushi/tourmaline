@@ -39,9 +39,9 @@ AI_Redundant:
 	dbw EFFECT_RAIN_DANCE,   .RainDance
 	dbw EFFECT_SUNNY_DAY,    .SunnyDay
 	dbw EFFECT_TELEPORT,     .Teleport
-	dbw EFFECT_MORNING_SUN,  .MorningSun
-	dbw EFFECT_SYNTHESIS,    .Synthesis
-	dbw EFFECT_MOONLIGHT,    .Moonlight
+	dbw EFFECT_SUN_HEAL,     .SunHeal
+	dbw EFFECT_SAND_HEAL,    .SandHeal
+	dbw EFFECT_RAIN_HEAL,    .RainHeal
 	dbw EFFECT_SWAGGER,      .Swagger
 	dbw EFFECT_FUTURE_SIGHT, .FutureSight
 	db -1
@@ -181,9 +181,9 @@ AI_Redundant:
 	ret
 
 .Heal:
-.MorningSun:
-.Synthesis:
-.Moonlight:
+.SunHeal:
+.SandHeal:
+.RainHeal:
 	farcall AICheckEnemyMaxHP
 	jr nc, .NotRedundant
 
