@@ -2069,7 +2069,7 @@ BattleAnim_PlayRough:
 
 ; based on prism
 BattleAnim_IronHead:
-	anim_2gfx ANIM_GFX_REFLECT
+	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_sound 0, 0, SFX_RAGE
 	anim_call BattleAnim_TargetObj_1Row
