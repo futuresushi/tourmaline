@@ -10,6 +10,7 @@ WithdrawUsers:
 	db CLOYSTER
 	db OMANYTE
 	db OMASTAR
+	db SHUCKLE
 	db -1
 
 HardenUsers:
@@ -19,19 +20,16 @@ HardenUsers:
 	db GRIMER
 	db MUK
 	db ONIX
-	db STEELIX
 	db KRABBY
 	db KINGLER
 	db STARYU
 	db STARMIE
 	db KABUTO
 	db KABUTOPS
-	db HERACROSS
 	db GLIGAR
-	db GLISCOR
+	db STEELIX
 	db SLUGMA
+	db HERACROSS
 	db MAGCARGO
 	db CORSOLA
-	db PUPITAR
-	db TYRANITAR
 	db -1
