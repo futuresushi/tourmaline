@@ -2090,7 +2090,7 @@ BattleAnim_IronHead:
 BattleAnim_PoisonJab:
 	anim_3gfx ANIM_GFX_HORN, ANIM_GFX_HIT, ANIM_GFX_POISON
 	anim_sound 0, 1, SFX_HORN_ATTACK
-	anim_obj ANIM_OBJ_5F,   9, 0,  12, 0, $1
+	anim_obj ANIM_OBJ_HORN,   9, 0,  12, 0, $1
 	anim_wait 6
 	anim_obj ANIM_OBJ_01, 17, 0,  7, 0, $0
 	anim_wait 8
