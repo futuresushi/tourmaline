@@ -24,8 +24,10 @@ HardenUsers:
 	db KINGLER
 	db STARYU
 	db STARMIE
+	db PINSIR
 	db KABUTO
 	db KABUTOPS
+	db QWILFISH
 	db GLIGAR
 	db STEELIX
 	db SLUGMA
