@@ -18,6 +18,8 @@ SECTION "Egg Moves", ROMX
 
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
+INCLUDE "data/pokemon/egg_move_pointers.asm"
+
 BulbasaurEggMoves:
 	db LIGHT_SCREEN
 	db SKULL_BASH
@@ -139,7 +141,7 @@ OddishEggMoves:
 	db SWORDS_DANCE
 	db RAZOR_LEAF
 	db FLAIL
-	db SYNTHESIS
+	db LUX_RESTORE
 	db SEED_BOMB
 	db -1 ; end
 
@@ -158,6 +160,7 @@ VenonatEggMoves:
 	db BATON_PASS
 	db SCREECH
 	db GIGA_DRAIN
+	db LUX_RESTORE
 	db -1 ; end
 
 DiglettEggMoves:
@@ -207,6 +210,7 @@ GrowlitheEggMoves:
 	db FIRE_SPIN
 	db FLARE_BLITZ
 	db WILD_CHARGE
+	db LUX_RESTORE
 	db -1 ; end
 
 PoliwagEggMoves:
@@ -232,7 +236,7 @@ BellsproutEggMoves:
 	db SWORDS_DANCE
 	db ENCORE
 	db REFLECT
-	db SYNTHESIS
+	db LUX_RESTORE
 	db LEECH_LIFE
 	db -1 ; end
 
@@ -257,6 +261,7 @@ PonytaEggMoves:
 	db CHARM
 	db QUICK_ATTACK
 	db WILD_CHARGE
+	db LUX_RESTORE
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -336,8 +341,7 @@ KrabbyEggMoves:
 	db -1 ; end
 
 ExeggcuteEggMoves:
-	db SYNTHESIS
-	db MOONLIGHT
+	db LUX_RESTORE
 	db REFLECT
 	db ABSORB
 	db ANCIENTPOWER
@@ -579,6 +583,7 @@ TogepiEggMoves:
 	db NASTY_PLOT
 	db ZEN_HEADBUTT
 	db AERIAL_ACE
+	db LUX_RESTORE
 	db -1 ; end
 
 NatuEggMoves:
@@ -633,11 +638,6 @@ AipomEggMoves:
 	db DOUBLESLAP
 	db SEED_BOMB
 	db AERIAL_ACE
-	db -1 ; end
-	
-SunkernEggMoves:
-	db LUX_RESTORE
-	db LEECH_SEED
 	db -1 ; end
 
 YanmaEggMoves:
