@@ -240,7 +240,7 @@ ENDM
 	add_tm DIG          ; db
 	add_tm PSYCHIC_M    ; dd
 	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df
+	add_tm AERIAL_ACE   ; df
 	add_tm DOUBLE_TEAM  ; e0
 	add_tm ICE_PUNCH    ; e1
 	add_tm SWAGGER      ; e2
