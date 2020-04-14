@@ -233,9 +233,9 @@ MoveDescriptions::
 	dw IronTailDescription
 	dw MetalClawDescription
 	dw IcicleCrashDescription
-	dw MorningSunDescription
-	dw SynthesisDescription
-	dw MoonlightDescription
+	dw LuxRestoreDescription
+	dw ShoreUpDescription
+	dw DrillRunDescription
 	dw HiddenPowerDescription
 	dw CrossChopDescription
 	dw TwisterDescription
@@ -876,6 +876,7 @@ SuperFangDescription:
 	db   "Cuts the foe's HP"
 	next "by 1/2.@"
 
+DrillRunDescription:
 ShadowClawDescription:
 SlashDescription:
 	db   "Has a high criti-"
@@ -1155,17 +1156,13 @@ MetalClawDescription:
 	db   "An attack that may"
 	next "up user's ATTACK.@"
 
-MorningSunDescription:
+LuxRestoreDescription:
 	db   "Restores HP"
-	next "(varies by time).@"
+	next "best in SUN.@"
 
-SynthesisDescription:
+ShoreUpDescription:
 	db   "Restores HP"
-	next "(varies by time).@"
-
-MoonlightDescription:
-	db   "Restores HP"
-	next "(varies by time).@"
+	next "best in SAND.@"
 
 HiddenPowerDescription:
 	db   "The power varies"
