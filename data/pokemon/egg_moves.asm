@@ -229,6 +229,7 @@ GrowlitheEggMoves:
 	db FLARE_BLITZ
 	db WILD_CHARGE
 	db LUX_RESTORE
+	db MUD_SLAP
 	db -1 ; end
 
 PoliwagEggMoves:
@@ -447,6 +448,7 @@ GoldeenEggMoves:
 	db PSYBEAM
 	db HAZE
 	db HYDRO_PUMP
+	db MUD_SLAP
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -495,6 +497,7 @@ KabutoEggMoves:
 	db RAPID_SPIN
 	db DIG
 	db FLAIL
+	db MUD_SLAP
 	db -1 ; end
 
 AerodactylEggMoves:
