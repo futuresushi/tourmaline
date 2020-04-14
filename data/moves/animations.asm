@@ -2145,11 +2145,12 @@ BattleAnim_TakeDown:
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 	
+; based on spark
 BattleAnim_WildCharge:
 	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
 	anim_sound 0, 0, SFX_ZAP_CANNON
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
-	anim_obj ANIM_OBJ_30,   6, 0,  11, 4, $0
+	anim_obj ANIM_OBJ_THUNDER_WAVE,   6, 0,  11, 4, $0
 	anim_wait 24
 	anim_setobj $1, $3
 	anim_call BattleAnim_TargetObj_1Row
