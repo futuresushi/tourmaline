@@ -104,11 +104,11 @@ MoveNames::
 	db "SCREECH@"
 	db "DOUBLE TEAM@"
 	db "RECOVER@"
-	db "HARDEN@"
+	db "BULK UP@" ; Changed from Harden
 	db "MINIMIZE@"
 	db "SMOKESCREEN@"
 	db "CONFUSE RAY@"
-	db "WITHDRAW@"
+	db "ENERGY BALL@" ; Changed from Withdraw
 	db "DEFENSE CURL@"
 	db "BARRIER@"
 	db "LIGHT SCREEN@"
