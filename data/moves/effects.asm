@@ -1714,21 +1714,21 @@ RapidSpin:
 	statupmessage
 	endmove
 
-MorningSun:
+SunHeal:
 	checkobedience
 	usedmovetext
 	doturn
 	healsun
 	endmove
 
-Synthesis:
+SandHeal:
 	checkobedience
 	usedmovetext
 	doturn
 	healsand
 	endmove
 
-Moonlight:
+RainHeal:
 	checkobedience
 	usedmovetext
 	doturn
