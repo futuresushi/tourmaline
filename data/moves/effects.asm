@@ -2071,3 +2071,18 @@ FlareBlitz:
 	kingsrock
 	burntarget
 	endmove
+
+BulkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	lowersub
+	statupanim
+	raisesub
+	attackup
+	statupmessage
+	statupfailtext
+	defenseup
+	statupmessage
+	statupfailtext
+	endmove
