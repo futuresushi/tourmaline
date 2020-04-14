@@ -1189,6 +1189,7 @@ DoduoEvosAttacks:
 	db 21, RAGE
 	db 33, DRILL_PECK
 	db 37, AGILITY
+	db 42, JUMP_KICK
 	db 0 ; no more level-up moves
 
 DodrioEvosAttacks:
@@ -1202,6 +1203,7 @@ DodrioEvosAttacks:
 	db 30, TRI_ATTACK
 	db 38, DRILL_PECK
 	db 47, AGILITY
+	db 52, JUMP_KICK
 	db 0 ; no more level-up moves
 
 SeelEvosAttacks:
@@ -3247,11 +3249,12 @@ StantlerEvosAttacks:
 	db 1, ASTONISH
 	db 5, SAND_ATTACK
 	db 8, LEER
+	db 10, STOMP
 	db 15, HYPNOSIS
-	db 23, STOMP
+	db 23, TAKE_DOWN
 	db 27, CALM_MIND
 	db 31, ZEN_HEADBUTT
-	db 40, TAKE_DOWN
+	db 40, JUMP_KICK
 	db 49, CONFUSE_RAY
 	db 0 ; no more level-up moves
 
