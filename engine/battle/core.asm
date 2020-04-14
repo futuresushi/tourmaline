@@ -1076,7 +1076,7 @@ ResidualDamage:
 .did_toxic
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
-	and 1 << PSN
+	and 1 << BRN
 	jr z, .eighth
 	call GetSixteenthMaxHP
 .eighth
