@@ -3577,11 +3577,11 @@ BattleAnim_FlashCannon:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 ;	anim_bgp $1b
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_8C,  8, 0, 11, 4, $4
+	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
 	anim_wait 4
 ;	anim_bgp $e4
 	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_8C,  8, 0, 11, 4, $4
+	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
 	anim_wait 4
 	anim_loop 10, .loop
 	anim_call BattleAnim_UserObj_2Row
