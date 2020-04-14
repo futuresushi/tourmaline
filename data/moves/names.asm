@@ -234,7 +234,7 @@ MoveNames::
 	db "ICICLE CRASH@" ; Changed from Vital Throw
 	db "LUX RESTORE@" ; Changed from Morning Sun
 	db "SHORE UP@" ; Changed from Synthesis
-	db "DRILL_RUN@" ; Changed from Moonlight
+	db "DRILL RUN@" ; Changed from Moonlight
 	db "HIDDEN POWER@"
 	db "CROSS CHOP@"
 	db "TWISTER@"
