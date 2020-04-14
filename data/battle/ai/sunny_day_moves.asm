@@ -9,6 +9,5 @@ SunnyDayMoves:
 	db FLARE_BLITZ
 	db SOLARBEAM
 	db SACRED_FIRE
-	db MORNING_SUN
-	db SYNTHESIS
+	db LUX_RESTORE
 	db -1 ; end
