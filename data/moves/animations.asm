@@ -106,7 +106,7 @@ BattleAnimations::
 	dw BattleAnim_Screech
 	dw BattleAnim_DoubleTeam
 	dw BattleAnim_Recover
-	dw BattleAnim_Harden
+	dw BattleAnim_BulkUp
 	dw BattleAnim_Minimize
 	dw BattleAnim_Smokescreen
 	dw BattleAnim_ConfuseRay
@@ -1654,6 +1654,19 @@ BattleAnim_Recover:
 	anim_incbgeffect ANIM_BG_18
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
+	
+; from prism
+BattleAnim_BulkUp:
+	anim_2gfx ANIM_GFX_MISC, ANIM_GFX_WIND
+.loop
+	anim_bgeffect ANIM_BG_1F, 8, 2, 0
+	anim_sound 0, 0, SFX_NOT_VERY_EFFECTIVE
+	anim_obj ANIM_OBJ_SWAGGER, 9, 4, 11, 0, $44
+	anim_wait 32
+	anim_loop 2, .loop
+	anim_sound 0, 0, SFX_KINESIS
+	anim_wait 16
+	anim_ret
 
 BattleAnim_Absorb:
 	anim_1gfx ANIM_GFX_CHARGE
@@ -1846,6 +1859,38 @@ BattleAnim_Screech:
 	anim_wait 2
 	anim_loop 2, .loop
 	anim_wait 64
+	anim_ret
+	
+; from prism
+BattleAnim_EnergyBall:
+	anim_2gfx ANIM_GFX_CHARGE, ANIM_GFX_EGG
+
+	anim_sound 0, 0, SFX_GIGA_DRAIN
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 0
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 8
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 16
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 24
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 32
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 40
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 48
+	anim_obj ANIM_OBJ_3C, 6, 0, 10, 4, 56
+	anim_wait 8
+	anim_obj ANIM_OBJ_3D, 6, 0, 10, 4, 0
+	anim_wait 64
+
+	anim_bgeffect ANIM_BG_1F, $60, 2, 0
+.loop
+	anim_sound 0, 0, SFX_AEROBLAST
+	anim_obj ANIM_OBJ_ENERGY_BALL, 7, 6, 11, 4, 2
+	anim_wait 3
+	anim_obj ANIM_OBJ_ENERGY_BALL, 8, 2, 11, 4, 2
+	anim_wait 3
+	anim_loop 8, .loop
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_VIBRATE_MON, 0, 0, 0
+	anim_wait 32
+	anim_call BattleAnim_ShowMon_1
+	anim_wait 1
 	anim_ret
 
 BattleAnim_ConfuseRay:
