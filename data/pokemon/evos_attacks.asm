@@ -29,7 +29,7 @@ BulbasaurEvosAttacks:
 	db 20, RAZOR_LEAF
 	db 25, SEED_BOMB
 	db 32, GROWTH
-	db 39, SYNTHESIS
+	db 39, LUX_RESTORE
 	db 46, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -47,7 +47,7 @@ IvysaurEvosAttacks:
 	db 22, RAZOR_LEAF
 	db 29, SEED_BOMB
 	db 38, GROWTH
-	db 47, SYNTHESIS
+	db 47, LUX_RESTORE
 	db 56, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -65,7 +65,7 @@ VenusaurEvosAttacks:
 	db 22, RAZOR_LEAF
 	db 29, SEED_BOMB
 	db 41, GROWTH
-	db 53, SYNTHESIS
+	db 53, LUX_RESTORE
 	db 65, SOLARBEAM
 	db 0 ; no more level-up moves
 
@@ -302,13 +302,13 @@ FearowEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, GROWL
-	db 1, LEER
-	db 1, AERIAL_ACE
+	db 1, DRILL_RUN
 	db 7, LEER
 	db 13, AERIAL_ACE
 	db 26, PURSUIT
 	db 40, DRILL_PECK
 	db 47, AGILITY
+	db 56, DRILL_RUN
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
@@ -377,6 +377,7 @@ SandshrewEvosAttacks:
 	db 30, SWIFT
 	db 37, FURY_SWIPES
 	db 45, SANDSTORM
+	db 52, SHORE_UP ; new
 	db 0 ; no more level-up moves
 
 SandslashEvosAttacks:
@@ -392,6 +393,7 @@ SandslashEvosAttacks:
 	db 33, SWIFT
 	db 42, FURY_SWIPES
 	db 52, SANDSTORM
+	db 57, SHORE_UP ; new
 	db 0 ; no more level-up moves
 
 NidoranFEvosAttacks:
@@ -479,7 +481,7 @@ ClefairyEvosAttacks:
 	db 19, MINIMIZE
 	db 26, DAZZLINGLEAM
 	db 34, METRONOME
-	db 43, MOONLIGHT
+	db 43, LUX_RESTORE
 	db 53, MOONBLAST
 	db 60, LIGHT_SCREEN
 	db 0 ; no more level-up moves
@@ -489,7 +491,7 @@ ClefableEvosAttacks:
 	db 1, MOONBLAST
 	db 1, DOUBLESLAP
 	db 1, METRONOME
-	db 1, MOONLIGHT
+	db 1, LUX_RESTORE
 	db 0 ; no more level-up moves
 
 VulpixEvosAttacks:
@@ -578,7 +580,7 @@ OddishEvosAttacks:
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
 	db 23, ACID
-	db 32, MOONLIGHT
+	db 32, LUX_RESTORE
 	db 39, PETAL_DANCE
 	db 46, MOONBLAST
 	db 0 ; no more level-up moves
@@ -595,7 +597,7 @@ GloomEvosAttacks:
 	db 16, STUN_SPORE
 	db 18, SLEEP_POWDER
 	db 24, ACID
-	db 35, MOONLIGHT
+	db 35, LUX_RESTORE
 	db 44, PETAL_DANCE
 	db 50, MOONBLAST
 	db 0 ; no more level-up moves
@@ -686,6 +688,7 @@ DiglettEvosAttacks:
 	db 37, EARTH_POWER
 	db 41, EARTHQUAKE
 	db 49, BASS_TREMOR
+	db 56, SHORE_UP ; new, dugtrio doesnt get
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
@@ -1551,7 +1554,7 @@ RhyhornEvosAttacks:
 	db 1, HORN_ATTACK
 	db 1, TAIL_WHIP
 	db 13, STOMP
-	db 22, MAGNITUDE
+	db 22, DRILL_RUN
 	db 31, SCARY_FACE
 	db 37, MEGAHORN
 	db 49, TAKE_DOWN
@@ -1564,7 +1567,7 @@ RhydonEvosAttacks:
 	db 1, TAIL_WHIP
 	db 1, STOMP
 	db 13, STOMP
-	db 19, MAGNITUDE
+	db 22, DRILL_RUN
 	db 31, SCARY_FACE
 	db 37, MEGAHORN
 	db 54, TAKE_DOWN
@@ -2115,7 +2118,7 @@ ChikoritaEvosAttacks:
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 15, POISONPOWDER
-	db 22, SYNTHESIS
+	db 22, LUX_RESTORE
 	db 29, BODY_SLAM
 	db 36, LIGHT_SCREEN
 	db 43, SAFEGUARD
@@ -2132,7 +2135,7 @@ BayleefEvosAttacks:
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 15, POISONPOWDER
-	db 23, SYNTHESIS
+	db 23, LUX_RESTORE
 	db 31, BODY_SLAM
 	db 39, LIGHT_SCREEN
 	db 47, SAFEGUARD
@@ -2148,7 +2151,7 @@ MeganiumEvosAttacks:
 	db 8, RAZOR_LEAF
 	db 12, REFLECT
 	db 15, POISONPOWDER
-	db 23, SYNTHESIS
+	db 23, LUX_RESTORE
 	db 31, BODY_SLAM
 	db 41, LIGHT_SCREEN
 	db 51, SAFEGUARD
@@ -2593,7 +2596,7 @@ HoppipEvosAttacks:
 	db EVOLVE_LEVEL, 18, SKIPLOOM
 	db 0 ; no more evolutions
 	db 1, SPLASH
-	db 5, SYNTHESIS
+	db 5, LUX_RESTORE
 	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
@@ -2608,10 +2611,10 @@ SkiploomEvosAttacks:
 	db EVOLVE_LEVEL, 27, JUMPLUFF
 	db 0 ; no more evolutions
 	db 1, SPLASH
-	db 1, SYNTHESIS
+	db 1, LUX_RESTORE
 	db 1, TAIL_WHIP
 	db 1, FAIRY_WIND
-	db 5, SYNTHESIS
+	db 5, LUX_RESTORE
 	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
@@ -2625,10 +2628,10 @@ SkiploomEvosAttacks:
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SPLASH
-	db 1, SYNTHESIS
+	db 1, LUX_RESTORE
 	db 1, TAIL_WHIP
 	db 1, FAIRY_WIND
-	db 5, SYNTHESIS
+	db 5, LUX_RESTORE
 	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
 	db 13, POISONPOWDER
@@ -2660,7 +2663,7 @@ SunkernEvosAttacks:
 	db 4, GROWTH
 	db 10, ABSORB
 	db 19, SUNNY_DAY
-	db 31, SYNTHESIS
+	db 31, LUX_RESTORE
 	db 39, SEED_BOMB
 	db 46, GIGA_DRAIN
 	db 0 ; no more level-up moves
@@ -2726,7 +2729,7 @@ EspeonEvosAttacks:
 	db 36, PSYBEAM
 	db 42, CALM_MIND
 	db 47, PSYCHIC_M
-	db 52, MORNING_SUN
+	db 52, LUX_RESTORE
 	db 0 ; no more level-up moves
 
 UmbreonEvosAttacks:
@@ -2741,7 +2744,7 @@ UmbreonEvosAttacks:
 	db 36, DARK_PULSE
 	db 42, MEAN_LOOK
 	db 47, SCREECH
-	db 52, MOONLIGHT
+	db 52, LUX_RESTORE
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -2846,8 +2849,9 @@ DunsparceEvosAttacks:
 	db 5, DEFENSE_CURL
 	db 13, GLARE
 	db 18, SPITE
-	db 26, PURSUIT
-	db 30, SCREECH
+	db 22, DRILL_RUN
+	db 27, PURSUIT
+	db 33, SCREECH
 	db 38, TAKE_DOWN
 	db 0 ; no more level-up moves
 
@@ -3470,7 +3474,7 @@ DirtquatroEvosAttacks:
 	db 1, ROCK_THROW
 	db 13, MUD_SLAP
 	db 25, AGILITY
-	db 37, RECOVER ; change to Shore Up
+	db 37, SHORE_UP
 	db 49, ROCK_SLIDE
 	db 61, SANDSTORM
 	db 73, EARTHQUAKE
