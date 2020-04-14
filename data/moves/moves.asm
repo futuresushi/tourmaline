@@ -245,9 +245,9 @@ Moves: ; 41afb
 	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,  100, STEEL,         PHYSICAL,  75, 15,  30
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,         PHYSICAL,  95, 35,  10
 	move ICICLE_CRASH, EFFECT_FLINCH_HIT,         85, ICE,           PHYSICAL,  90, 10,  30
-	move MORNING_SUN,  EFFECT_SUN_HEAL,            0, NORMAL,        STATUS,   100,  5,   0
-	move SYNTHESIS,    EFFECT_SAND_HEAL,           0, GRASS,         STATUS,   100,  5,   0
-	move MOONLIGHT,    EFFECT_RAIN_HEAL,           0, FAIRY,         STATUS,   100,  5,   0
+	move LUX_RESTORE,  EFFECT_SUN_HEAL,            0, FAIRY,         STATUS,   100, 10,   0 ; morning / synth / moon
+	move SHORE_UP,     EFFECT_SAND_HEAL,           0, GROUND,        STATUS,   100, 10,   0
+	move DRILL_RUN,    EFFECT_NORMAL_HIT,         80, GROUND,        PHYSICAL,  95, 10,   0 ; high crit
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,        1, NORMAL,        SPECIAL,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,      PHYSICAL,  80,  5,   0
 	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,        SPECIAL,  100, 20,  20
