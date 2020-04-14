@@ -1058,7 +1058,6 @@ ResidualDamage:
 	jr z, .check_toxic
 	ld de, wEnemyToxicCount
 .check_toxic
-
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVar
 	bit SUBSTATUS_TOXIC, a
@@ -1075,7 +1074,12 @@ ResidualDamage:
 	ld b, h
 	ld c, l
 .did_toxic
-
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and 1 << PSN
+	jr z, .eighth
+	call GetSixteenthMaxHP
+.eighth
 	call SubtractHPFromUser
 .did_psn_brn
 
@@ -1098,12 +1102,6 @@ ResidualDamage:
 	call SwitchTurnCore
 
 	call GetEighthMaxHP
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and 1 << PSN
-	jr z, .eighth
-	call GetSixteenthMaxHP
-.eighth
 	call SubtractHPFromUser
 	ld a, $1
 	ldh [hBGMapMode], a
