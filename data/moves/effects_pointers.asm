@@ -132,9 +132,9 @@ MoveEffectsPointers:
 	dw RapidSpin
 	dw NormalHit
 	dw NormalHit
-	dw MorningSun
-	dw Synthesis
-	dw Moonlight
+	dw SunHeal
+	dw SandHeal
+	dw RainHeal
 	dw HiddenPower
 	dw RainDance
 	dw SunnyDay
