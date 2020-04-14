@@ -2958,8 +2958,8 @@ BattleAnim_QuickAttack:
 	anim_ret
 
 BattleAnim_DefenseCurl:
-	anim_jumpif $1, BattleAnim_Withdraw
-	anim_jumpif $2, BattleAnim_Harden
+	anim_if_param_equal $1, BattleAnim_Withdraw
+	anim_if_param_equal $2, BattleAnim_Harden
 	anim_1gfx ANIM_GFX_SHAPES
 	anim_obp0 $e4
 	anim_call BattleAnim_TargetObj_1Row
