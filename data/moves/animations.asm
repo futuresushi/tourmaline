@@ -4450,9 +4450,9 @@ BattleAnim_DarkPulse:
 	anim_bgeffect ANIM_BG_1F, $60, $2, $0
 .loop
 	anim_sound 0, 0, SFX_AEROBLAST
-	anim_obj ANIM_OBJ_B4,  7, 6, 11, 4, $2
+	anim_obj ANIM_OBJ_SHADOW_BALL,  7, 6, 11, 4, $2
 	anim_wait 3
-	anim_obj ANIM_OBJ_B4,  8, 2, 11, 4, $2
+	anim_obj ANIM_OBJ_SHADOW_BALL,  8, 2, 11, 4, $2
 	anim_wait 3
 	anim_loop 8, .loop
 	anim_call BattleAnim_UserObj_1Row
