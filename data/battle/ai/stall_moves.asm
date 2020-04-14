@@ -15,8 +15,6 @@ StallMoves:
 	db AGILITY
 	db RAGE
 	db SCREECH
-	db HARDEN
-	db WITHDRAW
 	db DEFENSE_CURL
 	db BARRIER
 	db LIGHT_SCREEN
