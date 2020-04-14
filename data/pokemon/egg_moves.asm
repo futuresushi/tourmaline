@@ -133,6 +133,7 @@ VulpixEggMoves:
 	db ZEN_HEADBUTT
 	db FLARE_BLITZ
 	db SWIFT
+	db DREAM_EATER
 	db -1 ; end
 
 ZubatEggMoves:
@@ -354,6 +355,7 @@ DrowzeeEggMoves:
 	db LIGHT_SCREEN
 	db BARRIER
 	db NASTY_PLOT
+	db DREAM_EATER
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -370,6 +372,7 @@ ExeggcuteEggMoves:
 	db REFLECT
 	db ABSORB
 	db ANCIENTPOWER
+	db DREAM_EATER
 	db -1 ; end
 
 CuboneEggMoves:
