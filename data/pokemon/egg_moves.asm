@@ -7,13 +7,14 @@ SECTION "Egg Moves", ROMX
 ; Removed: Mega Punch, Rolling Kick, 
 ; Present, Beat Up, Razor Wind, Meditate,
 ; Mind Reader, Psywave, Mega Drain, Mimic,
-; Fury Attack, Bide
+; Fury Attack, Bide, Moonlight, Synthesis
 ; Added: Drain Punch, Play Rough, Hyper Voice, 
 ; DrainingKiss, Dark Pulse, Earth Power, 
 ; Flash Cannon, Shadow Claw, Zen Headbutt,
 ; Poison Jab, Bug Buzz, Hurricane, Seed Bomb,
 ; Iron Head, Flare Blitz, Wild Charge, X-Scissor,
-; Brave Bird, Icicle Crash, Aerial Ace, Astonish
+; Brave Bird, Icicle Crash, Aerial Ace, Astonish,
+; Lux Restore
 
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
@@ -632,6 +633,11 @@ AipomEggMoves:
 	db DOUBLESLAP
 	db SEED_BOMB
 	db AERIAL_ACE
+	db -1 ; end
+	
+SunkernEggMoves:
+	db LUX_RESTORE
+	db LEECH_SEED
 	db -1 ; end
 
 YanmaEggMoves:
