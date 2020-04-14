@@ -232,9 +232,9 @@ MoveNames::
 	db "IRON TAIL@"
 	db "METAL CLAW@"
 	db "ICICLE CRASH@" ; Changed from Vital Throw
-	db "MORNING SUN@"
-	db "SYNTHESIS@"
-	db "MOONLIGHT@"
+	db "LUX RESTORE@" ; Changed from Morning Sun
+	db "SHORE UP@" ; Changed from Synthesis
+	db "DRILL_RUN@" ; Changed from Moonlight
 	db "HIDDEN POWER@"
 	db "CROSS CHOP@"
 	db "TWISTER@"
