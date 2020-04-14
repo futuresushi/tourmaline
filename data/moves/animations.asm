@@ -2619,7 +2619,7 @@ BattleAnim_BraveBird:
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
-	anim_obj ANIM_OBJ_SKY_ATTACK_BIRD,   6, 0,  11, 0, $40
+	anim_obj ANIM_OBJ_SKY_ATTACK,   6, 0,  11, 0, $40
 	anim_wait 64
 	anim_incobj 1
 	anim_wait 21
