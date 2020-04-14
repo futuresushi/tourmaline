@@ -2622,6 +2622,7 @@ HoppipEvosAttacks:
 	db EVOLVE_LEVEL, 18, SKIPLOOM
 	db 0 ; no more evolutions
 	db 1, SPLASH
+	db 3, ABSORB
 	db 5, LUX_RESTORE
 	db 5, TAIL_WHIP
 	db 10, FAIRY_WIND
@@ -2636,7 +2637,7 @@ HoppipEvosAttacks:
 SkiploomEvosAttacks:
 	db EVOLVE_LEVEL, 27, JUMPLUFF
 	db 0 ; no more evolutions
-	db 1, SPLASH
+	db 1, ABSORB
 	db 1, LUX_RESTORE
 	db 1, TAIL_WHIP
 	db 1, FAIRY_WIND
@@ -2653,7 +2654,7 @@ SkiploomEvosAttacks:
 
 JumpluffEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SPLASH
+	db 1, ABSORB
 	db 1, LUX_RESTORE
 	db 1, TAIL_WHIP
 	db 1, FAIRY_WIND
