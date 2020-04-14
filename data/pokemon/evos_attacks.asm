@@ -29,6 +29,7 @@ BulbasaurEvosAttacks:
 	db 20, RAZOR_LEAF
 	db 25, SEED_BOMB
 	db 32, GROWTH
+	db 36, ENERGY_BALL
 	db 39, LUX_RESTORE
 	db 46, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -47,6 +48,7 @@ IvysaurEvosAttacks:
 	db 22, RAZOR_LEAF
 	db 29, SEED_BOMB
 	db 38, GROWTH
+	db 43, ENERGY_BALL
 	db 47, LUX_RESTORE
 	db 56, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -65,6 +67,7 @@ VenusaurEvosAttacks:
 	db 22, RAZOR_LEAF
 	db 29, SEED_BOMB
 	db 41, GROWTH
+	db 48, ENERGY_BALL
 	db 53, LUX_RESTORE
 	db 65, SOLARBEAM
 	db 0 ; no more level-up moves
@@ -850,7 +853,7 @@ PoliwhirlEvosAttacks:
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
+	db 1, BULK_UP
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, SUBMISSION
@@ -900,6 +903,7 @@ MachopEvosAttacks:
 	db 13, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
+	db 25, BULK_UP
 	db 31, SUBMISSION
 	db 37, CROSS_CHOP
 	db 43, SCARY_FACE
@@ -915,6 +919,7 @@ MachokeEvosAttacks:
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
+	db 25, BULK_UP
 	db 34, SUBMISSION
 	db 43, CROSS_CHOP
 	db 52, SCARY_FACE
@@ -929,6 +934,7 @@ MachampEvosAttacks:
 	db 15, KARATE_CHOP
 	db 19, SEISMIC_TOSS
 	db 25, FORESIGHT
+	db 25, BULK_UP
 	db 27, STRENGTH
 	db 34, SUBMISSION
 	db 43, CROSS_CHOP
