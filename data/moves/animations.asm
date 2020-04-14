@@ -1304,7 +1304,7 @@ BattleAnim_Sonicboom_JP:
 	anim_ret
 
 BattleAnim_Sonicboom:
-	anim_3gfx ANIM_GFX_PSYCHIC, ANIM_GFX_HIT
+	anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_HIT
 .loop
 	anim_sound 6, 2, SFX_RAZOR_WIND 
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
