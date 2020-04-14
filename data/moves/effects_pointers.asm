@@ -161,3 +161,4 @@ MoveEffectsPointers:
 	dw DoBurn
 	dw Hurricane
 	dw FlareBlitz
+	dw BulkUp
