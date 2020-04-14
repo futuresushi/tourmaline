@@ -2752,20 +2752,6 @@ BattleAnim_TriAttack:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_Withdraw:
-	anim_1gfx ANIM_GFX_REFLECT
-	anim_call BattleAnim_TargetObj_2Row
-	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
-	anim_wait 48
-	anim_sound 0, 0, SFX_SHINE
-	anim_obj ANIM_OBJ_WITHDRAW, 48, 88, $0
-	anim_wait 64
-	anim_incobj 2
-	anim_wait 1
-	anim_incbgeffect ANIM_BG_WITHDRAW
-	anim_call BattleAnim_ShowMon_0
-	anim_ret
-
 BattleAnim_Psybeam:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
@@ -2794,14 +2780,6 @@ BattleAnim_LeechLife:
 	anim_call BattleAnimSub_Drain
 	anim_wait 128
 	anim_wait 48
-	anim_ret
-
-BattleAnim_Harden:
-	anim_1gfx ANIM_GFX_REFLECT
-	anim_obp0 $0
-	anim_call BattleAnim_TargetObj_1Row
-	anim_call BattleAnimSub_Metallic
-	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_NoisePulse:
@@ -2935,6 +2913,8 @@ BattleAnim_QuickAttack:
 	anim_ret
 
 BattleAnim_DefenseCurl:
+	anim_jumpif $1, BattleAnim_Withdraw
+	anim_jumpif $2, BattleAnim_Harden
 	anim_1gfx ANIM_GFX_SHAPES
 	anim_obp0 $e4
 	anim_call BattleAnim_TargetObj_1Row
@@ -2944,6 +2924,30 @@ BattleAnim_DefenseCurl:
 	anim_wait 96
 	anim_incobj 2
 	anim_incbgeffect ANIM_BG_18
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+; removed, but used for DC
+BattleAnim_Withdraw:
+	anim_1gfx ANIM_GFX_REFLECT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_wait 48
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_WITHDRAW, 48, 88, $0
+	anim_wait 64
+	anim_incobj 2
+	anim_wait 1
+	anim_incbgeffect ANIM_BG_WITHDRAW
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
+;removed, but used for DC
+BattleAnim_Harden:
+	anim_1gfx ANIM_GFX_REFLECT
+	anim_obp0 $0
+	anim_call BattleAnim_TargetObj_1Row
+	anim_call BattleAnimSub_Metallic
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
