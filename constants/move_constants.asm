@@ -239,9 +239,9 @@
 	const IRON_TAIL    ; e7
 	const METAL_CLAW   ; e8
 	const ICICLE_CRASH ; e9
-	const MORNING_SUN  ; ea
-	const SYNTHESIS    ; eb
-	const MOONLIGHT    ; ec
+	const LUX_RESTORE  ; ea
+	const SHORE_UP     ; eb
+	const DRILL_RUN    ; ec
 	const HIDDEN_POWER ; ed
 	const CROSS_CHOP   ; ee
 	const TWISTER      ; ef
