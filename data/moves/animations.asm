@@ -2098,8 +2098,76 @@ BattleAnim_PoisonJab:
 	anim_wait 24
 	anim_ret
 
+;from polished
 BattleAnim_FocusBlast:
+	anim_3gfx ANIM_GFX_SPEED, ANIM_GFX_CHARGE, ANIM_GFX_BEAM
+	anim_obj ANIM_OBJ_FOCUS_BLAST,   5, 4,  11, 0, $0
+	anim_bgeffect ANIM_BG_16, $0, $1, $40
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+.loop
+	anim_sound 0, 0, SFX_SWORDS_DANCE
+	anim_obj ANIM_OBJ_47,   5, 4,  13, 4, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   4, 4,  13, 4, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   6, 4,  13, 4, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   3, 4,  13, 4, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   7, 4,  13, 4, $6
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   2, 4,  13, 4, $8
+	anim_wait 2
+	anim_obj ANIM_OBJ_47,   8, 4,  13, 4, $8
+	anim_wait 2
+	anim_loop 5, .loop
+	anim_wait 56
+	anim_bgeffect ANIM_BG_1F, $8, $2, $10
+	anim_bgeffect ANIM_BG_06, $0, $2, $0
+	anim_bgp $1b
+	anim_sound 0, 0, SFX_SUPER_EFFECTIVE
+	anim_obj ANIM_OBJ_27,  8, 0, 11, 4, $0
+	anim_incobj 8
+	anim_wait 2
+	anim_obj ANIM_OBJ_27, 10, 0, 10, 4, $0
+	anim_incobj 9
+	anim_wait 2
+	anim_obj ANIM_OBJ_27, 12, 0,  9, 4, $0
+	anim_incobj 10
+	anim_wait 2
+	anim_obj ANIM_OBJ_27, 14, 0,  8, 4, $0
+	anim_obj ANIM_OBJ_28, 15, 6,  7, 6, $0
+	anim_incobj 11
+	anim_incobj 12
+	anim_wait 2
+	anim_obj ANIM_OBJ_28, 17, 4,  7, 0, $0
+	anim_wait 2
+	anim_incobj 13
+	anim_incbgeffect ANIM_BG_18
+	anim_bgp $e4
+	anim_ret
+
+;from polished
 BattleAnim_IcicleCrash:
+	anim_2gfx ANIM_GFX_HORN, ANIM_GFX_HIT
+	anim_obj ANIM_OBJ_ICICLE,   9, 0,  10, 0, $3
+	anim_wait 8
+.loop
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, -16, 4,   5, 0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, -15, 4,   6, 0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00, -16, 4,   7, 0, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_HORN_ATTACK
+	anim_obj ANIM_OBJ_00,  15, 4,   6, 0, $0
+	anim_wait 8
+	anim_loop 3, .loop
+	anim_ret
+
 BattleAnim_Tackle:
 	anim_1gfx ANIM_GFX_HIT
 	anim_call BattleAnim_TargetObj_2Row
@@ -4598,7 +4666,7 @@ BattleAnim_Whirlpool:
 BattleAnim_Moonblast:
 	anim_3gfx ANIM_GFX_GLOBE, ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
-	anim_obj ANIM_OBJ_SEISMIC_TOSS,  6, 0, 9, 0, $1
+	anim_obj ANIM_OBJ_MOON,  6, 0, 9, 0, $1
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 63
 	anim_bgeffect ANIM_BG_1F, $50, $4, $10
