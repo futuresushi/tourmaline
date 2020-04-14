@@ -4597,7 +4597,7 @@ BattleAnim_Whirlpool:
 BattleAnim_Moonblast:
 	anim_3gfx ANIM_GFX_GLOBE, ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
-	anim_obj ANIM_OBJ_MOON,  6, 0, 9, 0, $1
+	anim_obj ANIM_OBJ_SEISMIC_TOSS,  6, 0, 9, 0, $1
 	anim_sound 0, 0, SFX_MOONLIGHT
 	anim_wait 63
 	anim_bgeffect ANIM_BG_1F, $50, $4, $10
