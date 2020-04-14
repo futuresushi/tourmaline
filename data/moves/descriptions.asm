@@ -105,11 +105,11 @@ MoveDescriptions::
 	dw ScreechDescription
 	dw DoubleTeamDescription
 	dw RecoverDescription
-	dw HardenDescription
+	dw BulkUpDescription
 	dw MinimizeDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
-	dw WithdrawDescription
+	dw EnergyBallDescription
 	dw DefenseCurlDescription
 	dw BarrierDescription
 	dw LightScreenDescription
@@ -610,6 +610,7 @@ ConfusionDescription:
 	db   "An attack that may"
 	next "cause confusion.@"
 
+EnergyBallDescription:
 EarthPowerDescription:
 FlashCannonDescription:
 BugBuzzDescription:
@@ -658,9 +659,9 @@ RecoverDescription:
 	db   "Restores HP by 1/2"
 	next "the max HP.@"
 
-HardenDescription:
+BulkUpDescription:
 	db   "Raises the user's"
-	next "DEFENSE.@"
+	next "ATK and DEF.@"
 
 MinimizeDescription:
 	db   "Heightens evasive-"
