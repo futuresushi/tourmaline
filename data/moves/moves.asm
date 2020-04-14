@@ -117,11 +117,11 @@ Moves: ; 41afb
 	move SCREECH,      EFFECT_DEFENSE_DOWN_2,      0, SOUND,         STATUS,    85, 40,   0
 	move DOUBLE_TEAM,  EFFECT_EVASION_UP,          0, NORMAL,        STATUS,   100, 15,   0
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,        STATUS,   100, 10,   0
-	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,        STATUS,   100, 30,   0
+	move BULK_UP,      EFFECT_BULK_UP,             0, FIGHTING,      STATUS,   100, 20,   0
 	move MINIMIZE,     EFFECT_EVASION_UP,          0, NORMAL,        STATUS,   100, 10,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,        STATUS,   100, 20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,         STATUS,   100, 10,   0
-	move WITHDRAW,     EFFECT_DEFENSE_UP,          0, WATER,         STATUS,   100, 40,   0
+	move ENERGY_BALL,  EFFECT_SP_DEF_DOWN_HIT,    90, GRASS,         SPECIAL,  100, 10,  10
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,        STATUS,   100, 40,   0
 	move BARRIER,      EFFECT_DEFENSE_UP_2,        0, PSYCHIC_TYPE,  STATUS,   100, 20,   0
 	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC_TYPE,  STATUS,   100, 30,   0
