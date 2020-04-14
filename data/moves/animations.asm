@@ -3188,22 +3188,22 @@ BattleAnim_BugBuzz:
 	anim_bgeffect ANIM_BG_1F, $14, $2, $0
 	anim_sound 0, 0, SFX_SNORE
 	anim_call BattleAnimSub_Sound
-	anim_obj ANIM_OBJ_4C,  7, 0, 11, 0, $2
-	anim_obj ANIM_OBJ_4C,  9, 0, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  7, 0, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  9, 0, 11, 0, $2
 	anim_wait 4
-	anim_obj ANIM_OBJ_4C,  8, 0, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  8, 0, 11, 0, $2
 	anim_wait 4
 	anim_sound 0, 0, SFX_SNORE
 	anim_call BattleAnimSub_Sound
-	anim_obj ANIM_OBJ_4C,  7, 4, 11, 0, $2
-	anim_obj ANIM_OBJ_4C,  8, 4, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  7, 4, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  8, 4, 11, 0, $2
 	anim_wait 4
-	anim_obj ANIM_OBJ_4C,  8, 0, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  8, 0, 11, 0, $2
 	anim_wait 4
-	anim_obj ANIM_OBJ_4C,  7, 6, 11, 0, $2
-	anim_obj ANIM_OBJ_4C,  8, 2, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  7, 6, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  8, 2, 11, 0, $2
 	anim_wait 4
-	anim_obj ANIM_OBJ_4C,  8, 0, 11, 0, $2
+	anim_obj ANIM_OBJ_WAVE,  8, 0, 11, 0, $2
 	anim_wait 24
 	anim_ret
 
