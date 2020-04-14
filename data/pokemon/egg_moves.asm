@@ -637,6 +637,11 @@ AipomEggMoves:
 	db SEED_BOMB
 	db AERIAL_ACE
 	db -1 ; end
+	
+SunkernEggMoves:
+	db LUX_RESTORE
+	db LEECH_SEED
+	db -1 ; end
 
 YanmaEggMoves:
 	db WHIRLWIND
