@@ -4593,7 +4593,7 @@ BattleAnim_Whirlpool:
 	anim_wait 1
 	anim_ret
 
-; from prism
+; adapted from prism
 BattleAnim_Moonblast:
 	anim_3gfx ANIM_GFX_GLOBE, ANIM_GFX_BEAM, ANIM_GFX_AEROBLAST
 	anim_bgp $1b
@@ -4602,8 +4602,6 @@ BattleAnim_Moonblast:
 	anim_wait 63
 	anim_bgeffect ANIM_BG_1F, $50, $4, $10
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_sound 0, 0, SFX_AEROBLAST
-	anim_obj ANIM_OBJ_B3,  9, 0, 11, 0, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj ANIM_OBJ_27, 10, 0, 10, 4, $0
