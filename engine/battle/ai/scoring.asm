@@ -369,9 +369,9 @@ AI_Smart:
 	dbw EFFECT_BATON_PASS,       AI_Smart_BatonPass
 	dbw EFFECT_PURSUIT,          AI_Smart_Pursuit
 	dbw EFFECT_RAPID_SPIN,       AI_Smart_RapidSpin
-	dbw EFFECT_MORNING_SUN,      AI_Smart_MorningSun
-	dbw EFFECT_SYNTHESIS,        AI_Smart_Synthesis
-	dbw EFFECT_MOONLIGHT,        AI_Smart_Moonlight
+	dbw EFFECT_SUN_HEAL,         AI_Smart_SunHeal
+	dbw EFFECT_SAND_HEAL,        AI_Smart_SandHeal
+	dbw EFFECT_RAIN_HEAL,        AI_Smart_RainHeal
 	dbw EFFECT_HIDDEN_POWER,     AI_Smart_HiddenPower
 	dbw EFFECT_RAIN_DANCE,       AI_Smart_RainDance
 	dbw EFFECT_SUNNY_DAY,        AI_Smart_SunnyDay
@@ -930,9 +930,9 @@ AI_Smart_ForceSwitch:
 	ret
 
 AI_Smart_Heal:
-AI_Smart_MorningSun:
-AI_Smart_Synthesis:
-AI_Smart_Moonlight:
+AI_Smart_SunHeal:
+AI_Smart_SandHeal:
+AI_Smart_RainHeal:
 ; 90% chance to greatly encourage this move if enemy's HP is below 25%.
 ; Discourage this move if enemy's HP is higher than 50%.
 ; Do nothing otherwise.
