@@ -2130,7 +2130,7 @@ MewEvosAttacks:
 	db 1, POUND
 	db 10, TRANSFORM
 	db 20, NASTY_PLOT
-	db 25, MOONBLAST ; temp, remove once tested
+	db 25, WILL_O_WISP ; temp, remove once tested
 	db 30, METRONOME
 	db 40, PSYCHIC_M
 	db 50, ANCIENTPOWER
