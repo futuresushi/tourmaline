@@ -835,20 +835,16 @@ BattleAnim_SeedBomb:
 	anim_ret
 
 BattleAnim_WillOWisp:
-	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_SMOKE
-	anim_sound 0, 0, SFX_CURSE
-	anim_obj ANIM_OBJ_BALL_POOF, 64, 88, $0
-	anim_bgeffect ANIM_BG_1F, $60, $2, $0
-.loop
-	anim_sound 0, 0, SFX_EMBER
-	anim_obj ANIM_OBJ_WAVE,  7, 6, 11, 4, $2
-	anim_obj ANIM_OBJ_EMBER, 136, 40, $15
-	anim_obj ANIM_OBJ_EMBER, 136, 40, $2a
-	anim_loop 2, .loop
-	anim_call BattleAnim_UserObj_1Row
+	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_ANGELS
+	anim_sound 6, 2, SFX_WHIRLWIND
+	anim_obj ANIM_OBJ_DESTINY_BOND, 44, 120, $2
+	anim_wait 64
+	anim_call BattleAnim_UserObj_2Row
+	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
+	anim_sound 0, 0, SFX_BURN
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_NIGHT_SHADE
 	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
-	anim_bgp $e4
 	anim_ret
 
 BattleAnim_Ember:
@@ -3690,6 +3686,9 @@ BattleAnim_FlashCannon:
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
 	anim_wait 4
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
+	anim_wait 4
 	anim_loop 5, .loop
 	anim_call BattleAnim_UserObj_1Row
 	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
@@ -3697,6 +3696,7 @@ BattleAnim_FlashCannon:
 	anim_call BattleAnim_ShowMon_1
 	anim_wait 1
 	anim_bgp $e4
+	anim_ret
 
 BattleAnim_Foresight:
 	anim_1gfx ANIM_GFX_SHINE
@@ -3831,12 +3831,12 @@ BattleAnim_ShoreUp:
 .loop
 	anim_sound 0, 1, SFX_SWORDS_DANCE
 	anim_wait 8
-	anim_obj ANIM_OBJ_58, 44, 88, $0
-	anim_obj ANIM_OBJ_58, 88, 88, $10
-	anim_obj ANIM_OBJ_58, 44, 88, $20
-	anim_obj ANIM_OBJ_58, 88, 88, $30
+	anim_obj ANIM_OBJ_58, 22, 44, $0
+	anim_obj ANIM_OBJ_58, 66, 44, $10
+	anim_obj ANIM_OBJ_58, 22, 44, $20
+	anim_obj ANIM_OBJ_58, 66, 44, $30
 	anim_wait 8
-	anim_loop 4, .loop
+	anim_loop 2, .loop
 	anim_wait 8
 	anim_ret
 
