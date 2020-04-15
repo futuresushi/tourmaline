@@ -1279,34 +1279,10 @@ BattleAnim_Thunder:
 	anim_wait 48
 	anim_ret
 
-BattleAnim_Sonicboom_JP:
-	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
-.loop
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 80, $3
-	anim_wait 8
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 88, $2
-	anim_wait 8
-	anim_sound 3, 0, SFX_RAZOR_WIND
-	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 96, $4
-	anim_wait 8
-	anim_loop 2, .loop
-	anim_wait 32
-	anim_incobj 1
-	anim_incobj 2
-	anim_incobj 3
-	anim_incobj 4
-	anim_incobj 5
-	anim_incobj 6
-	anim_obj ANIM_OBJ_01, 136, 56, $0
-	anim_wait 16
-	anim_ret
-
 BattleAnim_Sonicboom:
 	anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_HIT
-.loop
 	anim_sound 6, 2, SFX_RAZOR_WIND 
+.loop
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 4
 	anim_loop 9, .loop
@@ -2148,9 +2124,18 @@ BattleAnim_PoisonJab:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_POISON
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_01, 17, 0,  7, 0, $0
-	anim_wait 8
-	anim_call BattleAnimSub_Acid
-	anim_wait 8
+	anim_wait 4
+.loop
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_1A, 132, 72, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_1A, 116, 72, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_TOXIC
+	anim_obj ANIM_OBJ_1A, 148, 72, $0
+	anim_wait 4
+	anim_loop 5, .loop
 	anim_ret
 
 ;from polished
@@ -2673,10 +2658,10 @@ BattleAnim_Flash:
 	anim_wait 32
 	anim_ret
 	
-; Astonish animation from Pokémon Prism
+; Astonish animation adapted from Pokémon Prism
 BattleAnim_Astonish:
 	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_UserObj_1Row
+	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
 	anim_wait 4
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
@@ -3707,10 +3692,10 @@ BattleAnim_FlashCannon:
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
 	anim_wait 4
-	anim_loop 10, .loop
+	anim_loop 5, .loop
 	anim_call BattleAnim_UserObj_1Row
 	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_wait 16
+	anim_wait 8
 	anim_call BattleAnim_ShowMon_1
 	anim_wait 1
 	anim_bgp $e4
@@ -3844,10 +3829,10 @@ BattleAnim_Outrage:
 	anim_ret
 
 BattleAnim_ShoreUp:
-	anim_2gfx ANIM_GFX_SAND, ANIM_GFX_POWDER	
-	anim_obj ANIM_OBJ_SANDSTORM, 44, 88, $0
+	anim_1gfx ANIM_GFX_SAND	
+	anim_obj ANIM_OBJ_58, 44, 88, $0
 	anim_obj ANIM_OBJ_58, 44, 88, $10
-	anim_obj ANIM_OBJ_SANDSTORM, 44, 88, $20
+	anim_obj ANIM_OBJ_58, 44, 88, $20
 	anim_obj ANIM_OBJ_58, 44, 88, $30
 	anim_wait 8
 .loop
