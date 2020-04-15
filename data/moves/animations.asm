@@ -838,13 +838,17 @@ BattleAnim_WillOWisp:
 	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_SMOKE
 	anim_sound 0, 0, SFX_CURSE
 	anim_obj ANIM_OBJ_BALL_POOF, 64, 88, $0
-	anim_wait 32
-	anim_obp0 $54
-	anim_sound 6, 2, SFX_EMBER
+	anim_bgeffect ANIM_BG_1F, $60, $2, $0
+.loop
+	anim_sound 0, 0, SFX_EMBER
+	anim_obj ANIM_OBJ_WAVE,  7, 6, 11, 4, $2
 	anim_obj ANIM_OBJ_EMBER, 136, 40, $15
 	anim_obj ANIM_OBJ_EMBER, 136, 40, $2a
-	anim_wait 64
-	anim_incbgeffect ANIM_BG_NIGHT_SHADE
+	anim_loop 2, .loop
+	anim_call BattleAnim_UserObj_1Row
+	anim_call BattleAnim_ShowMon_1
+	anim_wait 1
+	anim_bgp $e4
 	anim_ret
 
 BattleAnim_Ember:
@@ -1281,15 +1285,13 @@ BattleAnim_Thunder:
 
 BattleAnim_Sonicboom:
 	anim_2gfx ANIM_GFX_PSYCHIC, ANIM_GFX_HIT
-	anim_sound 6, 2, SFX_RAZOR_WIND 
+	anim_sound 0, 0, SFX_SUPER_EFFECTIVE
 .loop
 	anim_obj ANIM_OBJ_WAVE, 64, 88, $2
 	anim_wait 4
 	anim_loop 9, .loop
 	anim_obj ANIM_OBJ_01, 144, 64, $18
 	anim_wait 8
-	anim_obj ANIM_OBJ_01, 128, 32, $18
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Gust:
@@ -2953,8 +2955,8 @@ BattleAnim_QuickAttack:
 	anim_ret
 
 BattleAnim_DefenseCurl:
-	anim_if_param_equal $1, BattleAnim_Withdraw
-	anim_if_param_equal $2, BattleAnim_Harden
+	anim_if_param_equal $1, .withdraw
+	anim_if_param_equal $2, .harden
 	anim_1gfx ANIM_GFX_SHAPES
 	anim_obp0 $e4
 	anim_call BattleAnim_TargetObj_1Row
@@ -2966,9 +2968,7 @@ BattleAnim_DefenseCurl:
 	anim_incbgeffect ANIM_BG_18
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
-
-; removed, but used for DC
-BattleAnim_Withdraw:
+.withdraw
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_call BattleAnim_TargetObj_2Row
 	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
@@ -2981,9 +2981,7 @@ BattleAnim_Withdraw:
 	anim_incbgeffect ANIM_BG_WITHDRAW
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
-
-;removed, but used for DC
-BattleAnim_Harden:
+.harden
 	anim_1gfx ANIM_GFX_REFLECT
 	anim_obp0 $0
 	anim_call BattleAnim_TargetObj_1Row
@@ -3830,15 +3828,15 @@ BattleAnim_Outrage:
 
 BattleAnim_ShoreUp:
 	anim_1gfx ANIM_GFX_SAND	
-	anim_obj ANIM_OBJ_58, 44, 88, $0
-	anim_obj ANIM_OBJ_58, 44, 88, $10
-	anim_obj ANIM_OBJ_58, 44, 88, $20
-	anim_obj ANIM_OBJ_58, 44, 88, $30
-	anim_wait 8
 .loop
 	anim_sound 0, 1, SFX_SWORDS_DANCE
 	anim_wait 8
-	anim_loop 16, .loop
+	anim_obj ANIM_OBJ_58, 44, 88, $0
+	anim_obj ANIM_OBJ_58, 88, 88, $10
+	anim_obj ANIM_OBJ_58, 44, 88, $20
+	anim_obj ANIM_OBJ_58, 88, 88, $30
+	anim_wait 8
+	anim_loop 4, .loop
 	anim_wait 8
 	anim_ret
 
