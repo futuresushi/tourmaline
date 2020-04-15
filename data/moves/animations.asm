@@ -2149,8 +2149,8 @@ BattleAnim_PoisonJab:
 	anim_sound 0, 1, SFX_HORN_ATTACK
 	anim_obj ANIM_OBJ_01, 17, 0,  7, 0, $0
 	anim_wait 8
-	anim_call BattleAnimSub_Sludge
-	anim_wait 24
+	anim_call BattleAnimSub_Acid
+	anim_wait 8
 	anim_ret
 
 ;from polished
@@ -2684,7 +2684,7 @@ BattleAnim_Astonish:
 	anim_sound 0, 1, SFX_KINESIS_2
 	anim_obj ANIM_OBJ_01, 16, 0,  6, 0, $0
 	anim_wait 16
-	anim_call BattleAnim_ShowMon_0
+	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_Substitute:
@@ -3707,14 +3707,10 @@ BattleAnim_FlashCannon:
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
 	anim_wait 4
-;	anim_bgp $e4
-	anim_sound 0, 1, SFX_SHINE
-	anim_obj ANIM_OBJ_OCTAZOOKA,  8, 0, 11, 4, $4
-	anim_wait 4
 	anim_loop 10, .loop
 	anim_call BattleAnim_UserObj_1Row
 	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $0, $0
-	anim_wait 32
+	anim_wait 16
 	anim_call BattleAnim_ShowMon_1
 	anim_wait 1
 	anim_bgp $e4
@@ -3848,6 +3844,19 @@ BattleAnim_Outrage:
 	anim_ret
 
 BattleAnim_ShoreUp:
+	anim_2gfx ANIM_GFX_SAND, ANIM_GFX_POWDER	
+	anim_obj ANIM_OBJ_SANDSTORM, 44, 88, $0
+	anim_obj ANIM_OBJ_58, 44, 88, $10
+	anim_obj ANIM_OBJ_SANDSTORM, 44, 88, $20
+	anim_obj ANIM_OBJ_58, 44, 88, $30
+	anim_wait 8
+.loop
+	anim_sound 0, 1, SFX_SWORDS_DANCE
+	anim_wait 8
+	anim_loop 16, .loop
+	anim_wait 8
+	anim_ret
+
 BattleAnim_Sandstorm:
 	anim_1gfx ANIM_GFX_POWDER
 	anim_obj ANIM_OBJ_SANDSTORM, 88, 0, $0
@@ -4344,8 +4353,6 @@ BattleAnim_RapidSpin:
 BattleAnim_FairyWind:
 	anim_2gfx ANIM_GFX_FLOWER, ANIM_GFX_MISC
 	anim_sound 0, 0, SFX_FLASH
-	anim_incbgeffect ANIM_BG_06, $0, $2, $0
-	anim_wait 128
 	anim_obj ANIM_OBJ_FLOWER, 64, 96, $2
 	anim_wait 2
 	anim_obj ANIM_OBJ_FLOWER, 64, 80, $2
@@ -4569,7 +4576,7 @@ BattleAnim_MirrorCoat:
 	anim_wait 32
 	anim_ret
 	
-; Dark Pulse animation from Pokémon Prism
+; Dark Pulse animation adapted from Pokémon Prism
 BattleAnim_DarkPulse:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_PSYCHIC 
 	anim_sound 0, 0, SFX_RAGE
@@ -4606,7 +4613,6 @@ BattleAnim_NastyPlot:
 	anim_ret
 
 BattleAnim_AerialAce:
-BattleAnim_Extremespeed:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_CUT
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
 	anim_sound 0, 0, SFX_MENU
@@ -4619,6 +4625,24 @@ BattleAnim_Extremespeed:
 	anim_wait 12
 	anim_sound 0, 1, SFX_CUT
 	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_wait 32
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+	
+BattleAnim_Extremespeed:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_00, 136, 48, $0
 	anim_wait 32
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
