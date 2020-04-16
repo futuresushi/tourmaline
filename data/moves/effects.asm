@@ -177,7 +177,25 @@ DreamEater:
 	buildopponentrage
 	endmove
 
-MirrorMove:
+SwitchHit:
+	checkobedience
+	usedmovetext
+	doturn
+	hastarget
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	switchout
 	endmove
 
 AttackUp:
