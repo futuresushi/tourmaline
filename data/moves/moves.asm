@@ -12,7 +12,7 @@ ENDM
 
 Moves: ; 41afb
 ; entries correspond to constants/move_constants.asm
-	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
+	move POUND,        EFFECT_SWITCH_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0 ; temporary testing
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING,      PHYSICAL, 100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, FAIRY,         PHYSICAL,  85, 10,   0
 	move AERIAL_ACE,   EFFECT_ALWAYS_HIT,         60, FLYING,        PHYSICAL, 100, 20,   0
