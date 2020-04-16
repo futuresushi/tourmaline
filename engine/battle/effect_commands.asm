@@ -2482,6 +2482,10 @@ BattleCommand_CheckFaint:
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
+	cp EFFECT_SWITCH_HIT
+	jr nz, .finish
+	call HasUserFainted
+	call nz, BattleCommand_switchout
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .finish
 
@@ -2490,6 +2494,13 @@ BattleCommand_CheckFaint:
 
 .finish
 	jp EndMoveEffect
+	
+BattleCommand_switchout:
+	call CheckAnyOtherAliveMons
+	ret z
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu_NoLoop
+	farcall ForcePickSwitchMonInBattle
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
