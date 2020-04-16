@@ -88,8 +88,20 @@ BattleCommand_Teleport:
 	; Transition into switchmon menu
 	call LoadStandardMenuHeader
 	farcall SetUpBattlePartyMenu_NoLoop
-
 	farcall ForcePickSwitchMonInBattle
+; Return to battle scene
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetPalettes
+	jp CloseWindow
+
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
