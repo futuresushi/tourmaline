@@ -46,7 +46,7 @@ BattleCommand_Teleport:
 .enemy_turn
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .failed
+	jp nz, .failed
 	ld a, [wBattleMonLevel]
 	ld b, a
 	ld a, [wCurPartyLevel]
@@ -62,7 +62,7 @@ BattleCommand_Teleport:
 	srl b
 	srl b
 	cp b
-	jr c, .failed
+	jp c, .failed
 .run_away
 	call UpdateBattleMonInParty
 	xor a
