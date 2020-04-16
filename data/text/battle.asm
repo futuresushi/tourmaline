@@ -874,6 +874,12 @@ ReflectEffectText:
 	text "<USER>'s"
 	line "DEFENSE rose!"
 	prompt
+	
+BattleText_UserReturnedToTrainer:
+	text "<USER>"
+	line "went back to"
+	line "<PLAYER>!"
+	prompt
 
 NothingHappenedText:
 	text "But nothing"
