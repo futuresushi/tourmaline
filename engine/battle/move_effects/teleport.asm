@@ -3,13 +3,13 @@ BattleCommand_Teleport:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
-	jr z, .failed
+	jp z, .failed
 	cp BATTLETYPE_TRAP
-	jr z, .failed
+	jp z, .failed
 	cp BATTLETYPE_CELEBI
-	jr z, .failed
+	jp z, .failed
 	cp BATTLETYPE_SUICUNE
-	jr z, .failed
+	jp z, .failed
 	
 ; Switch in a trainer battle
 	ld a, [wBattleMode]
