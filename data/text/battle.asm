@@ -878,13 +878,13 @@ ReflectEffectText:
 BattleText_UserReturnedToTrainer:
 	text "<USER>"
 	line "went back to"
-	line "<PLAYER>!"
+	cont "<PLAYER>!"
 	prompt
 	
 BattleText_UserReturnedToEnemy:
 	text "<USER>"
 	line "went back to"
-	line "<ENEMY>!"
+	cont "<ENEMY>!"
 	prompt
 
 NothingHappenedText:
