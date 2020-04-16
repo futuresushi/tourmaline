@@ -3831,10 +3831,10 @@ BattleAnim_ShoreUp:
 .loop
 	anim_sound 0, 1, SFX_SWORDS_DANCE
 	anim_wait 8
-	anim_obj ANIM_OBJ_58, 22, 88, $0
-	anim_obj ANIM_OBJ_58, 66, 88, $10
-	anim_obj ANIM_OBJ_58, 22, 88, $20
-	anim_obj ANIM_OBJ_58, 66, 88, $30
+	anim_obj ANIM_OBJ_58, 22, 98, $0
+	anim_obj ANIM_OBJ_58, 66, 98, $10
+	anim_obj ANIM_OBJ_58, 22, 98, $20
+	anim_obj ANIM_OBJ_58, 66, 98, $30
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 8
