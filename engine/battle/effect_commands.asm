@@ -2490,7 +2490,7 @@ BattleCommand_CheckFaint:
 	cp EFFECT_SWITCH_HIT
 	jr nz, .finish
 	call HasUserFainted
-	call nz, BattleCommand_switchout
+	call nz, BattleCommand_SwitchOut
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .finish
 
@@ -2500,7 +2500,7 @@ BattleCommand_CheckFaint:
 .finish
 	jp EndMoveEffect
 	
-BattleCommand_switchout:
+BattleCommand_SwitchOut:
 	call CheckAnyOtherAliveMons
 	ret z
 	call LoadStandardMenuHeader
