@@ -1554,7 +1554,7 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
 	ret z
-	cp EFFECT_ROAR
+	cp EFFECT_FORCE_SWITCH
 	ret z
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
