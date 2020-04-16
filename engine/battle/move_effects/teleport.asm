@@ -220,7 +220,7 @@ PrintReturnedToTrainer:
 	ld hl, UserReturnedToTrainer
 	jp StdBattleTextBox
 	
-PrintReturnedToTrainer:
+PrintReturnedToEnemy:
 ; '[x] returned to [z]!'
 	ld hl, UserReturnedToEnemy
 	jp StdBattleTextBox
