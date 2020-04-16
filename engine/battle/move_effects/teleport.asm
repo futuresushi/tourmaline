@@ -127,6 +127,10 @@ BattleCommand_Teleport:
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
 	call Teleport_LinkEnemySwitch
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
 	
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
@@ -160,7 +164,6 @@ Teleport_LinkPlayerSwitch:
 	ld [wBattlePlayerAction], a
 	ret
 	
-
 Teleport_LinkEnemySwitch:
 	ld a, [wLinkMode]
 	and a
@@ -185,7 +188,3 @@ Teleport_LinkEnemySwitch:
 	ld [wBattleAction], a
 .switch
 	jp CloseWindow
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
