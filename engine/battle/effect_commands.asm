@@ -2501,22 +2501,12 @@ BattleCommand_CheckFaint:
 	jp EndMoveEffect
 	
 BattleCommand_SwitchOut:
-	call CheckAnyOtherAliveMons
-	ret z
-	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu_NoLoop
-	farcall ForcePickSwitchMonInBattle
-; Return to battle scene
-	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
-	call CloseWindow
-	call ClearSprites
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
+; If Trainer Battle,
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .trainer
+.trainer
+	call BattleCommand_Teleport
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
