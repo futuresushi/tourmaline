@@ -80,6 +80,10 @@ BattleCommand_Teleport:
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
 .trainer
+	ldh a, [hBattleTurn]
+	and a
+	jp nz, .Enemy
+
 	call CheckAnyOtherAliveMons
 	jr z, .failed
 	call AnimateCurrentMove
@@ -100,6 +104,87 @@ BattleCommand_Teleport:
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
+	call Teleport_LinkPlayerSwitch
+
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+
+	ld hl, PassedBattleMonEntrance
+	call CallBattleCore
+
+	ret
+	
+.Enemy:
+; Wildmons don't have anything to switch to
+	ld a, [wBattleMode]
+	dec a ; WILDMON
+	jp z, .failed
+
+	call CheckAnyOtherAliveEnemyMons
+	jp z, .failed
+
+	call UpdateEnemyMonInParty
+	call AnimateCurrentMove
+	call Teleport_LinkEnemySwitch
+	
+; Mobile link battles handle entrances differently
+	farcall CheckMobileBattleError
+	jp c, EndMoveEffect
+	
+; Passed enemy PartyMon entrance
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+
+	ld hl, SpikesDamage
+	call CallBattleCore
+
+Teleport_LinkPlayerSwitch:
+	ld a, [wLinkMode]
+	and a
+	ret z
+
+	ld a, BATTLEPLAYERACTION_USEITEM
+	ld [wBattlePlayerAction], a
+
+	call LoadStandardMenuHeader
+	ld hl, LinkBattleSendReceiveAction
+	call CallBattleCore
+	call CloseWindow
+
+	xor a ; BATTLEPLAYERACTION_USEMOVE
+	ld [wBattlePlayerAction], a
+	ret
+	
+
+Teleport_LinkEnemySwitch:
+	ld a, [wLinkMode]
+	and a
+	ret z
+
+	call LoadStandardMenuHeader
+	ld hl, LinkBattleSendReceiveAction
+	call CallBattleCore
+
+	ld a, [wOTPartyCount]
+	add BATTLEACTION_SWITCH1
+	ld b, a
+	ld a, [wBattleAction]
+	cp BATTLEACTION_SWITCH1
+	jr c, .teleport
+	cp b
+	jr c, .switch
+	
+.teleport
+	ld a, [wCurOTMon]
+	add BATTLEACTION_SWITCH1
+	ld [wBattleAction], a
+.switch
+	jp CloseWindow
 
 .failed
 	call AnimateFailedMove
