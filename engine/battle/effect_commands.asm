@@ -2517,7 +2517,6 @@ BattleCommand_SwitchOut:
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
-	jp CloseWindow
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
