@@ -312,7 +312,6 @@ AI_Smart:
 	dbw EFFECT_LEECH_HIT,        AI_Smart_LeechHit
 	dbw EFFECT_SELFDESTRUCT,     AI_Smart_Selfdestruct
 	dbw EFFECT_DREAM_EATER,      AI_Smart_DreamEater
-	dbw EFFECT_MIRROR_MOVE,      AI_Smart_MirrorMove
 	dbw EFFECT_EVASION_UP,       AI_Smart_EvasionUp
 	dbw EFFECT_ALWAYS_HIT,       AI_Smart_AlwaysHit
 	dbw EFFECT_ACCURACY_DOWN,    AI_Smart_AccuracyDown
