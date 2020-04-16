@@ -150,6 +150,32 @@ UpdateBattleHuds::
 	farcall UpdatePlayerHUD
 	farcall UpdateEnemyHUD
 	ret
+	
+; These routines return z if the user is of the given type
+; From Polished, so far only User/Poison is used
+
+CheckIfUserIsPoisonType::
+	ld a, POISON
+	jr CheckIfUserIsSomeType
+CheckIfUserIsSomeType::
+	ld b, a
+	ldh a, [hBattleTurn]
+	xor 1
+CheckIfSomeoneIsSomeType
+	ld c, a
+	ld de, wEnemyMonType1
+	ld a, c
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp b
+	ret z
+	ld a, [de]
+	cp b
+	ret
 
 INCLUDE "home/battle_vars.asm"
 
