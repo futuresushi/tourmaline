@@ -1751,11 +1751,16 @@ BattleCommand_CheckHit:
 	ret
 	
 .AntiMinimize:
-; Returns z if Stomp or Body Slam is used against a minimized target
-	ld a, BATTLE_VARS_SUBSTATUS2_OPP
-	call GetBattleVar
-	bit SUBSTATUS_MINIMIZED, a
-	jr z, .no_minimize
+; Returns z if Stomp, Astonish or Body Slam is used against a minimized target
+	ld hl, wEnemyMinimized
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wPlayerMinimized
+.ok
+	ld a, [hl]
+	and a
+	jr z, .no_minimize	
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp BODY_SLAM
