@@ -1530,6 +1530,9 @@ BattleCommand_CheckHit:
 
 	call .DrainSub
 	jp z, .Miss
+	
+	call .PoisonTypeUsingToxic
+	ret z
 
 	call .LockOn
 	ret nz
@@ -1539,6 +1542,9 @@ BattleCommand_CheckHit:
 
 	call .ThunderRain
 	ret z
+	
+	call .AntiMinimize
+	ret z
 
 	call .XAccuracy
 	ret nz
@@ -1547,6 +1553,12 @@ BattleCommand_CheckHit:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
+	ret z
+	cp EFFECT_ROAR
+	ret z
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp STRUGGLE
 	ret z
 
 	call .StatModifiers
@@ -1660,6 +1672,15 @@ BattleCommand_CheckHit:
 	ld a, 1
 	and a
 	ret
+	
+.PoisonTypeUsingToxic:
+; Return z if we are a Poison-type using Toxic.
+	call CheckIfUserIsPoisonType
+	ret nz
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp TOXIC
+	ret
 
 .DrainSub:
 ; Return z if using an HP drain move on a substitute.
@@ -1727,6 +1748,24 @@ BattleCommand_CheckHit:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
+	ret
+	
+.AntiMinimize:
+; Returns z if Stomp or Body Slam is used against a minimized target
+	ld a, BATTLE_VARS_SUBSTATUS2_OPP
+	call GetBattleVar
+	bit SUBSTATUS_MINIMIZED, a
+	jr z, .no_minimize
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp BODY_SLAM
+	ret z
+	cp STOMP
+	ret z
+	cp ASTONISH
+	ret z
+.no_minimize
+	or 1
 	ret
 
 .XAccuracy:
