@@ -880,6 +880,12 @@ BattleText_UserReturnedToTrainer:
 	line "went back to"
 	line "<PLAYER>!"
 	prompt
+	
+BattleText_UserReturnedToEnemy:
+	text "<USER>"
+	line "went back to"
+	line "<ENEMY>!"
+	prompt
 
 NothingHappenedText:
 	text "But nothing"
