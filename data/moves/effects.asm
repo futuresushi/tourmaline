@@ -181,7 +181,6 @@ SwitchHit:
 	checkobedience
 	usedmovetext
 	doturn
-	hastarget
 	critical
 	damagestats
 	damagecalc
