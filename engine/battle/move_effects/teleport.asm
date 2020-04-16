@@ -100,7 +100,6 @@ BattleCommand_Teleport:
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
-	jp CloseWindow
 
 .failed
 	call AnimateFailedMove
