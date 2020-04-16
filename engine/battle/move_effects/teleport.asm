@@ -10,6 +10,11 @@ BattleCommand_Teleport:
 	jr z, .failed
 	cp BATTLETYPE_SUICUNE
 	jr z, .failed
+	
+; Switch in a trainer battle
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .trainer
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
@@ -19,10 +24,6 @@ BattleCommand_Teleport:
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy_turn
-; Can't teleport from a trainer battle
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .failed
 ; If your level is greater than the opponent's, you run without fail.
 	ld a, [wCurPartyLevel]
 	ld b, a
@@ -42,11 +43,6 @@ BattleCommand_Teleport:
 	srl b
 	cp b
 	jr nc, .run_away
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
-
 .enemy_turn
 	ld a, [wBattleMode]
 	dec a
@@ -83,3 +79,17 @@ BattleCommand_Teleport:
 
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
+.trainer
+	call CheckAnyOtherAliveMons
+	jr z, .failed
+	call AnimateCurrentMove
+	ld c, 30
+	call DelayFrames
+	; Transition into switchmon menu
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu_NoLoop
+
+	farcall ForcePickSwitchMonInBattle
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
