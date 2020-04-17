@@ -837,13 +837,15 @@ BattleAnim_SeedBomb:
 BattleAnim_WillOWisp:
 	anim_2gfx ANIM_GFX_FIRE, ANIM_GFX_ANGELS
 	anim_sound 6, 2, SFX_WHIRLWIND
+	anim_bgp $1b
+	anim_obp0 $0
 	anim_obj ANIM_OBJ_DESTINY_BOND, 44, 120, $2
 	anim_wait 64
 	anim_call BattleAnim_UserObj_2Row
-	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
 	anim_sound 0, 0, SFX_BURN
+	anim_obj ANIM_OBJ_EMBER, 64, 100, $14
+	anim_wait 4
 	anim_wait 32
-	anim_incbgeffect ANIM_BG_NIGHT_SHADE
 	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
