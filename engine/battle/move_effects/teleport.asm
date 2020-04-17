@@ -11,17 +11,9 @@ BattleCommand_Teleport:
 	cp BATTLETYPE_SUICUNE
 	jp z, .failed
 	
-; Switch in a trainer battle, or if the move isn't TELEPORT
+; Switch in a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .trainer
-	
-	ld a, [wCurPlayerMove]
-	cp TELEPORT
-	jr nz, .trainer
-
-	ld a, [wCurEnemyMove]
-	cp TELEPORT
 	jr nz, .trainer
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
@@ -88,7 +80,7 @@ BattleCommand_Teleport:
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
 .trainer
-; Check first if it's you or the enemy using this
+; Check first if it's you or the enemy using thid
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
@@ -140,6 +132,11 @@ BattleCommand_Teleport:
 	cp TELEPORT
 	jr nz, .skipenemyanimation
 
+; Wildmons don't have anything to switch to
+	ld a, [wBattleMode]
+	dec a ; WILDMON
+	jp z, .failed
+
 	call CheckAnyOtherAliveEnemyMons
 	jp z, .failed
 
@@ -147,10 +144,11 @@ BattleCommand_Teleport:
 	call AnimateCurrentMove
 	
 .skipenemyanimation
+	jp PrintReturnedToEnemy
+	
 	call CheckAnyOtherAliveEnemyMons
 	jp z, .noswitch
 	
-	jp PrintReturnedToEnemy
 	call Teleport_LinkEnemySwitch
 
 .failed
