@@ -19,7 +19,7 @@ BattleCommand_Teleport:
 	ld a, [wCurPlayerMove]
 	cp TELEPORT
 	jr nz, .trainer
-	
+
 	ld a, [wCurEnemyMove]
 	cp TELEPORT
 	jr nz, .trainer
@@ -54,7 +54,7 @@ BattleCommand_Teleport:
 .enemy_turn
 	ld a, [wBattleMode]
 	dec a
-	jp nz, .trainer
+	jp nz, .failed
 	ld a, [wBattleMonLevel]
 	ld b, a
 	ld a, [wCurPartyLevel]
@@ -150,7 +150,7 @@ BattleCommand_Teleport:
 	
 .skipenemyanimation
 	call CheckAnyOtherAliveEnemyMons
-	jr z, .noswitch
+	jp z, .noswitch
 	call CheckAnyOtherAliveMons
 	jr z, .noswitch
 	
@@ -162,8 +162,7 @@ BattleCommand_Teleport:
 	jp PrintButItFailed
 	
 .noswitch
-	call BattleCommand_CheckFaint
-	ret
+	jp c, EndMoveEffect
 	
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
@@ -214,7 +213,6 @@ Teleport_LinkEnemySwitch:
 	jr c, .teleport
 	cp b
 	jr c, .switch
-	ret
 	
 .teleport
 	ld a, [wCurOTMon]
