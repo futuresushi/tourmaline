@@ -78,7 +78,7 @@ BattleCommand_Teleport:
 	call SetBattleDraw
 
 	ld hl, FledFromBattleText
-	jp StdBattleTextbox
+	call StdBattleTextbox
 .trainer
 	ldh a, [hBattleTurn]
 	and a
@@ -88,7 +88,7 @@ BattleCommand_Teleport:
 	jr z, .failed
 	
 	ld hl, BattleText_UserReturnedToTrainer
-	jp StdBattleTextbox
+	call StdBattleTextbox
 	ld c, 30
 	call DelayFrames
 	; Transition into switchmon menu
