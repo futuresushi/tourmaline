@@ -88,18 +88,19 @@ BattleCommand_Teleport:
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
 .trainer
-<<<<<<< HEAD
 ; Check first if it's you or the enemy using this
-=======
->>>>>>> parent of fce70d241... Attempted fix for Teleport / SwitchHit
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
+; Check if this is another move calling the switching code, which has different failure states
+	ld a, [wCurPlayerMove]
+	cp TELEPORT
+	jr nz, .skipplayeranimation
 
 	call CheckAnyOtherAliveMons
 	jr z, .failed
+	
 	call AnimateCurrentMove
-<<<<<<< HEAD
 	
 .skipplayeranimation
 	call CheckAnyOtherAliveMons	
@@ -107,8 +108,6 @@ BattleCommand_Teleport:
 	call CheckAnyOtherAliveEnemyMons
 	jp z, .noswitch
 	jp PrintReturnedToTrainer
-=======
->>>>>>> parent of fce70d241... Attempted fix for Teleport / SwitchHit
 	ld c, 30
 	call DelayFrames
 	; Transition into switchmon menu
@@ -138,24 +137,16 @@ BattleCommand_Teleport:
 	ret
 	
 .Enemy:
-<<<<<<< HEAD
 ; Check if this is another move calling the switching code, which has different failure states
 	ld a, [wCurEnemyMove]
 	cp TELEPORT
 	jr nz, .skipenemyanimation
-=======
-; Wildmons don't have anything to switch to
-	ld a, [wBattleMode]
-	dec a ; WILDMON
-	jp z, .failed
->>>>>>> parent of fce70d241... Attempted fix for Teleport / SwitchHit
 
 	call CheckAnyOtherAliveEnemyMons
 	jp z, .failed
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
-<<<<<<< HEAD
 	
 .skipenemyanimation
 	call CheckAnyOtherAliveEnemyMons
@@ -164,21 +155,16 @@ BattleCommand_Teleport:
 	jr z, .noswitch
 	
 	jp PrintReturnedToEnemy
-=======
->>>>>>> parent of fce70d241... Attempted fix for Teleport / SwitchHit
 	call Teleport_LinkEnemySwitch
 
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
 	
-<<<<<<< HEAD
 .noswitch
 	call BattleCommand_CheckFaint
 	ret
 	
-=======
->>>>>>> parent of fce70d241... Attempted fix for Teleport / SwitchHit
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
 	jp c, EndMoveEffect
@@ -236,7 +222,6 @@ Teleport_LinkEnemySwitch:
 	ld [wBattleAction], a
 .switch
 	jp CloseWindow
-<<<<<<< HEAD
 	
 PrintReturnedToTrainer:
 ; '[x] returned to [y]!'
@@ -247,5 +232,3 @@ PrintReturnedToEnemy:
 ; '[x] returned to [z]!'
 	ld hl, BattleText_UserReturnedToEnemy
 	jp StdBattleTextbox
-=======
->>>>>>> parent of fce70d241... Attempted fix for Teleport / SwitchHit
