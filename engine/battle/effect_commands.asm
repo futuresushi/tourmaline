@@ -2487,10 +2487,6 @@ BattleCommand_CheckFaint:
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .multiple_hit_raise_sub
-	cp EFFECT_SWITCH_HIT
-	jr nz, .finish
-	call HasUserFainted
-	call nz, BattleCommand_SwitchOut
 	cp EFFECT_TRIPLE_KICK
 	jr nz, .finish
 
@@ -2501,12 +2497,15 @@ BattleCommand_CheckFaint:
 	jp EndMoveEffect
 	
 BattleCommand_SwitchOut:
+; THIS DOES NOT CURRENTLY WORK
+; DON'T USE IT
 ; If Trainer Battle,
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .trainer
-.trainer
-	call BattleCommand_Teleport
+;	ld a, [wBattleMode]
+;	dec a
+;	jr nz, .trainer
+;.trainer
+;	call BattleCommand_Teleport
+	ret
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
