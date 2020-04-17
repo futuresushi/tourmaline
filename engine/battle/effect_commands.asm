@@ -2501,12 +2501,18 @@ BattleCommand_CheckFaint:
 	jp EndMoveEffect
 	
 BattleCommand_SwitchOut:
-; If Trainer Battle,
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .trainer
-.trainer
-	call BattleCommand_Teleport
+	call BattleCommand_CheckFaint
+	jr z, .noswitch
+	
+	call CheckAnyOtherAliveMons
+	jr z, .noswitch
+	
+	ld a, [wCurOTMon]
+	add BATTLEACTION_SWITCH1
+	ld [wBattleAction], a
+	ret
+.noswitch
+	jp EndMoveEffect
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
