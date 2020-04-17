@@ -80,24 +80,13 @@ BattleCommand_Teleport:
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
 .trainer
-; Check first if it's you or the enemy using thid
 	ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
-; Check if this is another move calling the switching code, which has different failure states
-	ld a, [wCurPlayerMove]
-	cp TELEPORT
-	jr nz, .skipplayeranimation
 
 	call CheckAnyOtherAliveMons
 	jr z, .failed
-	
 	call AnimateCurrentMove
-	
-.skipplayeranimation
-	call CheckAnyOtherAliveMons	
-	jp z, .noswitch
-	jp PrintReturnedToTrainer
 	ld c, 30
 	call DelayFrames
 	; Transition into switchmon menu
@@ -127,11 +116,6 @@ BattleCommand_Teleport:
 	ret
 	
 .Enemy:
-; Check if this is another move calling the switching code, which has different failure states
-	ld a, [wCurEnemyMove]
-	cp TELEPORT
-	jr nz, .skipenemyanimation
-
 ; Wildmons don't have anything to switch to
 	ld a, [wBattleMode]
 	dec a ; WILDMON
@@ -142,21 +126,11 @@ BattleCommand_Teleport:
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
-	
-.skipenemyanimation
-	jp PrintReturnedToEnemy
-	
-	call CheckAnyOtherAliveEnemyMons
-	jp z, .noswitch
-	
 	call Teleport_LinkEnemySwitch
 
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
-	
-.noswitch
-	jp c, EndMoveEffect
 	
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
@@ -214,13 +188,3 @@ Teleport_LinkEnemySwitch:
 	ld [wBattleAction], a
 .switch
 	jp CloseWindow
-	
-PrintReturnedToTrainer:
-; '[x] returned to [y]!'
-	ld hl, UserReturnedToTrainer
-	jp StdBattleTextBox
-	
-PrintReturnedToTrainer:
-; '[x] returned to [z]!'
-	ld hl, UserReturnedToEnemy
-	jp StdBattleTextBox
