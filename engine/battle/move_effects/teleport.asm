@@ -3,27 +3,26 @@ BattleCommand_Teleport:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
-	jp z, .failed
+	jr z, .failed
 	cp BATTLETYPE_TRAP
-	jp z, .failed
+	jr z, .failed
 	cp BATTLETYPE_CELEBI
-	jp z, .failed
+	jr z, .failed
 	cp BATTLETYPE_SUICUNE
-	jp z, .failed
-	
-; Switch in a trainer battle
-	ld a, [wBattleMode]
-	dec a
-	jr nz, .trainer
+	jr z, .failed
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
 	bit SUBSTATUS_CANT_RUN, a
-	jp nz, .failed
+	jr nz, .failed
 ; Only need to check these next things if it's your turn
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy_turn
+; Can't teleport from a trainer battle
+	ld a, [wBattleMode]
+	dec a
+	jr nz, .failed
 ; If your level is greater than the opponent's, you run without fail.
 	ld a, [wCurPartyLevel]
 	ld b, a
@@ -43,10 +42,15 @@ BattleCommand_Teleport:
 	srl b
 	cp b
 	jr nc, .run_away
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
+
 .enemy_turn
 	ld a, [wBattleMode]
 	dec a
-	jp nz, .failed
+	jr nz, .failed
 	ld a, [wBattleMonLevel]
 	ld b, a
 	ld a, [wCurPartyLevel]
@@ -62,7 +66,9 @@ BattleCommand_Teleport:
 	srl b
 	srl b
 	cp b
-	jp c, .failed
+	; This should be jr c, .failed
+	; As written, it makes enemy use of Teleport always succeed if able
+	jr nc, .run_away
 .run_away
 	call UpdateBattleMonInParty
 	xor a
@@ -79,112 +85,3 @@ BattleCommand_Teleport:
 
 	ld hl, FledFromBattleText
 	jp StdBattleTextbox
-.trainer
-	ldh a, [hBattleTurn]
-	and a
-	jp nz, .Enemy
-
-	call CheckAnyOtherAliveMons
-	jr z, .failed
-	call AnimateCurrentMove
-	ld c, 30
-	call DelayFrames
-	; Transition into switchmon menu
-	call LoadStandardMenuHeader
-	farcall SetUpBattlePartyMenu_NoLoop
-	farcall ForcePickSwitchMonInBattle
-; Return to battle scene
-	call ClearPalettes
-	farcall _LoadBattleFontsHPBar
-	call CloseWindow
-	call ClearSprites
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
-	ld b, SCGB_BATTLE_COLORS
-	call GetSGBLayout
-	call SetPalettes
-	call Teleport_LinkPlayerSwitch
-
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
-
-	ld hl, PassedBattleMonEntrance
-	call CallBattleCore
-
-	ret
-	
-.Enemy:
-; Wildmons don't have anything to switch to
-	ld a, [wBattleMode]
-	dec a ; WILDMON
-	jp z, .failed
-
-	call CheckAnyOtherAliveEnemyMons
-	jp z, .failed
-
-	call UpdateEnemyMonInParty
-	call AnimateCurrentMove
-	call Teleport_LinkEnemySwitch
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
-	
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
-	
-; Passed enemy PartyMon entrance
-	xor a
-	ld [wEnemySwitchMonIndex], a
-	ld hl, EnemySwitch_SetMode
-	call CallBattleCore
-	ld hl, ResetBattleParticipants
-	call CallBattleCore
-
-	ld hl, SpikesDamage
-	call CallBattleCore
-
-Teleport_LinkPlayerSwitch:
-	ld a, [wLinkMode]
-	and a
-	ret z
-
-	ld a, BATTLEPLAYERACTION_USEITEM
-	ld [wBattlePlayerAction], a
-
-	call LoadStandardMenuHeader
-	ld hl, LinkBattleSendReceiveAction
-	call CallBattleCore
-	call CloseWindow
-
-	xor a ; BATTLEPLAYERACTION_USEMOVE
-	ld [wBattlePlayerAction], a
-	ret
-	
-Teleport_LinkEnemySwitch:
-	ld a, [wLinkMode]
-	and a
-	ret z
-
-	call LoadStandardMenuHeader
-	ld hl, LinkBattleSendReceiveAction
-	call CallBattleCore
-
-	ld a, [wOTPartyCount]
-	add BATTLEACTION_SWITCH1
-	ld b, a
-	ld a, [wBattleAction]
-	cp BATTLEACTION_SWITCH1
-	jr c, .teleport
-	cp b
-	jr c, .switch
-	
-.teleport
-	ld a, [wCurOTMon]
-	add BATTLEACTION_SWITCH1
-	ld [wBattleAction], a
-.switch
-	jp CloseWindow
