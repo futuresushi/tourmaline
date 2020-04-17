@@ -86,8 +86,7 @@ BattleCommand_Teleport:
 
 	call CheckAnyOtherAliveMons
 	jr z, .failed
-	
-	jp PrintReturnedToTrainer
+	call AnimateCurrentMove
 	ld c, 30
 	call DelayFrames
 	; Transition into switchmon menu
@@ -127,7 +126,6 @@ BattleCommand_Teleport:
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
-	jp PrintReturnedToEnemy
 	call Teleport_LinkEnemySwitch
 
 .failed

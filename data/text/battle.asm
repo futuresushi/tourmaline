@@ -880,12 +880,15 @@ BattleText_UserReturnedToTrainer:
 	line "went back to"
 	cont "<PLAYER>!"
 	prompt
+<<<<<<< HEAD
 	
 BattleText_UserReturnedToEnemy:
 	text "<USER>"
 	line "went back to"
 	cont "<ENEMY>!"
 	prompt
+=======
+>>>>>>> parent of d0ffa4e0c... Update battle.asm
 
 NothingHappenedText:
 	text "But nothing"
