@@ -183,12 +183,10 @@ Teleport_LinkEnemySwitch:
 	jr c, .teleport
 	cp b
 	jr c, .switch
-	ret
 	
 .teleport
 	ld a, [wCurOTMon]
 	add BATTLEACTION_SWITCH1
 	ld [wBattleAction], a
-	ret
 .switch
 	jp CloseWindow
