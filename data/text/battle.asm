@@ -874,21 +874,20 @@ ReflectEffectText:
 	text "<USER>'s"
 	line "DEFENSE rose!"
 	prompt
-	
+
+;unused, intended for SwitchHit
 BattleText_UserReturnedToTrainer:
 	text "<USER>"
 	line "went back to"
 	cont "<PLAYER>!"
 	prompt
-<<<<<<< HEAD
 	
+; unused, intended for SwitchHit
 BattleText_UserReturnedToEnemy:
 	text "<USER>"
 	line "went back to"
 	cont "<ENEMY>!"
 	prompt
-=======
->>>>>>> parent of d0ffa4e0c... Update battle.asm
 
 NothingHappenedText:
 	text "But nothing"
