@@ -105,8 +105,6 @@ BattleCommand_Teleport:
 .skipplayeranimation
 	call CheckAnyOtherAliveMons	
 	jp z, .noswitch
-	call CheckAnyOtherAliveEnemyMons
-	jp z, .noswitch
 	jp PrintReturnedToTrainer
 	ld c, 30
 	call DelayFrames
@@ -151,8 +149,6 @@ BattleCommand_Teleport:
 .skipenemyanimation
 	call CheckAnyOtherAliveEnemyMons
 	jp z, .noswitch
-	call CheckAnyOtherAliveMons
-	jr z, .noswitch
 	
 	jp PrintReturnedToEnemy
 	call Teleport_LinkEnemySwitch
