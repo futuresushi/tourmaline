@@ -87,8 +87,7 @@ BattleCommand_Teleport:
 	call CheckAnyOtherAliveMons
 	jr z, .failed
 	
-	ld hl, BattleText_UserReturnedToTrainer
-	jp StdBattleTextbox
+	jp PrintReturnedToTrainer
 	ld c, 30
 	call DelayFrames
 	; Transition into switchmon menu
@@ -126,8 +125,7 @@ BattleCommand_Teleport:
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
-	ld hl, BattleText_UserReturnedToEnemy
-	jp StdBattleTextbox
+	jp PrintReturnedToEnemy
 	call Teleport_LinkEnemySwitch
 
 .failed
@@ -190,3 +188,13 @@ Teleport_LinkEnemySwitch:
 	ld [wBattleAction], a
 .switch
 	jp CloseWindow
+
+PrintReturnedToTrainer:
+; '[x] returned to [y]!'
+	ld hl, BattleText_UserReturnedToTrainer
+	jp StdBattleTextbox
+	
+PrintReturnedToEnemy:
+; '[x] returned to [z]!'
+	ld hl, BattleText_UserReturnedToEnemy
+	jp StdBattleTextbox
