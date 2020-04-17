@@ -218,9 +218,9 @@ Teleport_LinkEnemySwitch:
 PrintReturnedToTrainer:
 ; '[x] returned to [y]!'
 	ld hl, UserReturnedToTrainer
-	jp StdBattleTextbox
+	jp StdBattleTextBox
 	
 PrintReturnedToEnemy:
 ; '[x] returned to [z]!'
 	ld hl, UserReturnedToEnemy
-	jp StdBattleTextbox
+	jp StdBattleTextBox
