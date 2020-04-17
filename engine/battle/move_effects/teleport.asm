@@ -113,6 +113,8 @@ BattleCommand_Teleport:
 
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
+
+	ret
 	
 .Enemy:
 ; Wildmons don't have anything to switch to
