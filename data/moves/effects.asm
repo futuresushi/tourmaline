@@ -1257,7 +1257,7 @@ PainSplit:
 	painsplit
 	endmove
 
-Snore:
+SpeedUpHit:
 	checkobedience
 	usedmovetext
 	doturn
@@ -1268,7 +1268,6 @@ Snore:
 	damagevariation
 	checkhit
 	effectchance
-	snore
 	moveanim
 	failuretext
 	applydamage
@@ -1276,8 +1275,8 @@ Snore:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	flinchtarget
-	kingsrock
+	speedup
+	statupmessage
 	endmove
 
 Conversion2:
@@ -1417,11 +1416,20 @@ MeanLook:
 	arenatrap
 	endmove
 
-Nightmare:
+;requires sun effects still
+Growth:
 	checkobedience
 	usedmovetext
 	doturn
-	nightmare
+	lowersub
+	statupanim
+	raisesub
+	specialattackup
+	statupmessage
+	statupfailtext
+	attackup
+	statupmessage
+	statupfailtext
 	endmove
 
 FlameWheel:
@@ -1607,17 +1615,18 @@ Present:
 	kingsrock
 	endmove
 
-Frustration:
+BodySlam:
 	checkobedience
 	usedmovetext
 	doturn
 	critical
 	damagestats
-	frustrationpower
 	damagecalc
 	stab
 	damagevariation
+	doubleminimizedamage
 	checkhit
+	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1625,7 +1634,7 @@ Frustration:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	kingsrock
+	paralyzetarget
 	endmove
 
 Safeguard:
@@ -1803,11 +1812,19 @@ BellyDrum:
 	bellydrum
 	endmove
 
-PsychUp:
+Echolocate:
 	checkobedience
 	usedmovetext
 	doturn
-	psychup
+	lowersub
+	statupanim
+	raisesub
+	specialattackup
+	statupmessage
+	statupfailtext
+	accuracyup
+	statupmessage
+	statupfailtext
 	endmove
 
 MirrorCoat:
