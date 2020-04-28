@@ -1,5 +1,5 @@
 MoveNames::
-	db "POUND@"
+	db "POWER GEM@" ; Changed from Pound
 	db "KARATE CHOP@"
 	db "DOUBLESLAP@"
 	db "AERIAL ACE@" ; Changed from Comet Punch
@@ -19,7 +19,7 @@ MoveNames::
 	db "WHIRLWIND@"
 	db "FLY@"
 	db "FLASH CANNON@" ; Changed from Bind
-	db "SLAM@"
+	db "DRAGON CLAW@" ; Changed from Slam
 	db "VINE WHIP@"
 	db "STOMP@"
 	db "DOUBLE KICK@"
@@ -37,7 +37,7 @@ MoveNames::
 	db "TAKE DOWN@"
 	db "THRASH@"
 	db "DOUBLE-EDGE@"
-	db "TAIL WHIP@"
+	db "FLAME CHARGE@" ; Changed from Tail Whip
 	db "POISON STING@"
 	db "TWINEEDLE@"
 	db "PIN MISSILE@"
@@ -110,7 +110,7 @@ MoveNames::
 	db "CONFUSE RAY@"
 	db "ENERGY BALL@" ; Changed from Withdraw
 	db "DEFENSE CURL@"
-	db "BARRIER@"
+	db "SIGNAL BEAM@" ; Changed from Barrier
 	db "LIGHT SCREEN@"
 	db "HAZE@"
 	db "REFLECT@"
@@ -121,15 +121,15 @@ MoveNames::
 	db "SELFDESTRUCT@"
 	db "BRAVE BIRD@" ; Changed from Egg Bomb
 	db "LICK@"
-	db "SMOG@"
+	db "HEAT WAVE@" ; Changed from Smog
 	db "SLUDGE@"
 	db "POWER BALLAD@" ; Changed from Bone Club
 	db "FIRE BLAST@"
 	db "WATERFALL@"
-	db "CLAMP@"
+	db "DRAGON PULSE@" ; Changed from Clamp
 	db "SWIFT@"
-	db "SKULL BASH@"
-	db "SPIKE CANNON@"
+	db "POWER WHIP@" ; Changed from Skull Bash
+	db "ICICLE SPEAR@" ; Changed from Icicle Spear
 	db "NOISE PULSE@" ; Changed from Constrict
 	db "AMNESIA@"
 	db "ZEN HEADBUTT@" ; Change from Kinesis
@@ -137,7 +137,7 @@ MoveNames::
 	db "HI JUMP KICK@"
 	db "GLARE@"
 	db "DREAM EATER@"
-	db "POISON GAS@"
+	db "ECHOLOCATE@" ; Changed from Poison Gas
 	db "DAZZLINGLEAM@" ; Changed from Barrage
 	db "LEECH LIFE@"
 	db "DRAININGKISS@" ; Changed from Lovely Kiss
@@ -167,11 +167,11 @@ MoveNames::
 	db "SKETCH@"
 	db "TRIPLE KICK@"
 	db "THIEF@"
-	db "SPIDER WEB@"
+	db "BULLET PUNCH@" ; Changed from Spider Web
 	db "WILD CHARGE@" ; Changed from Mind Reader
-	db "NIGHTMARE@"
+	db "AIR SLASH@" ; Changed from Nightmare
 	db "FLAME WHEEL@"
-	db "SNORE@"
+	db "ICE SHARD@" ; Changed from Snore
 	db "CURSE@"
 	db "FLAIL@"
 	db "CONVERSION2@"
@@ -195,7 +195,7 @@ MoveNames::
 	db "DESTINY BOND@"
 	db "PERISH SONG@"
 	db "ICY WIND@"
-	db "DETECT@"
+	db "AQUA JET@" ; Changed from Detect
 	db "BONE RUSH@"
 	db "LOCK-ON@"
 	db "OUTRAGE@"
@@ -208,7 +208,7 @@ MoveNames::
 	db "SWAGGER@"
 	db "MILK DRINK@"
 	db "SPARK@"
-	db "FURY CUTTER@"
+	db "ECHOED VOICE@" ; Changed from Fury Cutter
 	db "STEEL WING@"
 	db "MEAN LOOK@"
 	db "ATTRACT@"
@@ -216,7 +216,7 @@ MoveNames::
 	db "HEAL BELL@"
 	db "RETURN@"
 	db "PRESENT@"
-	db "FRUSTRATION@"
+	db "NIGHT SLASH@" ; Changed from Frustration
 	db "SAFEGUARD@"
 	db "PAIN SPLIT@"
 	db "SACRED FIRE@"
