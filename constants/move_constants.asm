@@ -6,7 +6,7 @@
 ; - BattleAnimations (see data/moves/animations.asm)
 	const_def
 	const NO_MOVE      ; 00
-	const POUND        ; 01
+	const POWER_GEM    ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
 	const AERIAL_ACE   ; 04
@@ -26,7 +26,7 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const FLASH_CANNON ; 14
-	const SLAM         ; 15
+	const DRAGON_CLAW  ; 15
 	const VINE_WHIP    ; 16
 	const STOMP        ; 17
 	const DOUBLE_KICK  ; 18
@@ -44,7 +44,7 @@
 	const TAKE_DOWN    ; 24
 	const THRASH       ; 25
 	const DOUBLE_EDGE  ; 26
-	const TAIL_WHIP    ; 27
+	const FLAME_CHARGE ; 27
 	const POISON_STING ; 28
 	const TWINEEDLE    ; 29
 	const PIN_MISSILE  ; 2a
@@ -117,7 +117,7 @@
 	const CONFUSE_RAY  ; 6d
 	const ENERGY_BALL  ; 6e
 	const DEFENSE_CURL ; 6f
-	const BARRIER      ; 70
+	const SIGNAL_BEAM  ; 70
 	const LIGHT_SCREEN ; 71
 	const HAZE         ; 72
 	const REFLECT      ; 73
@@ -128,15 +128,15 @@
 	const SELFDESTRUCT ; 78
 	const BRAVE_BIRD   ; 79
 	const LICK         ; 7a
-	const SMOG         ; 7b
+	const HEAT_WAVE    ; 7b
 	const SLUDGE       ; 7c
 	const POWER_BALLAD ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
-	const CLAMP        ; 80
+	const DRAGON_PULSE ; 80
 	const SWIFT        ; 81
-	const SKULL_BASH   ; 82
-	const SPIKE_CANNON ; 83
+	const POWER_WHIP   ; 82
+	const ICICLE_SPEAR ; 83
 	const NOISE_PULSE  ; 84
 	const AMNESIA      ; 85
 	const ZEN_HEADBUTT ; 86
@@ -144,7 +144,7 @@
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
 	const DREAM_EATER  ; 8a
-	const POISON_GAS   ; 8b
+	const ECHOLOCATE   ; 8b
 	const DAZZLINGLEAM ; 8c
 	const LEECH_LIFE   ; 8d
 	const DRAININGKISS ; 8e
@@ -174,11 +174,11 @@
 	const SKETCH       ; a6
 	const TRIPLE_KICK  ; a7
 	const THIEF        ; a8
-	const SPIDER_WEB   ; a9
+	const BULLET_PUNCH ; a9
 	const WILD_CHARGE  ; aa
-	const NIGHTMARE    ; ab
+	const AIR_SLASH    ; ab
 	const FLAME_WHEEL  ; ac
-	const SNORE        ; ad
+	const ICE_SHARD    ; ad
 	const CURSE        ; ae
 	const FLAIL        ; af
 	const CONVERSION2  ; b0
@@ -202,7 +202,7 @@
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
-	const DETECT       ; c5
+	const AQUA_JET     ; c5
 	const BONE_RUSH    ; c6
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
@@ -215,7 +215,7 @@
 	const SWAGGER      ; cf
 	const MILK_DRINK   ; d0
 	const SPARK        ; d1
-	const FURY_CUTTER  ; d2
+	const ECHOED_VOICE ; d2
 	const STEEL_WING   ; d3
 	const MEAN_LOOK    ; d4
 	const ATTRACT      ; d5
@@ -223,7 +223,7 @@
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
 	const PRESENT      ; d9
-	const FRUSTRATION  ; da
+	const NIGHT_SLASH  ; da
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
 	const SACRED_FIRE  ; dd
