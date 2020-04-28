@@ -1,6 +1,6 @@
 MoveDescriptions::
 ; entries correspond to move ids (see constants/move_constants.asm)
-	dw PoundDescription
+	dw PowerGemDescription
 	dw KarateChopDescription
 	dw DoubleslapDescription
 	dw AerialAceDescription
@@ -20,7 +20,7 @@ MoveDescriptions::
 	dw WhirlwindDescription
 	dw FlyDescription
 	dw FlashCannonDescription
-	dw SlamDescription
+	dw DragonClawDescription
 	dw VineWhipDescription
 	dw StompDescription
 	dw DoubleKickDescription
@@ -38,7 +38,7 @@ MoveDescriptions::
 	dw TakeDownDescription
 	dw ThrashDescription
 	dw DoubleEdgeDescription
-	dw TailWhipDescription
+	dw FlameChargeDescription
 	dw PoisonStingDescription
 	dw TwineedleDescription
 	dw PinMissileDescription
@@ -111,7 +111,7 @@ MoveDescriptions::
 	dw ConfuseRayDescription
 	dw EnergyBallDescription
 	dw DefenseCurlDescription
-	dw BarrierDescription
+	dw SignalBeamDescription
 	dw LightScreenDescription
 	dw HazeDescription
 	dw ReflectDescription
@@ -122,15 +122,15 @@ MoveDescriptions::
 	dw SelfdestructDescription
 	dw BraveBirdDescription
 	dw LickDescription
-	dw SmogDescription
+	dw HeatWaveDescription
 	dw SludgeDescription
 	dw PowerBalladDescription
 	dw FireBlastDescription
 	dw WaterfallDescription
-	dw ClampDescription
+	dw DragonPulseDescription
 	dw SwiftDescription
-	dw SkullBashDescription
-	dw SpikeCannonDescription
+	dw PowerWhipDescription
+	dw IcicleSpearDescription
 	dw NoisePulseDescription
 	dw AmnesiaDescription
 	dw ZenHeadbuttDescription
@@ -138,7 +138,7 @@ MoveDescriptions::
 	dw HiJumpKickDescription
 	dw GlareDescription
 	dw DreamEaterDescription
-	dw PoisonGasDescription
+	dw EcholocateDescription
 	dw DazzlingleamDescription
 	dw LeechLifeDescription
 	dw DrainingKissDescription
@@ -168,11 +168,11 @@ MoveDescriptions::
 	dw SketchDescription
 	dw TripleKickDescription
 	dw ThiefDescription
-	dw SpiderWebDescription
+	dw BulletPunchDescription
 	dw WildChargeDescription
-	dw NightmareDescription
+	dw AirSlashDescription
 	dw FlameWheelDescription
-	dw SnoreDescription
+	dw IceShardDescription
 	dw CurseDescription
 	dw FlailDescription
 	dw Conversion2Description
@@ -196,7 +196,7 @@ MoveDescriptions::
 	dw DestinyBondDescription
 	dw PerishSongDescription
 	dw IcyWindDescription
-	dw DetectDescription
+	dw AquaJetDescription
 	dw BoneRushDescription
 	dw LockOnDescription
 	dw OutrageDescription
@@ -209,7 +209,7 @@ MoveDescriptions::
 	dw SwaggerDescription
 	dw MilkDrinkDescription
 	dw SparkDescription
-	dw FuryCutterDescription
+	dw EchoedVoiceDescription
 	dw SteelWingDescription
 	dw MeanLookDescription
 	dw AttractDescription
@@ -217,7 +217,7 @@ MoveDescriptions::
 	dw HealBellDescription
 	dw ReturnDescription
 	dw PresentDescription
-	dw FrustrationDescription
+	dw NightSlashDescription
 	dw SafeguardDescription
 	dw PainSplitDescription
 	dw SacredFireDescription
@@ -261,9 +261,9 @@ MoveFFDescription:
 Move00Description:
 	db "?@"
 
-PoundDescription:
-	db   "Pounds with fore-"
-	next "legs or tail.@"
+PowerGemDescription:
+	db   "Attacks with gem-"
+	next "like sparkles.@"
 
 KarateChopDescription:
 	db   "Has a high criti-"
@@ -329,9 +329,9 @@ FlyDescription:
 	db   "1st turn: Fly"
 	next "2nd turn: Attack@"
 
-SlamDescription:
-	db   "Slams the foe with"
-	next "a tail, vine, etc.@"
+DragonClawDescription:
+	db   "Slashes the foe with"
+	next "long, sharp claws.@"
 
 VineWhipDescription:
 	db   "Whips the foe with"
@@ -398,9 +398,9 @@ DoubleEdgeDescription:
 	db   "A tackle that also"
 	next "hurts the user.@"
 
-TailWhipDescription:
-	db   "Lowers the foe's"
-	next "DEFENSE.@"
+FlameChargeDescription:
+	db   "A fiery tackle"
+	next "that raises SPEED.@"
 
 PoisonStingDescription:
 	db   "An attack that may"
@@ -535,8 +535,8 @@ LeechSeedDescription:
 	next "foe on every turn.@"
 
 GrowthDescription:
-	db   "Raises the SPCL."
-	next "ATK rating.@"
+	db   "Raises both SPCL."
+	next "ATK and ATK rating.@"
 
 RazorLeafDescription:
 	db   "Has a high criti-"
@@ -627,6 +627,9 @@ AgilityDescription:
 	db   "Sharply increases"
 	next "the user's SPEED.@"
 
+BulletPunchDescription:
+IceShardDescription:
+AquaJetDescription:
 QuickAttackDescription:
 	db   "Lets the user get"
 	next "in the first hit.@"
@@ -683,9 +686,9 @@ DefenseCurlDescription:
 	db   "Heightens the"
 	next "user's DEFENSE.@"
 
-BarrierDescription:
-	db   "Sharply increases"
-	next "user's DEFENSE.@"
+SignalBeamDescription:
+	db   "A strange beam."
+	next "It may confuse.@"
 
 LightScreenDescription:
 	db   "Ups SPCL.DEF with"
@@ -719,9 +722,9 @@ LickDescription:
 	db   "An attack that may"
 	next "cause paralysis.@"
 
-SmogDescription:
-	db   "An attack that may"
-	next "poison the foe.@"
+HeatWaveDescription:
+	db   "A hot wind that may"
+	next "burn the foe.@"
 
 SludgeDescription:
 	db   "An attack that may"
@@ -739,21 +742,21 @@ WaterfallDescription:
 	db   "An aquatic charge"
 	next "attack.@"
 
-ClampDescription:
-	db   "Traps the foe for"
-	next "2-5 turns.@"
+DragonPulseDescription:
+	db   "Attack with a ball"
+	next "of shining light."
 
 AerialAceDescription:
 SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+PowerWhipDescription:
+	db   "Whips foe hard"
+	next "with its body.@"
 
-SpikeCannonDescription:
-	db   "Fires spikes to"
+IcicleSpearDescription:
+	db   "Fires icicles to"
 	next "hit 2-5 times.@"
 
 NoisePulseDescription:
@@ -780,9 +783,9 @@ DreamEaterDescription:
 	db   "Steals HP from a"
 	next "sleeping victim.@"
 
-PoisonGasDescription:
-	db   "A move that may"
-	next "poison the foe.@"
+EcholocateDescription:
+	db   "Increases ACCURACY"
+	next "and SPCL. ATTACK.@"
 
 DazzlingleamDescription:
 	db   "Dazzles the foe"
@@ -848,6 +851,7 @@ RestDescription:
 	db   "Sleep for 2 turns"
 	next "to fully recover.@"
 
+AirSlashDescription:
 IronHeadDescription:
 AstonishDescription:
 ZenHeadbuttDescription:
@@ -879,6 +883,7 @@ SuperFangDescription:
 
 DrillRunDescription:
 ShadowClawDescription:
+NightSlashDescription:
 SlashDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
@@ -903,10 +908,6 @@ ThiefDescription:
 	db   "An attack that may"
 	next "steal a held item.@"
 
-SpiderWebDescription:
-	db   "Prevents fleeing"
-	next "or switching.@"
-
 NightmareDescription:
 	db   "A sleeper loses"
 	next "1/4 HP every turn.@"
@@ -914,10 +915,6 @@ NightmareDescription:
 FlameWheelDescription:
 	db   "An attack that may"
 	next "cause a burn.@"
-
-SnoreDescription:
-	db   "An attack useable"
-	next "only while asleep.@"
 
 CurseDescription:
 	db   "Works differently"
@@ -1013,10 +1010,6 @@ IcyWindDescription:
 	db   "An icy attack that"
 	next "lowers SPEED.@"
 
-DetectDescription:
-	db   "Evades attack that"
-	next "turn. It may fail.@"
-
 BoneRushDescription:
 	db   "An attack that"
 	next "hits 2-5 times.@"
@@ -1065,7 +1058,7 @@ SparkDescription:
 	db   "An attack that may"
 	next "cause paralysis.@"
 
-FuryCutterDescription:
+EchoedVoiceDescription:
 	db   "Successive hits"
 	next "raise power.@"
 
@@ -1096,10 +1089,6 @@ ReturnDescription:
 PresentDescription:
 	db   "A bomb that may"
 	next "restore HP.@"
-
-FrustrationDescription:
-	db   "An attack based on"
-	next "lack of loyalty.@"
 
 SafeguardDescription:
 	db   "Prevents all"
