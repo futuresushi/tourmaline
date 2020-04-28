@@ -45,7 +45,7 @@ Moves: ; 41afb
 	move POISON_JAB,   EFFECT_POISON_HIT,         80, POISON,        PHYSICAL, 100, 20,  30	
 	move FLARE_BLITZ,  EFFECT_FLARE_BLITZ,       120, FIRE,          PHYSICAL, 100, 15,  10
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,        PHYSICAL, 100, 35,   0
-	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,        PHYSICAL, 100, 15,  30
+	move BODY_SLAM,    EFFECT_BODY_SLAM,          85, NORMAL,        PHYSICAL, 100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,        PHYSICAL,  90, 20,   0
 	move TAKE_DOWN,    EFFECT_RECOIL_HIT,         90, NORMAL,        PHYSICAL,  85, 20,   0
 	move THRASH,       EFFECT_RAMPAGE,           120, NORMAL,        PHYSICAL, 100, 10,   0
@@ -85,7 +85,7 @@ Moves: ; 41afb
 	move ABSORB,       EFFECT_LEECH_HIT,          40, GRASS,         SPECIAL,  100, 15,   0
 	move FOCUS_BLAST,  EFFECT_SP_DEF_DOWN_HIT,   120, FIGHTING,      SPECIAL,   70,  5,  10
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,         STATUS,    90, 10,   0
-	move GROWTH,       EFFECT_SP_ATK_UP,           0, NORMAL,        STATUS,   100, 20,   0
+	move GROWTH,       EFFECT_GROWTH,              0, NORMAL,        STATUS,   100, 20,   0 ; does not have sun effect yet
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,         PHYSICAL,  95, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,         SPECIAL,  100, 10,   0
 	move POISONPOWDER, EFFECT_POISON,              0, POISON,        STATUS,    75, 35,   0
