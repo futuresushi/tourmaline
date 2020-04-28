@@ -92,7 +92,7 @@ MoveEffectsPointers:
 	dw Counter
 	dw Encore
 	dw PainSplit
-	dw Snore
+	dw SpeedUpHit
 	dw Conversion2
 	dw LockOn
 	dw Sketch
@@ -107,7 +107,7 @@ MoveEffectsPointers:
 	dw TripleKick
 	dw Thief
 	dw MeanLook
-	dw Nightmare
+	dw Growth
 	dw FlameWheel
 	dw Curse
 	dw NormalHit
@@ -123,7 +123,7 @@ MoveEffectsPointers:
 	dw Attract
 	dw Return
 	dw Present
-	dw Frustration
+	dw BodySlam
 	dw Safeguard
 	dw SacredFire
 	dw Magnitude
@@ -143,7 +143,7 @@ MoveEffectsPointers:
 	dw AllUpHit
 	dw FakeOut
 	dw BellyDrum
-	dw PsychUp
+	dw Echolocate
 	dw MirrorCoat
 	dw SkullBash
 	dw Twister
