@@ -217,11 +217,10 @@ ChuckExplainBadgeText:
 
 ChuckExplainTMText:
 	text "That move is"
-	line "BULK UP"
+	line "BULK UP!"
 
 	para "It beefs up your"
-	line "ATTACK and DEFENSE"
-	cont "stats!
+	line "PHYSICAL stats!"
 	done
 
 ChuckAfterText:

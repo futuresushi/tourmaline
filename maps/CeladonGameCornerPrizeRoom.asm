@@ -64,7 +64,7 @@ CeladonPrizeRoom_tmcounterloop:
 	takecoins CELADONGAMECORNERPRIZEROOM_TM15_COINS
 	sjump CeladonPrizeRoom_purchased
 	
-.DoubleTeam:
+.FocusBlast:
 	checkitem TM_FOCUS_BLAST
 	iftrue CeladonPrizeRoom_alreadyhavetm
 	checkcoins CELADONGAMECORNERPRIZEROOM_TM32_COINS
