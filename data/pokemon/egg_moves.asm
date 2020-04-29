@@ -148,6 +148,7 @@ ZubatEggMoves:
 	db NASTY_PLOT
 	db ZEN_HEADBUTT
 	db BRAVE_BIRD
+	db DOUBLE_TEAM
 	db -1 ; end
 
 OddishEggMoves:
@@ -176,6 +177,7 @@ VenonatEggMoves:
 	db LUX_RESTORE
 	db SWEET_SCENT
 	db DREAM_EATER
+	db DOUBLE_TEAM
 	db -1 ; end
 
 DiglettEggMoves:
@@ -286,6 +288,7 @@ PonytaEggMoves:
 	db QUICK_ATTACK
 	db WILD_CHARGE
 	db LUX_RESTORE
+	db DOUBLE_TEAM
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -597,6 +600,7 @@ SpinarakEggMoves:
 	db BATON_PASS
 	db PURSUIT
 	db NIGHT_SLASH
+	db DOUBLE_TEAM
 	db -1 ; end
 
 ChinchouEggMoves:
