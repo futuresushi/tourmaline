@@ -3,7 +3,6 @@
 
 StallMoves:
 	db SWORDS_DANCE
-	db TAIL_WHIP
 	db LEER
 	db GROWL
 	db DISABLE
@@ -16,7 +15,6 @@ StallMoves:
 	db RAGE
 	db SCREECH
 	db DEFENSE_CURL
-	db BARRIER
 	db LIGHT_SCREEN
 	db HAZE
 	db REFLECT
@@ -30,4 +28,6 @@ StallMoves:
 	db FLAME_WHEEL
 	db CALM_MIND
 	db NASTY_PLOT
+	db BULK_UP
+	db ECHOLOCATE
 	db -1 ; end

@@ -17,13 +17,11 @@ EncoreMoves:
 	db HAZE
 	db FOCUS_ENERGY
 	db DREAM_EATER
-	db POISON_GAS
 	db SPLASH
 	db CONVERSION
 	db SUPER_FANG
 	db SUBSTITUTE
 	db TRIPLE_KICK
-	db SPIDER_WEB
 	db LOCK_ON
 	db FLAME_WHEEL
 	db AEROBLAST
@@ -31,4 +29,6 @@ EncoreMoves:
 	db POWDER_SNOW
 	db NASTY_PLOT
 	db CALM_MIND
+	db BULK_UP
+	db ECHOLOCATE
 	db -1 ; end

@@ -10,4 +10,6 @@ SunnyDayMoves:
 	db SOLARBEAM
 	db SACRED_FIRE
 	db LUX_RESTORE
+	db FLAME_CHARGE
+	db HEAT_WAVE
 	db -1 ; end
