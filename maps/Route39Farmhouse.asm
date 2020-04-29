@@ -174,7 +174,7 @@ FarmerFText_HealedMiltank:
 
 Text_ReceivedTM13:
 	text "<PLAYER> received"
-	line "TM13."
+	line "TM13 HEAT WAVE."
 	done
 
 FarmerFText_HeatWaveSpeech:
