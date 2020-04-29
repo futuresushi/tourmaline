@@ -210,10 +210,10 @@ endc
 ENDM
 
 ; see data/moves/tmhm_moves.asm for moves
-	add_tm DYNAMICPUNCH ; bf
+	add_tm BULK_UP      ; bf
 	add_tm HEADBUTT     ; c0
 	add_tm CURSE        ; c1
-	add_tm ROLLOUT      ; c2
+	add_tm X_SCISSOR    ; c2
 	add_tm ROAR         ; c4
 	add_tm TOXIC        ; c5
 	add_tm ZAP_CANNON   ; c6
@@ -222,7 +222,7 @@ ENDM
 	add_tm HIDDEN_POWER ; c9
 	add_tm SUNNY_DAY    ; ca
 	add_tm SWEET_SCENT  ; cb
-	add_tm SNORE        ; cc
+	add_tm HEAT_WAVE    ; cc
 	add_tm BLIZZARD     ; cd
 	add_tm HYPER_BEAM   ; ce
 	add_tm ICY_WIND     ; cf
@@ -230,10 +230,10 @@ ENDM
 	add_tm RAIN_DANCE   ; d1
 	add_tm GIGA_DRAIN   ; d2
 	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
+	add_tm WILL_O_WISP  ; d4
 	add_tm SOLARBEAM    ; d5
 	add_tm IRON_TAIL    ; d6
-	add_tm DRAGONBREATH ; d7
+	add_tm DRAGON_PULSE ; d7
 	add_tm THUNDER      ; d8
 	add_tm EARTHQUAKE   ; d9
 	add_tm RETURN       ; da
@@ -241,7 +241,7 @@ ENDM
 	add_tm PSYCHIC_M    ; dd
 	add_tm SHADOW_BALL  ; de
 	add_tm AERIAL_ACE   ; df
-	add_tm DOUBLE_TEAM  ; e0
+	add_tm FOCUS_BLAST  ; e0
 	add_tm ICE_PUNCH    ; e1
 	add_tm SWAGGER      ; e2
 	add_tm SLEEP_TALK   ; e3
@@ -249,17 +249,17 @@ ENDM
 	add_tm SANDSTORM    ; e5
 	add_tm FIRE_BLAST   ; e6
 	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8
+	add_tm DARK_PULSE   ; e8
 	add_tm THUNDERPUNCH ; e9
-	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb
+	add_tm DRILL_RUN    ; ea
+	add_tm ENERGY_BALL  ; eb
 	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed
+	add_tm ECHOED_VOICE ; ed
 	add_tm THIEF        ; ee
 	add_tm STEEL_WING   ; ef
 	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
-	add_tm NIGHTMARE    ; f2
+	add_tm SIGNAL_BEAM  ; f1
+	add_tm SHADOW_CLAW  ; f2
 NUM_TMS EQU const_value - TM01 ; discount ITEM_C3 and ITEM_DC
 
 add_hm: MACRO
