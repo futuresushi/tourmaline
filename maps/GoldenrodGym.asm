@@ -48,8 +48,8 @@ GoldenrodGymWhitneyScript:
 	end
 
 .StoppedCrying:
-	checkevent EVENT_GOT_TM45_ATTRACT
-	iftrue .GotAttract
+	checkevent EVENT_GOT_TM45_ECHOED_VOICE
+	iftrue .GotEchoedVoice
 	checkflag ENGINE_PLAINBADGE
 	iftrue .GotPlainBadge
 	writetext WhitneyWhatDoYouWantText
@@ -64,18 +64,18 @@ GoldenrodGymWhitneyScript:
 .GotPlainBadge:
 	writetext WhitneyPlainBadgeText
 	promptbutton
-	verbosegiveitem TM_ATTRACT
-	iffalse .NoRoomForAttract
-	setevent EVENT_GOT_TM45_ATTRACT
-	writetext WhitneyAttractText
+	verbosegiveitem TM_ECHOED_VOICE
+	iffalse .NoRoomForEchoedVoice
+	setevent EVENT_GOT_TM45_ECHOED_VOICE
+	writetext WhitneyEchoedVoiceText
 	waitbutton
 	closetext
 	end
 
-.GotAttract:
+.GotEchoedVoice:
 	writetext WhitneyGoodCryText
 	waitbutton
-.NoRoomForAttract:
+.NoRoomForEchoedVoice:
 	closetext
 	end
 
@@ -248,12 +248,12 @@ WhitneyPlainBadgeText:
 	line "this too!"
 	done
 
-WhitneyAttractText:
-	text "It's ATTRACT!"
-	line "It makes full use"
+WhitneyEchoedVoiceText:
+	text "It's ECHOED VOICE!"
+	line "It keeps getting"
 
-	para "of a #MON's"
-	line "charm."
+	para "stronger every"
+	line "time you use it!"
 
 	para "Isn't it just per-"
 	line "fect for a cutie"
