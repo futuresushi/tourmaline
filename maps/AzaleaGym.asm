@@ -33,26 +33,26 @@ AzaleaGymBugsyScript:
 	readvar VAR_BADGES
 	scall AzaleaGymActivateRockets
 .FightDone:
-	checkevent EVENT_GOT_TM49_FURY_CUTTER
-	iftrue .GotFuryCutter
+	checkevent EVENT_GOT_TM49_SIGNAL_BEAM
+	iftrue .GotSignalBeam
 	setevent EVENT_BEAT_TWINS_AMY_AND_MAY
 	setevent EVENT_BEAT_BUG_CATCHER_BENNY
 	setevent EVENT_BEAT_BUG_CATCHER_AL
 	setevent EVENT_BEAT_BUG_CATCHER_JOSH
 	writetext BugsyText_HiveBadgeSpeech
 	promptbutton
-	verbosegiveitem TM_FURY_CUTTER
-	iffalse .NoRoomForFuryCutter
-	setevent EVENT_GOT_TM49_FURY_CUTTER
-	writetext BugsyText_FuryCutterSpeech
+	verbosegiveitem TM_SIGNAL_BEAM
+	iffalse .NoRoomForSignalBeam
+	setevent EVENT_GOT_TM49_SIGNAL_BEAM
+	writetext BugsyText_SignalBeamSpeech
 	waitbutton
 	closetext
 	end
 
-.GotFuryCutter:
+.GotSignalBeam:
 	writetext BugsyText_BugMonsAreDeep
 	waitbutton
-.NoRoomForFuryCutter:
+.NoRoomForSignalBeam:
 	closetext
 	end
 
@@ -203,17 +203,13 @@ BugsyText_HiveBadgeSpeech:
 	line "you to have this."
 	done
 
-BugsyText_FuryCutterSpeech:
+BugsyText_SignalBeamSpeech:
 	text "TM49 contains"
-	line "FURY CUTTER."
+	line "SIGNAL BEAM."
 
-	para "If you don't miss,"
-	line "it gets stronger"
-	cont "every turn."
-
-	para "The longer your"
-	line "battle goes, the"
-	cont "better it gets."
+	para "It shoots a weird,"
+	line "beam that can"
+	cont "confuse your foe!"
 
 	para "Isn't that great?"
 	line "I discovered it!"
