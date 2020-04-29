@@ -149,6 +149,7 @@ ZubatEggMoves:
 	db ZEN_HEADBUTT
 	db BRAVE_BIRD
 	db DOUBLE_TEAM
+	db ATTRACT
 	db -1 ; end
 
 OddishEggMoves:
@@ -420,6 +421,7 @@ ChanseyEggMoves:
 	db METRONOME
 	db HEAL_BELL
 	db ATTRACT
+	db ROLLOUT
 	db -1 ; end
 
 TangelaEggMoves:
@@ -436,6 +438,7 @@ KangaskhanEggMoves:
 	db FOCUS_ENERGY
 	db SAFEGUARD
 	db DISABLE
+	db ATTRACT
 	db -1 ; end
 
 HorseaEggMoves:
@@ -490,6 +493,7 @@ EeveeEggMoves:
 	db MUD_SLAP
 	db SWIFT
 	db DOUBLE_TEAM
+	db ATTRACT
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -519,6 +523,7 @@ SnorlaxEggMoves:
 	db LICK
 	db SEED_BOMB
 	db WILD_CHARGE
+	db ATTRACT
 	db -1 ; end
 
 DratiniEggMoves:
@@ -916,6 +921,7 @@ HoundourEggMoves:
 	db ENDURE
 	db MUD_SLAP
 	db FLAME_CHARGE
+	db DREAM_EATER
 	db -1 ; end
 
 PhanpyEggMoves:
