@@ -1,10 +1,10 @@
 TMHMMoves:
 ; entries correspond to *_TMNUM enums (see constants/item_constants.asm)
 ; TMs
-	db DYNAMICPUNCH
+	db BULK_UP
 	db HEADBUTT
 	db CURSE
-	db ROLLOUT
+	db X_SCISSOR
 	db ROAR
 	db TOXIC
 	db ZAP_CANNON
@@ -13,7 +13,7 @@ TMHMMoves:
 	db HIDDEN_POWER
 	db SUNNY_DAY
 	db SWEET_SCENT
-	db SNORE
+	db HEAT_WAVE
 	db BLIZZARD
 	db HYPER_BEAM
 	db ICY_WIND
@@ -21,10 +21,10 @@ TMHMMoves:
 	db RAIN_DANCE
 	db GIGA_DRAIN
 	db ENDURE
-	db FRUSTRATION
+	db WILL_O_WISP
 	db SOLARBEAM
 	db IRON_TAIL
-	db DRAGONBREATH
+	db DRAGON_PULSE
 	db THUNDER
 	db EARTHQUAKE
 	db RETURN
@@ -32,7 +32,7 @@ TMHMMoves:
 	db PSYCHIC_M
 	db SHADOW_BALL
 	db AERIAL_ACE
-	db DOUBLE_TEAM
+	db FOCUS_BLAST
 	db ICE_PUNCH
 	db SWAGGER
 	db SLEEP_TALK
@@ -40,17 +40,17 @@ TMHMMoves:
 	db SANDSTORM
 	db FIRE_BLAST
 	db SWIFT
-	db DEFENSE_CURL
+	db DARK_PULSE
 	db THUNDERPUNCH
-	db DREAM_EATER
-	db DETECT
+	db DRILL_RUN
+	db ENERGY_BALL
 	db REST
-	db ATTRACT
+	db ECHOED_VOICE
 	db THIEF
 	db STEEL_WING
 	db FIRE_PUNCH
-	db FURY_CUTTER
-	db NIGHTMARE
+	db SIGNAL_BEAM
+	db SHADOW_CLAW
 ; HMs
 	db CUT
 	db FLY
