@@ -1807,6 +1807,8 @@ BattleAnim_Supersonic:
 	anim_wait 64
 	anim_ret
 
+BattleAnim_Echolocate:
+BattleAnim_EchoedVoice:
 BattleAnim_HyperVoice:
 	anim_1gfx ANIM_GFX_PSYCHIC
 	anim_bgeffect ANIM_BG_1F, $8, $1, $20
