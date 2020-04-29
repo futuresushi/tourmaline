@@ -68,25 +68,25 @@ FarmerMScript_Milking:
 PokefanF_SnoreFarmer:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
-	iftrue FarmerFScript_GotSnore
+	checkevent EVENT_GOT_TM13_HEAT_WAVE_FROM_MOOMOO_FARM
+	iftrue FarmerFScript_GotHeatWave
 	checkevent EVENT_HEALED_MOOMOO
-	iftrue FarmerFScript_GiveSnore
+	iftrue FarmerFScript_GiveHeatWave
 	writetext FarmerFText_InTrouble
 	waitbutton
 	closetext
 	end
 
-FarmerFScript_GiveSnore:
+FarmerFScript_GiveHeatWave:
 	writetext FarmerFText_HealedMiltank
 	promptbutton
-	verbosegiveitem TM_SNORE
-	iffalse FarmerFScript_NoRoomForSnore
-	setevent EVENT_GOT_TM13_SNORE_FROM_MOOMOO_FARM
-FarmerFScript_GotSnore:
-	writetext FarmerFText_SnoreSpeech
+	verbosegiveitem TM_HEAT_WAVE
+	iffalse FarmerFScript_NoRoomForHeatWave
+	setevent EVENT_GOT_TM13_HEAT_WAVE_FROM_MOOMOO_FARM
+FarmerFScript_GotHeatWave:
+	writetext FarmerFText_HeatWaveSpeech
 	waitbutton
-FarmerFScript_NoRoomForSnore:
+FarmerFScript_NoRoomForHeatWave:
 	closetext
 	end
 
@@ -162,7 +162,7 @@ FarmerFText_InTrouble:
 	done
 
 FarmerFText_HealedMiltank:
-	text "You fixed our"
+	text "You healed our"
 	line "MILTANK, hon. Now"
 
 	para "it gives MOOMOO"
@@ -177,19 +177,17 @@ Text_ReceivedTM13:
 	line "TM13."
 	done
 
-FarmerFText_SnoreSpeech:
+FarmerFText_HeatWaveSpeech:
 	text "That there's"
-	line "SNORE."
+	line "HEAT WAVE."
 
-	para "It's a rare move"
-	line "that only works"
+	para "It's a hot wind"
+	line "that can burn"
+	cont "the opponent!"
 
-	para "while the #MON"
-	line "is asleep."
-
-	para "You best think how"
-	line "you ought to use"
-	cont "it, hon."
+	para "If you use it"
+	line "here you'll spoil"
+	cont "the milk, hon!"
 	done
 
 Route39Farmhouse_MapEvents:
