@@ -396,7 +396,7 @@ BattleTowerMons1:
 
 	db SNORLAX
 	db LUM_BERRY
-	db HEADBUTT, PROTECT, SNORE, SURF
+	db HEADBUTT, PROTECT, SLEEP_TALK, SURF
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -500,7 +500,7 @@ BattleTowerMons1:
 
 	db TAUROS
 	db KINGS_ROCK
-	db HEADBUTT, SWAGGER, TAIL_WHIP, ICY_WIND
+	db HEADBUTT, SWAGGER, LEER, ICY_WIND
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -945,7 +945,7 @@ BattleTowerMons2:
 
 	db AZUMARILL
 	db MYSTIC_WATER
-	db SURF, BLIZZARD, ATTRACT, RAIN_DANCE
+	db WATERFALL, ICE_PUNCH, PLAY_ROUGH, RAIN_DANCE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -1130,7 +1130,7 @@ BattleTowerMons3:
 
 	db POLIWRATH
 	db BRIGHTPOWDER
-	db DOUBLE_TEAM, SURF, BASS_TREMOR, SUBMISSION
+	db WATERFALL, SURF, BASS_TREMOR, SUBMISSION
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1234,7 +1234,7 @@ BattleTowerMons3:
 
 	db BELLOSSOM
 	db BRIGHTPOWDER
-	db GIGA_DRAIN, SUNNY_DAY, SOLARBEAM, DOUBLE_TEAM
+	db GIGA_DRAIN, SUNNY_DAY, SOLARBEAM, LUX_RESTORE
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1338,7 +1338,7 @@ BattleTowerMons3:
 
 	db CROBAT
 	db SITRUS_BERRY
-	db ATTRACT, CONFUSE_RAY, TOXIC, WING_ATTACK
+	db AIR_SLASH, CONFUSE_RAY, TOXIC, WING_ATTACK
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1679,7 +1679,7 @@ BattleTowerMons4:
 
 	db KINGDRA
 	db LEFTOVERS
-	db SURF, DRAGONBREATH, HYPER_BEAM, BLIZZARD
+	db SURF, DRAGON_PULSE, HYPER_BEAM, BLIZZARD
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2173,7 +2173,7 @@ BattleTowerMons4:
 
 	db ELECTABUZZ
 	db KINGS_ROCK
-	db LIGHT_SCREEN, THUNDERPUNCH, SWIFT, SNORE
+	db LIGHT_SCREEN, THUNDERPUNCH, SWIFT, SLEEP_TALK
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp
@@ -2202,7 +2202,7 @@ BattleTowerMons5:
 
 	db KINGDRA
 	db SITRUS_BERRY
-	db SURF, HYPER_BEAM, BLIZZARD, DRAGONBREATH
+	db SURF, HYPER_BEAM, BLIZZARD, DRAGON_PULSE
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -2228,7 +2228,7 @@ BattleTowerMons5:
 
 	db HOUNDOOM
 	db LUM_BERRY
-	db REST, CRUNCH, DREAM_EATER, FLAMETHROWER
+	db REST, CRUNCH, DARK_PULSE, FLAMETHROWER
 	dw 0 ; OT ID
 	dt 125000 ; Exp
 	; Stat exp
@@ -3219,7 +3219,7 @@ BattleTowerMons6:
 
 	db SANDSLASH
 	db SCOPE_LENS
-	db EARTHQUAKE, SLASH, HYPER_BEAM, SNORE
+	db EARTHQUAKE, SLASH, HYPER_BEAM, SLEEP_TALK
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3271,7 +3271,7 @@ BattleTowerMons6:
 
 	db GOLEM
 	db BRIGHTPOWDER
-	db EXPLOSION, EARTHQUAKE, FIRE_PUNCH, FRUSTRATION
+	db EXPLOSION, EARTHQUAKE, FIRE_PUNCH, RETURN
 	dw 0 ; OT ID
 	dt 216000 ; Exp
 	; Stat exp
@@ -3282,7 +3282,7 @@ BattleTowerMons6:
 	bigdw 30000
 	dn 7, 6, 5, 7 ; DVs
 	db 5, 10, 15, 20 ; PP
-	db 0 ; Happiness
+	db 255 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
@@ -3875,7 +3875,7 @@ BattleTowerMons8:
 
 	db SNORLAX
 	db LEFTOVERS
-	db REST, BELLY_DRUM, SNORE, EARTHQUAKE
+	db REST, BELLY_DRUM, SLEEP_TALK, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 512000 ; Exp
 	; Stat exp
@@ -4554,7 +4554,7 @@ BattleTowerMons9:
 
 	db KINGDRA
 	db LEFTOVERS
-	db DRAGONBREATH, SURF, HYPER_BEAM, BLIZZARD
+	db DRAGON_PULSE, SURF, HYPER_BEAM, BLIZZARD
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -4918,7 +4918,7 @@ BattleTowerMons9:
 
 	db MUK
 	db QUICK_CLAW
-	db TOXIC, SLUDGE_BOMB, ATTRACT, GIGA_DRAIN
+	db TOXIC, SLUDGE_BOMB, MOONBLAST, GIGA_DRAIN
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp
@@ -5259,7 +5259,7 @@ BattleTowerMons10:
 
 	db SNEASEL
 	db SCOPE_LENS
-	db SLASH, BLIZZARD, DREAM_EATER, FAINT_ATTACK
+	db SLASH, BLIZZARD, ICICLE_CRASH, NIGHT_SLASH
 	dw 0 ; OT ID
 	dt 1000000 ; Exp
 	; Stat exp
