@@ -71,7 +71,7 @@ EvolutionMoves::
 	db NO_MOVE      ; WEEPINBELL
 	db NO_MOVE      ; VICTREEBEL
 	db NO_MOVE      ; TENTACOOL
-	db WRAP         ; TENTACRUEL
+	db POWER_WHIP   ; TENTACRUEL
 	db NO_MOVE      ; GEODUDE
 	db NO_MOVE      ; GRAVELER
 	db NO_MOVE      ; GOLEM
@@ -85,7 +85,7 @@ EvolutionMoves::
 	db NO_MOVE      ; DODUO
 	db TRI_ATTACK   ; DODRIO
 	db NO_MOVE      ; SEEL
-	db NO_MOVE      ; DEWGONG
+	db ICICLE_SPEAR ; DEWGONG
 	db NO_MOVE      ; GRIMER
 	db NO_MOVE      ; MUK
 	db NO_MOVE      ; SHELLDER
@@ -137,7 +137,7 @@ EvolutionMoves::
 	db EMBER        ; FLAREON
 	db NO_MOVE      ; PORYGON
 	db NO_MOVE      ; OMANYTE
-	db SPIKE_CANNON ; OMASTAR
+	db ICICLE_SPEAR ; OMASTAR
 	db NO_MOVE      ; KABUTO
 	db SLASH        ; KABUTOPS
 	db NO_MOVE      ; AERODACTYL
@@ -158,7 +158,7 @@ EvolutionMoves::
 	db FIRE_PUNCH   ; TYPHLOSION
 	db NO_MOVE      ; TOTODILE
 	db NO_MOVE      ; CROCONAW
-	db SHADOW_CLAW  ; FERALIGATR make it night slash later
+	db NIGHT_SLASH  ; FERALIGATR
 	db NO_MOVE      ; SENTRET
 	db AGILITY      ; FURRET
 	db NO_MOVE      ; HOOTHOOT
@@ -176,7 +176,7 @@ EvolutionMoves::
 	db NO_MOVE      ; TOGEPI
 	db FAIRY_WIND   ; TOGETIC
 	db NO_MOVE      ; NATU
-	db NO_MOVE      ; XATU
+	db AIR_SLASH    ; XATU
 	db NO_MOVE      ; MAREEP
 	db NO_MOVE      ; FLAAFFY
 	db THUNDERPUNCH ; AMPHAROS
@@ -228,7 +228,7 @@ EvolutionMoves::
 	db NO_MOVE      ; SKARMORY
 	db NO_MOVE      ; HOUNDOUR
 	db NO_MOVE      ; HOUNDOOM
-	db DRAGONBREATH ; KINGDRA
+	db DRAGON_PULSE ; KINGDRA
 	db NO_MOVE      ; PHANPY
 	db EARTH_POWER  ; DONPHAN
 	db NO_MOVE      ; PORYGON2
