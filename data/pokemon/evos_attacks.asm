@@ -575,6 +575,7 @@ ZubatEvosAttacks:
 	db 27, AIR_SLASH
 	db 31, LEECH_LIFE
 	db 36, MEAN_LOOK
+	db 40, DOUBLE_TEAM
 	db 46, HAZE
 	db 0 ; no more level-up moves
 
@@ -592,6 +593,7 @@ GolbatEvosAttacks:
 	db 30, AIR_SLASH
 	db 37, LEECH_LIFE
 	db 42, MEAN_LOOK
+	db 48, DOUBLE_TEAM
 	db 55, HAZE
 	db 0 ; no more level-up moves
 
@@ -2468,6 +2470,7 @@ CrobatEvosAttacks:
 	db 30, AIR_SLASH
 	db 37, LEECH_LIFE
 	db 42, MEAN_LOOK
+	db 48, DOUBLE_TEAM
 	db 55, HAZE
 	db 0 ; no more level-up moves
 
@@ -3369,6 +3372,7 @@ TyrogueEvosAttacks:
 	db EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 25, DOUBLE_TEAM
 	db 0 ; no more level-up moves
 
 HitmontopEvosAttacks:
