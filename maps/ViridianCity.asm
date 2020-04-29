@@ -47,20 +47,20 @@ ViridianCityGrampsNearGym:
 	closetext
 	end
 
-ViridianCityDreamEaterFisher:
+ViridianCityDrillRunFisher:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM42_DREAM_EATER
-	iftrue .GotDreamEater
-	writetext ViridianCityDreamEaterFisherText
+	checkevent EVENT_GOT_TM42_DRILL_RUN
+	iftrue .GotDrillRun
+	writetext ViridianCityDrillRunFisherText
 	promptbutton
-	verbosegiveitem TM_DREAM_EATER
-	iffalse .NoRoomForDreamEater
-	setevent EVENT_GOT_TM42_DREAM_EATER
-.GotDreamEater:
-	writetext ViridianCityDreamEaterFisherGotDreamEaterText
+	verbosegiveitem TM_DRILL_RUN
+	iffalse .NoRoomForDrillRun
+	setevent EVENT_GOT_TM42_DRILL_RUN
+.GotDrillRun:
+	writetext ViridianCityDrillRunFisherGotDrillRunText
 	waitbutton
-.NoRoomForDreamEater:
+.NoRoomForDrillRun:
 	closetext
 	end
 
@@ -144,17 +144,17 @@ ViridianCityGrampsNearGymBlueReturnedText:
 	line "You'll need it."
 	done
 
-ViridianCityDreamEaterFisherText:
+ViridianCityDrillRunFisherText:
 	text "Yawn!"
 
 	para "I must have dozed"
 	line "off in the sun."
 
 	para "…I had this dream"
-	line "about a DROWZEE"
+	line "about a cool drill"
 
-	para "eating my dream."
-	line "Weird, huh?"
+	para "that pierced the"
+	line "heavens!"
 
 	para "Huh?"
 	line "What's this?"
@@ -162,14 +162,14 @@ ViridianCityDreamEaterFisherText:
 	para "Where did this TM"
 	line "come from?"
 
-	para "This is spooky!"
+	para "This is weird!"
 	line "Here, you can have"
 	cont "this TM."
 	done
 
-ViridianCityDreamEaterFisherGotDreamEaterText:
+ViridianCityDrillRunFisherGotDrillRunText:
 	text "TM42 contains"
-	line "DREAM EATER…"
+	line "DRILL RUN…"
 
 	para "…Zzzzz…"
 	done
@@ -236,5 +236,5 @@ ViridianCity_MapEvents:
 	db 4 ; object events
 	object_event 18,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianCityCoffeeGramps, -1
 	object_event 30,  8, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianCityGrampsNearGym, -1
-	object_event  6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDreamEaterFisher, -1
+	object_event  6, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianCityDrillRunFisher, -1
 	object_event 17, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianCityYoungsterScript, -1
