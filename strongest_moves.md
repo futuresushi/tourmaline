@@ -1,17 +1,17 @@
 # Strongest Moves
-## Normal:
+## Rock:
 ### Physical
 - Strongest Move:
-  - Name: Skull Bash
-  - Power: 130
-  - Accuracy: 100
-- Move Count: 31
+  - Name: Rock Slide
+  - Power: 75
+  - Accuracy: 90
+- Move Count: 3
 ### Special
 - Strongest Move:
-  - Name: Tri Attack
+  - Name: Power Gem
   - Power: 80
   - Accuracy: 100
-- Move Count: 5
+- Move Count: 2
 ---
 ## Fighting:
 ### Physical
@@ -50,10 +50,24 @@
 - Move Count: 7
 ### Special
 - Strongest Move:
-  - Name: Gust
-  - Power: 40
+  - Name: Air Slash
+  - Power: 75
+  - Accuracy: 95
+- Move Count: 4
+---
+## Normal:
+### Physical
+- Strongest Move:
+  - Name: Thrash
+  - Power: 120
   - Accuracy: 100
-- Move Count: 3
+- Move Count: 26
+### Special
+- Strongest Move:
+  - Name: Tri Attack
+  - Power: 80
+  - Accuracy: 100
+- Move Count: 4
 ---
 ## Fire:
 ### Physical
@@ -61,13 +75,13 @@
   - Name: Flare Blitz
   - Power: 120
   - Accuracy: 100
-- Move Count: 4
+- Move Count: 5
 ### Special
 - Strongest Move:
   - Name: Fire Blast
   - Power: 110
   - Accuracy: 85
-- Move Count: 4
+- Move Count: 5
 ---
 ## Ice:
 ### Physical
@@ -75,7 +89,7 @@
   - Name: Icicle Crash
   - Power: 85
   - Accuracy: 90
-- Move Count: 2
+- Move Count: 4
 ### Special
 - Strongest Move:
   - Name: Ice Beam
@@ -103,7 +117,7 @@
   - Name: Iron Head
   - Power: 80
   - Accuracy: 100
-- Move Count: 5
+- Move Count: 6
 ### Special
 - Strongest Move:
   - Name: Flash Cannon
@@ -111,19 +125,33 @@
   - Accuracy: 100
 - Move Count: 1
 ---
+## Dragon:
+### Physical
+- Strongest Move:
+  - Name: Outrage
+  - Power: 120
+  - Accuracy: 100
+- Move Count: 2
+### Special
+- Strongest Move:
+  - Name: Dragon Pulse
+  - Power: 85
+  - Accuracy: 100
+- Move Count: 4
+---
 ## Grass:
 ### Physical
 - Strongest Move:
-  - Name: Seed Bomb
-  - Power: 80
-  - Accuracy: 100
-- Move Count: 3
+  - Name: Power Whip
+  - Power: 120
+  - Accuracy: 85
+- Move Count: 4
 ### Special
 - Strongest Move:
   - Name: Petal Dance
   - Power: 120
   - Accuracy: 100
-- Move Count: 4
+- Move Count: 5
 ---
 ## Sound:
 ### Physical
@@ -137,7 +165,7 @@
   - Name: Hyper Voice
   - Power: 90
   - Accuracy: 100
-- Move Count: 4
+- Move Count: 5
 ---
 ## Ground:
 ### Physical
@@ -145,7 +173,7 @@
   - Name: Earthquake
   - Power: 100
   - Accuracy: 100
-- Move Count: 5
+- Move Count: 6
 ### Special
 - Strongest Move:
   - Name: Earth Power
@@ -165,7 +193,7 @@
   - Name: Sludge Bomb
   - Power: 90
   - Accuracy: 100
-- Move Count: 4
+- Move Count: 3
 ---
 ## Bug:
 ### Physical
@@ -173,13 +201,13 @@
   - Name: Megahorn
   - Power: 120
   - Accuracy: 85
-- Move Count: 6
+- Move Count: 5
 ### Special
 - Strongest Move:
   - Name: Bug Buzz
   - Power: 90
   - Accuracy: 100
-- Move Count: 1
+- Move Count: 2
 ---
 ## Dark:
 ### Physical
@@ -187,7 +215,7 @@
   - Name: Crunch
   - Power: 80
   - Accuracy: 100
-- Move Count: 5
+- Move Count: 6
 ### Special
 - Strongest Move:
   - Name: Dark Pulse
@@ -222,34 +250,6 @@
   - Power: 120
   - Accuracy: 100
 - Move Count: 6
----
-## Dragon:
-### Physical
-- Strongest Move:
-  - Name: Outrage
-  - Power: 120
-  - Accuracy: 100
-- Move Count: 1
-### Special
-- Strongest Move:
-  - Name: Dragonbreath
-  - Power: 60
-  - Accuracy: 100
-- Move Count: 3
----
-## Rock:
-### Physical
-- Strongest Move:
-  - Name: Rock Slide
-  - Power: 75
-  - Accuracy: 90
-- Move Count: 3
-### Special
-- Strongest Move:
-  - Name: Ancientpower
-  - Power: 60
-  - Accuracy: 100
-- Move Count: 1
 ---
 ## Ghost:
 ### Physical
