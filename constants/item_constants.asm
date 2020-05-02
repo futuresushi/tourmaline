@@ -283,8 +283,8 @@ NUM_HMS EQU const_value - HM01
 add_mt: MACRO
 	enum \1_TMNUM
 ENDM
-+; Move tutor moves don't have item constants, but do need
-+; to be added after TMs and HMs for learnset compatibility!
+; Move tutor moves don't have item constants, but do need
+; to be added after TMs and HMs for learnset compatibility!
 	add_mt FLAMETHROWER
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
