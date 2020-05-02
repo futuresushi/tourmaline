@@ -35,20 +35,6 @@ MoveTutor:
 
 .GetMoveTutorMove:
 	ld a, [wScriptVar]
-	cp MOVETUTOR_FLAMETHROWER
-	jr z, .flamethrower
-	cp MOVETUTOR_THUNDERBOLT
-	jr z, .thunderbolt
-	; MOVETUTOR_ICE_BEAM
-	ld a, ICE_BEAM
-	ret
-
-.flamethrower
-	ld a, FLAMETHROWER
-	ret
-
-.thunderbolt
-	ld a, THUNDERBOLT
 	ret
 
 CheckCanLearnMoveTutorMove:
