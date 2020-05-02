@@ -63,4 +63,5 @@ TMHMMoves:
 	db FLAMETHROWER
 	db THUNDERBOLT
 	db ICE_BEAM
+	db SOFTBOILED
 	db 0 ; end
