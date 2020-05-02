@@ -33,8 +33,38 @@ CeladonCityPoliwrath:
 CeladonCityTeacher1Script:
 	jumptextfaceplayer CeladonCityTeacher1Text
 
-CeladonCityGramps1Script:
-	jumptextfaceplayer CeladonCityGramps1Text
+CeladonCityTutorSoftboiledScript:
+	faceplayer
+	opentext
+	writetext CeladonCityTutorSoftboiledText
+	waitbutton
+	checkitem POKE_DOLL
+	iffalse .NoPokeDoll
+	writetext CeladonCityTutorSoftboiledText2
+	yesorno
+	iffalse .TutorRefused
+	writebyte SOFTBOILED
+	writetext CeladonCityTutorSoftboiledClear
+	special MoveTutor
+	if_equal $0, .TeachMove
+	
+.NoPokeDoll:
+       writetext CeladonCityTutorNoDoll
+       waitbutton
+       closetext
+       end
+
+.TutorRefused
+	writetext CeladonCityTutorSoftboiledRefused
+	waitbutton
+	closetext
+	end
+
+.TeachMove
+	writetext CeladonCityTutorSoftboiledTaught
+	waitbutton
+	closetext
+	end
 
 CeladonCityGramps2Script:
 	jumptextfaceplayer CeladonCityGramps2Text
@@ -105,19 +135,49 @@ else
 	done
 endc
 
-CeladonCityGramps1Text:
-	text "GRIMER have been"
-	line "appearing lately."
+CeladonCityTutorSoftboiledText:
+	text "Hello there!"
+	line "I've seen you"
+	cont "running around."
+	para "It must be good"
+	line "luck that brought"
+	cont "us together."
+	done
+	
+CeladonCityTutorSoftboiledText2:	
+	text "Would you like me"
+	line "to teach your"
+	para "#MON to use"
+	line "SOFTBOILED"
+	
+CeladonCityTutorSoftboiledClear:
+	text ""
+	done
+	
+CeladonCityTutorSoftboiledRefused:
+	text "OK then."
+	done
+	
+CeladonCityTutorSoftboiledTaught:
+	text "Now if your"
+	line "#MON is in a"
+	para "pinch, they can" 
+	line "eat an egg"
+	cont "and restore HP."
+	para "Or if they are"
+	line "feeling a bit"
+	cont "hungry, hohoho!"
+	done
 
-	para "See that pond out"
-	line "in front of the"
+CeladonCityTutorNoDoll:
+	text "Ah, you don't"
+	line "have a #DOLL."
 
-	para "house? GRIMER live"
-	line "there now."
-
-	para "Where did they"
-	line "come from? This is"
-	cont "a serious problem…"
+	para "You can get one"
+	line "from the DEPT."
+	
+	para "STORE in CEL-"
+	line "ADON CITY."
 	done
 
 CeladonCityGramps2Text:
@@ -275,7 +335,7 @@ CeladonCity_MapEvents:
 	object_event 26, 11, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityFisherScript, -1
 	object_event 27, 11, SPRITE_POLIWAG, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityPoliwrath, -1
 	object_event 20, 24, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityTeacher1Script, -1
-	object_event 14, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps1Script, -1
+	object_event 14, 16, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CeladonCityTutorSoftboiledScript, -1
 	object_event  8, 31, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CeladonCityGramps2Script, -1
 	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster1Script, -1
 	object_event 24, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CeladonCityYoungster2Script, -1
