@@ -62,6 +62,7 @@ CeladonCityTutorSoftboiledScript:
 	end
 
 .TeachMove
+	writetext CeladonCityTutorPayment
 	writetext CeladonCityTutorSoftboiledTaught
 	waitbutton
 	closetext
@@ -153,6 +154,10 @@ CeladonCityTutorSoftboiledText2:
 	line "a #DOLL"
 	
 CeladonCityTutorSoftboiledClear:
+	text ""
+	done
+	
+CeladonCityTutorPayment:
 	text "<PLAYER> gave a"
 	line "#DOLL to the man."
 	done
