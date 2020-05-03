@@ -744,7 +744,7 @@ WaterfallDescription:
 
 DragonPulseDescription:
 	db   "Attack with a ball"
-	next "of shining light."
+	next "of shining light.@"
 
 AerialAceDescription:
 SwiftDescription:
