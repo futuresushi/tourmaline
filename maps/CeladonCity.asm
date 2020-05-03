@@ -153,7 +153,8 @@ CeladonCityTutorSoftboiledText2:
 	line "a #DOLL"
 	
 CeladonCityTutorSoftboiledClear:
-	text ""
+	text "<PLAYER> gave a"
+	line "#DOLL to the man."
 	done
 	
 CeladonCityTutorSoftboiledRefused:
