@@ -43,26 +43,26 @@ CeladonCityTutorSoftboiledScript:
 	writetext CeladonCityTutorSoftboiledText2
 	yesorno
 	iffalse .TutorRefused
-	takeitem POKE_DOLL
 	writebyte SOFTBOILED
 	writetext CeladonCityTutorSoftboiledClear
 	special MoveTutor
 	if_equal $0, .TeachMove
 	
-.NoPokeDoll:
-       writetext CeladonCityTutorNoDoll
-       waitbutton
-       closetext
-       end
-
 .TutorRefused
 	writetext CeladonCityTutorSoftboiledRefused
 	waitbutton
 	closetext
 	end
 
+.NoPokeDoll:
+       writetext CeladonCityTutorNoDoll
+       waitbutton
+       closetext
+       end
+
 .TeachMove
 	writetext CeladonCityTutorPayment
+	takeitem POKE_DOLL
 	waitbutton
 	writetext CeladonCityTutorSoftboiledTaught
 	waitbutton
