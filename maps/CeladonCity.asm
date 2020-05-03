@@ -148,10 +148,9 @@ CeladonCityTutorSoftboiledText:
 CeladonCityTutorSoftboiledText2:	
 	text "Would you like me"
 	line "to teach your"
-	para "#MON to use"
-	line "SOFTBOILED? I'll"
-	line "do it for a"
-	line "#DOLL."
+	cont "#MON to use"
+	para "SOFTBOILED for"
+	line "a #DOLL"
 	
 CeladonCityTutorSoftboiledClear:
 	text ""
