@@ -723,8 +723,8 @@ LickDescription:
 	next "cause paralysis.@"
 
 HeatWaveDescription:
-	db   "A hot wind that may"
-	next "burn the foe.@"
+	db   "A hot wind that"
+	next "may burn the foe.@"
 
 SludgeDescription:
 	db   "An attack that may"
