@@ -43,6 +43,7 @@ CeladonCityTutorSoftboiledScript:
 	writetext CeladonCityTutorSoftboiledText2
 	yesorno
 	iffalse .TutorRefused
+	takeitem POKE_DOLL
 	writebyte SOFTBOILED
 	writetext CeladonCityTutorSoftboiledClear
 	special MoveTutor
@@ -148,7 +149,9 @@ CeladonCityTutorSoftboiledText2:
 	text "Would you like me"
 	line "to teach your"
 	para "#MON to use"
-	line "SOFTBOILED"
+	line "SOFTBOILED? I'll"
+	line "do it for a"
+	line "#DOLL."
 	
 CeladonCityTutorSoftboiledClear:
 	text ""
