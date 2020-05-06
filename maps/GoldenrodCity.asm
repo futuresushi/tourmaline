@@ -41,12 +41,12 @@ GoldenrodCity_MapScripts:
 	ifequal WEDNESDAY, .MoveTutorAppear
 	ifequal FRIDAY, .MoveTutorAppear
 	ifequal SATURDAY, .MoveTutorAppear
-	checkevent EVENT_BEAT_PRYCE
-	iffalse .MoveTutorDone
-	readvar VAR_WEEKDAY
-	ifequal TUESDAY, .MoveTutorAppear
-	ifequal THURSDAY, .MoveTutorAppear
-	ifequal SUNDAY, .MoveTutorAppear
+;	checkevent EVENT_BEAT_PRYCE
+;	iffalse .MoveTutorDone
+;	readvar VAR_WEEKDAY
+;	ifequal TUESDAY, .MoveTutorAppear
+;	ifequal THURSDAY, .MoveTutorAppear
+;	ifequal SUNDAY, .MoveTutorAppear
 .MoveTutorDisappear:
 	disappear GOLDENRODCITY_MOVETUTOR
 	return
@@ -70,72 +70,73 @@ MoveTutorScript:
 	iffalse .Refused2
 	checkcoins 500
 	ifequal HAVE_LESS, .NotEnoughMoney
-	readvar VAR_WEEKDAY
-	ifequal TUESDAY, .NastyPlot
-	ifequal THURSDAY, .SwordsDance
-	ifequal SUNDAY, .ThunderWave
+;	readvar VAR_WEEKDAY
+;	ifequal TUESDAY, .NastyPlot
+;	ifequal THURSDAY, .SwordsDance
+;	ifequal SUNDAY, .ThunderWave
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .Flamethrower
-	ifequal 2, .Thunderbolt
-	ifequal 3, .IceBeam
+	ifequal MOVETUTOR_FLAMETHROWER, .Flamethrower
+	ifequal MOVETUTOR_THUNDERBOLT, .Thunderbolt
+	ifequal MOVETUTOR_ICE_BEAM, .IceBeam
 	sjump .Incompatible
 
 .Flamethrower:
-	writebyte FLAMETHROWER
+	setval FLAMETHROWER
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .Thunderbolt:
-	writebyte THUNDERBOLT
+	setval THUNDERBOLT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .IceBeam:
-	writebyte ICE_BEAM
+	setval ICE_BEAM
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
-	
-.NastyPlot:
-	writetext GoldenrodCityMoveTutorAltTues
-	yesorno
-	iffalse .RefusedAlt
-	writebyte NASTY_PLOT
-	writetext GoldenrodCityMoveTutorMoveText
-	special MoveTutor
-	if_equal $0, .TeachMove
-	sjump .Incompatible
-	iftrue .RefusedAlt
-	
-.SwordsDance:
-	writetext GoldenrodCityMoveTutorAltThur
-	yesorno
-	iffalse .RefusedAlt
-	writebyte SWORDS_DANCE
-	writetext GoldenrodCityMoveTutorMoveText
-	special MoveTutor
-	if_equal $0, .TeachMove
-	sjump .Incompatible
-	iftrue .RefusedAlt
-	
-.ThunderWave:
-	writetext GoldenrodCityMoveTutorAltSun
-	yesorno
-	iffalse .RefusedAlt
-	writebyte THUNDER_WAVE
-	writetext GoldenrodCityMoveTutorMoveText
-	special MoveTutor
-	if_equal $0, .TeachMove
-	sjump .Incompatible
-	iftrue .RefusedAlt
+
+; Expansion, incomplete
+;.NastyPlot:
+;	writetext GoldenrodCityMoveTutorAltTues
+;	yesorno
+;	iffalse .RefusedAlt
+;	writebyte NASTY_PLOT
+;	writetext GoldenrodCityMoveTutorMoveText
+;	special MoveTutor
+;	if_equal $0, .TeachMove
+;	sjump .Incompatible
+;	iftrue .RefusedAlt
+;	
+;.SwordsDance:
+;	writetext GoldenrodCityMoveTutorAltThur
+;	yesorno
+;	iffalse .RefusedAlt
+;	writebyte SWORDS_DANCE
+;	writetext GoldenrodCityMoveTutorMoveText
+;	special MoveTutor
+;	if_equal $0, .TeachMove
+;	sjump .Incompatible
+;	iftrue .RefusedAlt
+;	
+;.ThunderWave:
+;	writetext GoldenrodCityMoveTutorAltSun
+;	yesorno
+;	iffalse .RefusedAlt
+;	writebyte THUNDER_WAVE
+;	writetext GoldenrodCityMoveTutorMoveText
+;	special MoveTutor
+;	if_equal $0, .TeachMove
+;	sjump .Incompatible
+;	iftrue .RefusedAlt
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -157,11 +158,11 @@ MoveTutorScript:
 	closetext
 	end
 	
-.RefusedAlt:
-	writetext GoldenrodCityMoveTutorAltRefusedText
-	waitbutton
-	closetext
-	end
+;.RefusedAlt:
+;	writetext GoldenrodCityMoveTutorAltRefusedText
+;	waitbutton
+;	closetext
+;	end
 
 .Refused2:
 	writetext GoldenrodCityMoveTutorHmTooBadText
