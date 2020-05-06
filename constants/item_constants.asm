@@ -243,7 +243,7 @@ ENDM
 	add_tm AERIAL_ACE   ; df
 	add_tm FOCUS_BLAST  ; e0
 	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2
+	add_tm DAZZLINGLEAM ; e2
 	add_tm SLEEP_TALK   ; e3
 	add_tm SLUDGE_BOMB  ; e4
 	add_tm SANDSTORM    ; e5
@@ -255,7 +255,7 @@ ENDM
 	add_tm ENERGY_BALL  ; eb
 	add_tm REST         ; ec
 	add_tm ECHOED_VOICE ; ed
-	add_tm THIEF        ; ee
+	add_tm WILD_CHARGE  ; ee
 	add_tm STEEL_WING   ; ef
 	add_tm FIRE_PUNCH   ; f0
 	add_tm SIGNAL_BEAM  ; f1
