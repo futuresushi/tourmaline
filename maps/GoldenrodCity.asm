@@ -108,31 +108,28 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltTues
 	yesorno
 	iffalse .RefusedAlt
-	setval NASTY_PLOT
+	writebyte NASTY_PLOT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
 	
 .SwordsDance:
 	writetext GoldenrodCityMoveTutorAltThur
 	yesorno
 	iffalse .RefusedAlt
-	setval SWORDS_DANCE
+	writebyte SWORDS_DANCE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
 	
 .ThunderWave:
 	writetext GoldenrodCityMoveTutorAltSun
 	yesorno
 	iffalse .RefusedAlt
-	setval THUNDER_WAVE
+	writebyte THUNDER_WAVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
-	sjump .Incompatible
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
