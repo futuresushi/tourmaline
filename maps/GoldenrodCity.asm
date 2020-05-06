@@ -41,6 +41,12 @@ GoldenrodCity_MapScripts:
 	ifequal WEDNESDAY, .MoveTutorAppear
 	ifequal FRIDAY, .MoveTutorAppear
 	ifequal SATURDAY, .MoveTutorAppear
+	checkevent EVENT_BEAT_PRYCE
+	iffalse .MoveTutorDone
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .MoveTutorAppear
+	ifequal THURSDAY, .MoveTutorAppear
+	ifequal SUNDAY, .MoveTutorAppear
 .MoveTutorDisappear:
 	disappear GOLDENRODCITY_MOVETUTOR
 	return
@@ -59,11 +65,15 @@ MoveTutorScript:
 	yesorno
 	iffalse .Refused
 	special DisplayCoinCaseBalance
-	writetext GoldenrodCityMoveTutorAsk4000CoinsOkayText
+	writetext GoldenrodCityMoveTutorAsk500CoinsOkayText
 	yesorno
 	iffalse .Refused2
 	checkcoins 500
 	ifequal HAVE_LESS, .NotEnoughMoney
+	readvar VAR_WEEKDAY
+	ifequal TUESDAY, .NastyPlot
+	ifequal THURSDAY, .SwordsDance
+	ifequal SUNDAY, .ThunderWave
 	writetext GoldenrodCityMoveTutorWhichMoveShouldITeachText
 	loadmenu .MoveMenuHeader
 	verticalmenu
@@ -93,6 +103,36 @@ MoveTutorScript:
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
+	
+.NastyPlot:
+	writetext GoldenrodCityMoveTutorAltTues
+	yesorno
+	iffalse .RefusedAlt
+	setval NASTY_PLOT
+	writetext GoldenrodCityMoveTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.SwordsDance:
+	writetext GoldenrodCityMoveTutorAltThur
+	yesorno
+	iffalse .RefusedAlt
+	setval SWORDS_DANCE
+	writetext GoldenrodCityMoveTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
+	
+.ThunderWave:
+	writetext GoldenrodCityMoveTutorAltSun
+	yesorno
+	iffalse .RefusedAlt
+	setval THUNDER_WAVE
+	writetext GoldenrodCityMoveTutorMoveText
+	special MoveTutor
+	ifequal FALSE, .TeachMove
+	sjump .Incompatible
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -110,6 +150,12 @@ MoveTutorScript:
 
 .Refused:
 	writetext GoldenrodCityMoveTutorAwwButTheyreAmazingText
+	waitbutton
+	closetext
+	end
+	
+.RefusedAlt:
+	writetext GoldenrodCityMoveTutorAltRefusedText
 	waitbutton
 	closetext
 	end
@@ -500,7 +546,7 @@ GoldenrodCityMoveTutorAskTeachAMoveText:
 	line "new move?"
 	done
 
-GoldenrodCityMoveTutorAsk4000CoinsOkayText:
+GoldenrodCityMoveTutorAsk500CoinsOkayText:
 	text "It will cost you"
 	line "500 coins. Okay?"
 	done
@@ -509,6 +555,11 @@ GoldenrodCityMoveTutorAwwButTheyreAmazingText:
 	text "Aww… But they're"
 	line "amazing…"
 	done
+	
+GoldenrodCityMoveTutorAltRefusedText:
+	text "Aww… But it's a"
+	line "good move…"
+	done
 
 GoldenrodCityMoveTutorWhichMoveShouldITeachText:
 	text "Wahahah! You won't"
@@ -516,6 +567,33 @@ GoldenrodCityMoveTutorWhichMoveShouldITeachText:
 
 	para "Which move should"
 	line "I teach?"
+	done
+	
+GoldenrodCityMoveTutorAltTues:
+	text "I'm a little bit"
+	line "hungover..."
+	
+	para "Today I can teach"
+	line "NASTY PLOT."
+	cont "Interested"
+	done
+
+GoldenrodCityMoveTutorAltThur:
+	text "I'm a little bit"
+	line "hungover..."
+	
+	para "Today I can teach"
+	line "SWORDS DANCE."
+	cont "Interested"
+	done
+
+GoldenrodCityMoveTutorAltSun:
+	text "I'm a little bit"
+	line "hungover..."
+	
+	para "Today I can teach"
+	line "THUNDER WAVE."
+	cont "Interested"
 	done
 
 GoldenrodCityMoveTutorHmTooBadText:
@@ -550,7 +628,7 @@ GoldenrodCityMoveTutorYouDontHaveEnoughCoinsText:
 GoldenrodCityMoveTutorMoveText:
 	text_start
 	done
-
+	
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
 
