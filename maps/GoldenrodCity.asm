@@ -108,7 +108,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltTues
 	yesorno
 	iffalse .RefusedAlt
-	writebyte NASTY_PLOT
+	setval NASTY_PLOT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	if_equal $0, .TeachMove
@@ -119,7 +119,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltThur
 	yesorno
 	iffalse .RefusedAlt
-	writebyte SWORDS_DANCE
+	setval SWORDS_DANCE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	if_equal $0, .TeachMove
@@ -130,7 +130,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltSun
 	yesorno
 	iffalse .RefusedAlt
-	writebyte THUNDER_WAVE
+	setval THUNDER_WAVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	if_equal $0, .TeachMove
