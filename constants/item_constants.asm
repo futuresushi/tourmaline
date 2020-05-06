@@ -289,6 +289,9 @@ ENDM
 	add_mt THUNDERBOLT
 	add_mt ICE_BEAM
 	add_mt SOFTBOILED
+	add_mt NASTY_PLOT
+	add_mt SWORDS_DANCE
+	add_mt THUNDER_WAVE
 NUM_TM_HM_TUTOR EQU __enum__ - 1
 
 	const ITEM_FA       ; fa
