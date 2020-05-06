@@ -1426,7 +1426,7 @@ KrabbyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 5, LEER
-	db 12, WHIRLPOOL
+	db 12, BUBBLEBEAM
 	db 16, DEFENSE_CURL
 	db 23, STOMP
 	db 27, X_SCISSOR
@@ -1438,9 +1438,9 @@ KinglerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, LEER
-	db 1, WHIRLPOOL
+	db 1, BUBBLEBEAM
 	db 5, LEER
-	db 12, WHIRLPOOL
+	db 12, BUBBLEBEAM
 	db 16, DEFENSE_CURL
 	db 23, STOMP
 	db 27, X_SCISSOR
