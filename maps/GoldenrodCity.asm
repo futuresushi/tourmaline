@@ -84,21 +84,21 @@ MoveTutorScript:
 	sjump .Incompatible
 
 .Flamethrower:
-	setbyte FLAMETHROWER
+	writebyte FLAMETHROWER
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .Thunderbolt:
-	setbyte THUNDERBOLT
+	writebyte THUNDERBOLT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
 	sjump .Incompatible
 
 .IceBeam:
-	setbyte ICE_BEAM
+	writebyte ICE_BEAM
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	ifequal FALSE, .TeachMove
@@ -108,7 +108,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltTues
 	yesorno
 	iffalse .RefusedAlt
-	setbyte NASTY_PLOT
+	writebyte NASTY_PLOT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	if_equal $0, .TeachMove
@@ -119,7 +119,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltThur
 	yesorno
 	iffalse .RefusedAlt
-	setbyte SWORDS_DANCE
+	writebyte SWORDS_DANCE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	if_equal $0, .TeachMove
@@ -130,7 +130,7 @@ MoveTutorScript:
 	writetext GoldenrodCityMoveTutorAltSun
 	yesorno
 	iffalse .RefusedAlt
-	setbyte THUNDER_WAVE
+	writebyte THUNDER_WAVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
 	if_equal $0, .TeachMove
