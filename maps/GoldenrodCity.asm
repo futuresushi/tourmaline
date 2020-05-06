@@ -111,7 +111,9 @@ MoveTutorScript:
 	writebyte NASTY_PLOT
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
-	ifequal FALSE, .TeachMove
+	if_equal $0, .TeachMove
+	sjump .Incompatible
+	iftrue .RefusedAlt
 	
 .SwordsDance:
 	writetext GoldenrodCityMoveTutorAltThur
@@ -120,7 +122,9 @@ MoveTutorScript:
 	writebyte SWORDS_DANCE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
-	ifequal FALSE, .TeachMove
+	if_equal $0, .TeachMove
+	sjump .Incompatible
+	iftrue .RefusedAlt
 	
 .ThunderWave:
 	writetext GoldenrodCityMoveTutorAltSun
@@ -129,7 +133,9 @@ MoveTutorScript:
 	writebyte THUNDER_WAVE
 	writetext GoldenrodCityMoveTutorMoveText
 	special MoveTutor
-	ifequal FALSE, .TeachMove
+	if_equal $0, .TeachMove
+	sjump .Incompatible
+	iftrue .RefusedAlt
 
 .MoveMenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -572,7 +578,7 @@ GoldenrodCityMoveTutorAltTues:
 	
 	para "Today I can teach"
 	line "NASTY PLOT."
-	cont "Interested"
+	cont "Interested?"
 	done
 
 GoldenrodCityMoveTutorAltThur:
@@ -581,7 +587,7 @@ GoldenrodCityMoveTutorAltThur:
 	
 	para "Today I can teach"
 	line "SWORDS DANCE."
-	cont "Interested"
+	cont "Interested?"
 	done
 
 GoldenrodCityMoveTutorAltSun:
@@ -590,7 +596,7 @@ GoldenrodCityMoveTutorAltSun:
 	
 	para "Today I can teach"
 	line "THUNDER WAVE."
-	cont "Interested"
+	cont "Interested?"
 	done
 
 GoldenrodCityMoveTutorHmTooBadText:
