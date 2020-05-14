@@ -110,13 +110,13 @@ _ResetWRAM:
 	call ByteFill
 
 	ldh a, [rLY]
-	ldh [hSecondsBackup], a
+	ldh [hUnusedBackup], a
 	call DelayFrame
 	ldh a, [hRandomSub]
 	ld [wPlayerID], a
 
 	ldh a, [rLY]
-	ldh [hSecondsBackup], a
+	ldh [hUnusedBackup], a
 	call DelayFrame
 	ldh a, [hRandomAdd]
 	ld [wPlayerID + 1], a
@@ -1206,7 +1206,7 @@ TitleScreenMain:
 	inc [hl]
 
 ; Fade out the title screen music
-	xor a
+	xor a ; MUSIC_NONE
 	ld [wMusicFadeID], a
 	ld [wMusicFadeID + 1], a
 	ld hl, wMusicFade

@@ -596,8 +596,7 @@ ReadObjectEvents::
 	ld bc, 1
 	add hl, bc
 ; Fill the remaining sprite IDs and y coords with 0 and -1, respectively.
-; Bleeds into wObjectMasks due to a bug.  Uncomment the above subtraction
-; to fix.
+; Bleeds into wObjectMasks due to a bug.  Uncomment the above code to fix.
 	ld bc, MAPOBJECT_LENGTH
 .loop
 	ld [hl],  0
@@ -1043,10 +1042,10 @@ MapTextbox::
 Call_a_de::
 ; Call a:de.
 
-	ldh [hBuffer], a
+	ldh [hTempBank], a
 	ldh a, [hROMBank]
 	push af
-	ldh a, [hBuffer]
+	ldh a, [hTempBank]
 	rst Bankswitch
 
 	call .de

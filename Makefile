@@ -45,18 +45,18 @@ RGBLINK ?= $(RGBDS)rgblink
 .SECONDARY:
 
 all: crystal
-crystal: pokecrystal.gbc
-crystal11: pokecrystal11.gbc
+crystal:    pokecrystal.gbc
+crystal11:  pokecrystal11.gbc
 crystal-au: pokecrystal-au.gbc
 
 clean:
-	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(crystal_au_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
-	find gfx \( -name "*.[12]bpp" -o -name "*.lz" -o -name "*.gbcpal" \) -delete
+	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(crystal_au_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) rgbdscheck.o
+	find gfx \( -name "*.[12]bpp" -o -name "*.lz" -o -name "*.gbcpal" -o -name "*.sgb.tilemap" \) -delete
 	find gfx/pokemon -mindepth 1 ! -path "gfx/pokemon/unown/*" \( -name "bitmask.asm" -o -name "frames.asm" -o -name "front.animated.tilemap" -o -name "front.dimensions" \) -delete
 	$(MAKE) clean -C tools/
 
 tidy:
-	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(crystal_au_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(crystal_au_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) rgbdscheck.o
 	$(MAKE) clean -C tools/
 
 compare: $(roms)
@@ -66,16 +66,20 @@ tools:
 	$(MAKE) -C tools/
 
 
-$(crystal_obj):   RGBASMFLAGS =
-$(crystal11_obj): RGBASMFLAGS = -D _CRYSTAL11
-$(crystal_au_obj): RGBASMFLAGS = -D _CRYSTAL11 -D _CRYSTAL_AU
+RGBASMFLAGS = -L -Weverything
+$(crystal_obj):    RGBASMFLAGS +=
+$(crystal11_obj):  RGBASMFLAGS += -D _CRYSTAL11
+$(crystal_au_obj): RGBASMFLAGS += -D _CRYSTAL11 -D _CRYSTAL_AU
+
+rgbdscheck.o: rgbdscheck.asm
+	$(RGBASM) -o $@ $<
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
 # It doesn't look like $(shell) can be deferred so there might not be a better way.
 define DEP
-$1: $2 $$(shell tools/scan_includes $2)
-	$$(RGBASM) $$(RGBASMFLAGS) -L -o $$@ $$<
+$1: $2 $$(shell tools/scan_includes $2) | rgbdscheck.o
+	$$(RGBASM) $$(RGBASMFLAGS) -o $$@ $$<
 endef
 
 # Build tools when building the rom.
@@ -91,20 +95,17 @@ $(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 endif
 
 
-pokecrystal.gbc: $(crystal_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l pokecrystal.link -o $@ $(crystal_obj)
-	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
-	tools/sort_symfile.sh pokecrystal.sym
+pokecrystal.gbc: $(crystal_obj) layout.link
+	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l layout.link -p 0 -o $@ $(crystal_obj)
+	$(RGBFIX) -Cjv -t PM_CRYSTAL -i BYTE -k 01 -l 0x33 -m 0x10 -r 3 -p 0 $@
 
-pokecrystal11.gbc: $(crystal11_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal11.sym -m pokecrystal11.map -l pokecrystal.link -o $@ $(crystal11_obj)
-	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -n 1 -p 0 -r 3 -t PM_CRYSTAL $@
-	tools/sort_symfile.sh pokecrystal11.sym
+pokecrystal11.gbc: $(crystal11_obj) layout.link
+	$(RGBLINK) -n pokecrystal11.sym -m pokecrystal11.map -l layout.link -p 0 -o $@ $(crystal11_obj)
+	$(RGBFIX) -Cjv -t PM_CRYSTAL -i BYTE -n 1 -k 01 -l 0x33 -m 0x10 -r 3 -p 0 $@
 
-pokecrystal-au.gbc: $(crystal_au_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal-au.sym -m pokecrystal-au.map -l pokecrystal.link -o $@ $(crystal_au_obj)
-	$(RGBFIX) -Cjv -i BYTU -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_CRYSTAL $@
-	tools/sort_symfile.sh pokecrystal-au.sym
+pokecrystal-au.gbc: $(crystal_au_obj) layout.link
+	$(RGBLINK) -n pokecrystal-au.sym -m pokecrystal-au.map -l layout.link -p 0 -o $@ $(crystal_au_obj)
+	$(RGBFIX) -Cjv -t PM_CRYSTAL -i BYTU -k 01 -l 0x33 -m 0x10 -r 3 -p 0 $@
 
 
 # For files that the compressor can't match, there will be a .lz file suffixed with the md5 hash of the correct uncompressed file.
@@ -228,12 +229,12 @@ gfx/battle/dude.2bpp: rgbgfx += -h
 gfx/font/unused_bold_font.1bpp: tools/gfx += --trim-whitespace
 
 gfx/sgb/sgb_border.2bpp: tools/gfx += --trim-whitespace
+gfx/sgb/sgb_border.sgb.tilemap: gfx/sgb/sgb_border.bin ; tr < $< -d '\000' > $@
 
 gfx/mobile/ascii_font.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/dialpad.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/dialpad_cursor.2bpp: tools/gfx += --trim-whitespace
-gfx/mobile/electro_ball.2bpp: tools/gfx += --trim-whitespace
-gfx/mobile/electro_ball_nonmatching.2bpp: tools/gfx += --remove-duplicates --remove-xflip
+gfx/mobile/electro_ball.2bpp: tools/gfx += --remove-duplicates --remove-xflip --preserve=0x39
 gfx/mobile/mobile_splash.2bpp: tools/gfx += --remove-duplicates --remove-xflip
 gfx/mobile/card.2bpp: tools/gfx += --trim-whitespace
 gfx/mobile/card_2.2bpp: tools/gfx += --trim-whitespace

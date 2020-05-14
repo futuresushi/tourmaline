@@ -1,5 +1,6 @@
 AIScoring: ; used only for BANK(AIScoring)
 
+
 AI_Basic:
 ; Don't do anything redundant:
 ;  -Using status-only moves if the player can't be statused
@@ -451,15 +452,15 @@ AI_Smart_LockOn:
 
 .asm_38834
 	ld a, [wPlayerEvaLevel]
-	cp $a
+	cp BASE_STAT_LEVEL + 3
 	jr nc, .asm_3887a
-	cp $8
+	cp BASE_STAT_LEVEL + 1
 	jr nc, .asm_38875
 
 	ld a, [wEnemyAccLevel]
-	cp $5
+	cp BASE_STAT_LEVEL - 2
 	jr c, .asm_3887a
-	cp $7
+	cp BASE_STAT_LEVEL
 	jr c, .asm_38875
 
 	ld hl, wEnemyMonMoves
@@ -565,7 +566,7 @@ AI_Smart_Selfdestruct:
 ; If enemy's HP is between 25% and 50%,
 ; over 90% chance to greatly discourage this move.
 	call Random
-	cp 9 percent - 2
+	cp 8 percent
 	ret c
 
 .asm_388c6
@@ -589,7 +590,7 @@ AI_Smart_DreamEater:
 AI_Smart_EvasionUp:
 ; Dismiss this move if enemy's evasion can't raise anymore.
 	ld a, [wEnemyEvaLevel]
-	cp $d
+	cp MAX_STAT_LEVEL
 	jp nc, AIDiscourageMove
 
 ; If enemy's HP is full...
@@ -700,12 +701,12 @@ AI_Smart_AlwaysHit:
 
 ; ...enemy's accuracy level has been lowered three or more stages
 	ld a, [wEnemyAccLevel]
-	cp $5
+	cp BASE_STAT_LEVEL - 2
 	jr c, .asm_38954
 
 ; ...or player's evasion level has been raised three or more stages.
 	ld a, [wPlayerEvaLevel]
-	cp $a
+	cp BASE_STAT_LEVEL + 3
 	ret c
 
 .asm_38954
@@ -865,12 +866,12 @@ AI_Smart_ResetStats:
 ; 85% chance to encourage this move if any of enemy's stat levels is lower than -2.
 	push hl
 	ld hl, wEnemyAtkLevel
-	ld c, $8
+	ld c, NUM_LEVEL_STATS
 .asm_389fb
 	dec c
 	jr z, .asm_38a05
 	ld a, [hli]
-	cp $5
+	cp BASE_STAT_LEVEL - 2
 	jr c, .asm_38a12
 	jr .asm_389fb
 
@@ -882,7 +883,7 @@ AI_Smart_ResetStats:
 	dec c
 	jr z, .asm_38a1b
 	ld a, [hli]
-	cp $a
+	cp BASE_STAT_LEVEL + 3
 	jr c, .asm_38a0a
 
 .asm_38a12
@@ -1093,7 +1094,7 @@ AI_Smart_SpDefenseUp2:
 
 ; Discourage this move if enemy's special defense level is higher than +3.
 	ld a, [wEnemySDefLevel]
-	cp $b
+	cp BASE_STAT_LEVEL + 4
 	jr nc, .asm_38b10
 
 ; 80% chance to greatly encourage this move if
@@ -1253,11 +1254,11 @@ AI_Smart_Rage:
 ; Encourage this move based on Rage's counter.
 .asm_38b8c
 	ld a, [wEnemyRageCounter]
-	cp $2
+	cp 2
 	ret c
 	dec [hl]
 	ld a, [wEnemyRageCounter]
-	cp $3
+	cp 3
 	ret c
 	dec [hl]
 	ret
@@ -1329,7 +1330,7 @@ AI_Smart_Mimic:
 AI_Smart_Counter:
 	push hl
 	ld hl, wPlayerUsedMoves
-	ld c, 4
+	ld c, NUM_MOVES
 	ld b, 0
 
 .asm_38bf9
@@ -1468,8 +1469,8 @@ AI_Smart_SleepTalk:
 ; Greatly discourage this move otherwise.
 
 	ld a, [wEnemyMonStatus]
-	and $7
-	cp $1
+	and SLP
+	cp 1
 	jr z, .asm_38cc7
 
 	dec [hl]
@@ -1530,9 +1531,9 @@ AI_Smart_Spite:
 .asm_38cfb
 	pop hl
 	ld a, [de]
-	cp $6
+	cp 6
 	jr c, .asm_38d0d
-	cp $f
+	cp 15
 	jr nc, .asm_38d0b
 
 	call Random
@@ -1818,9 +1819,9 @@ AI_Smart_Curse:
 	jr nc, .asm_38e93
 
 	ld a, [wEnemyAtkLevel]
-	cp $b
+	cp BASE_STAT_LEVEL + 4
 	jr nc, .asm_38e93
-	cp $9
+	cp BASE_STAT_LEVEL + 2
 	ret nc
 
 	ld a, [wBattleMonType1]
@@ -1939,10 +1940,10 @@ AI_Smart_Protect:
 
 AI_Smart_Foresight:
 	ld a, [wEnemyAccLevel]
-	cp $5
+	cp BASE_STAT_LEVEL - 2
 	jr c, .asm_38f41
 	ld a, [wPlayerEvaLevel]
-	cp $a
+	cp BASE_STAT_LEVEL + 3
 	jr nc, .asm_38f41
 
 	ld a, [wBattleMonType1]
@@ -2402,7 +2403,7 @@ AI_Smart_BellyDrum:
 ; Else, discourage this move if enemy's HP is not full.
 
 	ld a, [wEnemyAtkLevel]
-	cp $a
+	cp BASE_STAT_LEVEL + 3
 	jr nc, .asm_3914d
 
 	call AICheckEnemyMaxHP
@@ -2422,8 +2423,8 @@ AI_Smart_BellyDrum:
 AI_Smart_MirrorCoat:
 	push hl
 	ld hl, wPlayerUsedMoves
-	ld c, $4
-	ld b, $0
+	ld c, NUM_MOVES
+	ld b, 0
 
 .asm_39193
 	ld a, [hli]
@@ -2756,7 +2757,7 @@ AIHasMoveInArray:
 
 .next
 	ld a, [hli]
-	cp $ff
+	cp -1
 	jr z, .done
 
 	ld b, a
