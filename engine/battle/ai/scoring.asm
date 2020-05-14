@@ -2420,63 +2420,6 @@ AI_Smart_BellyDrum:
 	ld [hl], a
 	ret
 
-AI_Smart_PsychUp:
-	push hl
-	ld hl, wEnemyAtkLevel
-	ld b, $8
-	ld c, 100
-
-; Calculate the sum of all enemy's stat level modifiers. Add 100 first to prevent underflow.
-; Put the result in c. c will range between 58 and 142.
-.asm_3915a
-	ld a, [hli]
-	sub $7
-	add c
-	ld c, a
-	dec b
-	jr nz, .asm_3915a
-
-; Calculate the sum of all player's stat level modifiers. Add 100 first to prevent underflow.
-; Put the result in d. d will range between 58 and 142.
-	ld hl, wPlayerAtkLevel
-	ld b, $8
-	ld d, 100
-
-.asm_39169
-	ld a, [hli]
-	sub $7
-	add d
-	ld d, a
-	dec b
-	jr nz, .asm_39169
-
-; Greatly discourage this move if enemy's stat levels are higher than player's (if c>=d).
-	ld a, c
-	sub d
-	pop hl
-	jr nc, .asm_39188
-
-; Else, 80% chance to encourage this move unless player's accuracy level is lower than -1...
-	ld a, [wPlayerAccLevel]
-	cp BASE_STAT_LEVEL - 1
-	ret c
-
-; ...or enemy's evasion level is higher than +0.
-	ld a, [wEnemyEvaLevel]
-	cp BASE_STAT_LEVEL + 1
-	ret nc
-
-	call AI_80_20
-	ret c
-
-	dec [hl]
-	ret
-
-.asm_39188
-	inc [hl]
-	inc [hl]
-	ret
-
 AI_Smart_MirrorCoat:
 	push hl
 	ld hl, wPlayerUsedMoves
