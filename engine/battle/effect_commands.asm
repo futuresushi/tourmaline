@@ -5398,12 +5398,14 @@ BattleCommand_EndLoop:
 	jr z, .got_hit_n_times_text
 	ld hl, EnemyHitTimesText
 .got_hit_n_times_text
-
 	push bc
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	call StdBattleTextbox
-
+	pop bc
+	xor a
+	ld [bc], a
+	ret
 .loop_back_to_critical
 	ld a, [wBattleScriptBufferAddress + 1]
 	ld h, a
