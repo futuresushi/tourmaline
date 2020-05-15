@@ -2061,48 +2061,48 @@ BattleCommand_StatUpDownAnim:
 	ld d, 0
 	jp PlayFXAnimID
 	
-INCLUDE "data/pokemon/withdraw_harden_users.asm"
-
+;INCLUDE "data/pokemon/withdraw_harden_users.asm"
+;
 ; Defense Curl, Withdraw, and Harden were merged, so use the correct
 ; animation for the Pokémon that learned each one. From Polished
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld e, a
-	ld d, 0
-	cp DEFENSE_CURL
-	jr nz, .not_defense_curl
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [wBattleMonSpecies]
-	jr z, .got_user_species
-	ld a, [wEnemyMonSpecies]
-.got_user_species
-	ld hl, WithdrawUsers
-	ld de, 1
-	push af
-	call IsInArray
-	jr nc, .not_withdraw
-	pop af
-	ld a, $1
-	jr .got_kick_counter
-.not_withdraw
-	pop af ; restore species to a
-	inc hl ; ld hl, HardenUsers
-	; ld de, 1
-	call IsInArray
-	jr nc, .not_harden
-	ld a, $2
-	jr .got_kick_counter
-.not_harden
-.not_defense_curl
-	xor a
-.got_kick_counter
-	ld [wKickCounter], a
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVar
-	ld e, a
-	ld d, 0
-	jp PlayFXAnimID
+;	ld a, BATTLE_VARS_MOVE_ANIM
+;	call GetBattleVar
+;	ld e, a
+;	ld d, 0
+;	cp DEFENSE_CURL
+;	jr nz, .not_defense_curl
+;	ldh a, [hBattleTurn]
+;	and a
+;	ld a, [wBattleMonSpecies]
+;	jr z, .got_user_species
+;	ld a, [wEnemyMonSpecies]
+;.got_user_species
+;	ld hl, WithdrawUsers
+;	ld de, 1
+;	push af
+;	call IsInArray
+;	jr nc, .not_withdraw
+;	pop af
+;	ld a, $1
+;	jr .got_kick_counter
+;.not_withdraw
+;	pop af ; restore species to a
+;	inc hl ; ld hl, HardenUsers
+;	; ld de, 1
+;	call IsInArray
+;	jr nc, .not_harden
+;	ld a, $2
+;	jr .got_kick_counter
+;.not_harden
+;.not_defense_curl
+;	xor a
+;.got_kick_counter
+;	ld [wKickCounter], a
+;	ld a, BATTLE_VARS_MOVE_ANIM
+;	call GetBattleVar
+;	ld e, a
+;	ld d, 0
+;	jp PlayFXAnimID
 
 BattleCommand_SwitchTurn:
 ; switchturn
