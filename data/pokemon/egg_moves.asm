@@ -56,6 +56,7 @@ SquirtleEggMoves:
 	db DYNAMICPUNCH
 	db ROLLOUT
 	db AQUA_JET
+	db ZAP_CANNON
 	db -1 ; end
 
 PidgeyEggMoves:
