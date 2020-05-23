@@ -2486,17 +2486,6 @@ BattleCommand_CheckFaint:
 
 .finish
 	jp EndMoveEffect
-	
-BattleCommand_SwitchOut:
-; THIS DOES NOT CURRENTLY WORK
-; DON'T USE IT
-; If Trainer Battle,
-;	ld a, [wBattleMode]
-;	dec a
-;	jr nz, .trainer
-;.trainer
-;	call BattleCommand_Teleport
-	ret
 
 BattleCommand_BuildOpponentRage:
 ; buildopponentrage
@@ -6546,6 +6535,8 @@ BattleCommand_CheckSafeguard:
 INCLUDE "engine/battle/move_effects/magnitude.asm"
 
 INCLUDE "engine/battle/move_effects/baton_pass.asm"
+
+INCLUDE "engine/battle/move_effects/switchout.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 

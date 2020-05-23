@@ -875,14 +875,14 @@ ReflectEffectText:
 	line "DEFENSE rose!"
 	prompt
 
-;unused, intended for SwitchHit
+;unused, intended for SwitchOut
 BattleText_UserReturnedToTrainer:
 	text "<USER>"
 	line "went back to"
 	cont "<PLAYER>!"
 	prompt
 	
-; unused, intended for SwitchHit
+; unused, intended for SwitchOut
 BattleText_UserReturnedToEnemy:
 	text "<USER>"
 	line "went back to"

@@ -177,7 +177,7 @@ DreamEater:
 	buildopponentrage
 	endmove
 
-SwitchHit:
+SwitchOut:
 	checkobedience
 	usedmovetext
 	doturn
@@ -194,6 +194,7 @@ SwitchHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	switchout
 	endmove
 
