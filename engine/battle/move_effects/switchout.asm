@@ -128,16 +128,16 @@ FailedSwitchOut:
 ResetSwitchOutStatus:
 ; Reset status changes, etc.
 
-    call ResetPlayerStatLevels
-    call NewBattleMonStatus
+    farcall ResetPlayerStatLevels
+    farcall NewBattleMonStatus
     jr .common
 
 .enemy
-    call ResetEnemyStatLevels
-    call NewEnemyMonStatus
+    farcall ResetEnemyStatLevels
+    farcall NewEnemyMonStatus
 
 .common
-    call BreakAttraction
+    farcall BreakAttraction
 	; New mon hasn't used a move yet.
 	ld a, BATTLE_VARS_LAST_MOVE
 	call GetBattleVarAddr
