@@ -1,13 +1,15 @@
-BattleCommand_BatonPass:
-; batonpass
+BattleCommand_SwitchOut:
+; switchout
 
-	ldh a, [hBattleTurn]
+; Mostly copied from baton_pass.asm.
+
+    ldh a, [hBattleTurn]
 	and a
 	jp nz, .Enemy
 
 ; Need something to switch to
 	call CheckAnyOtherAlivePartyMons
-	jp z, FailedBatonPass
+	jp z, FailedSwitchOut
 
 	call UpdateBattleMonInParty
 	call AnimateCurrentMove
@@ -34,7 +36,7 @@ BattleCommand_BatonPass:
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
-	call BatonPass_LinkPlayerSwitch
+	call SwitchOut_LinkPlayerSwitch
 
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
@@ -46,24 +48,24 @@ BattleCommand_BatonPass:
 	farcall SendOutMonText
 	ld c, 50
 	call DelayFrames
-
-	call ResetBatonPassStatus
+	
+	call ResetSwitchOutStatus
 	ret
 
 .Enemy:
 ; Wildmons don't have anything to switch to
 	ld a, [wBattleMode]
 	dec a ; WILDMON
-	jp z, FailedBatonPass
+	jp z, FailedSwitchOut
 
 	call CheckAnyOtherAliveEnemyMons
-	jp z, FailedBatonPass
+	jp z, FailedSwitchOut
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
 	ld hl, BattleText_UserReturnedToEnemy
 	call StdBattleTextbox
-	call BatonPass_LinkEnemySwitch
+	call SwitchOut_LinkEnemySwitch
 
 ; Mobile link battles handle entrances differently
 	farcall CheckMobileBattleError
@@ -86,9 +88,9 @@ BattleCommand_BatonPass:
 	ld hl, SpikesDamage
 	call CallBattleCore
 
-	jr ResetBatonPassStatus
+	jr ResetSwitchOutStatus.enemy
 
-BatonPass_LinkPlayerSwitch:
+SwitchOut_LinkPlayerSwitch:
 	ld a, [wLinkMode]
 	and a
 	ret z
@@ -105,7 +107,7 @@ BatonPass_LinkPlayerSwitch:
 	ld [wBattlePlayerAction], a
 	ret
 
-BatonPass_LinkEnemySwitch:
+SwitchOut_LinkEnemySwitch:
 	ld a, [wLinkMode]
 	and a
 	ret z
@@ -119,109 +121,36 @@ BatonPass_LinkEnemySwitch:
 	ld b, a
 	ld a, [wBattleAction]
 	cp BATTLEACTION_SWITCH1
-	jr c, .baton_pass
+	jr c, .switch_hit
 	cp b
 	jr c, .switch
 
-.baton_pass
+.switch_hit
 	ld a, [wCurOTMon]
 	add BATTLEACTION_SWITCH1
 	ld [wBattleAction], a
 .switch
 	jp CloseWindow
 
-FailedBatonPass:
-	call AnimateFailedMove
-	jp PrintButItFailed
+FailedSwitchOut:
+	ret
 
-ResetBatonPassStatus:
-; Reset status changes that aren't passed by Baton Pass.
+ResetSwitchOutStatus:
+; Reset status changes, etc.
 
-	; Nightmare isn't passed.
-	ld a, BATTLE_VARS_STATUS
-	call GetBattleVar
-	and SLP
-	jr nz, .ok
+    farcall ResetPlayerStatLevels
+    farcall NewBattleMonStatus
+    jr .common
 
-	ld a, BATTLE_VARS_SUBSTATUS1
-	call GetBattleVarAddr
-	res SUBSTATUS_NIGHTMARE, [hl]
-.ok
+.enemy
+    farcall ResetEnemyStatLevels
+    farcall NewEnemyMonStatus
 
-	; Disable isn't passed.
-	call ResetActorDisable
-
-	; Attraction isn't passed.
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
-	ld hl, wEnemySubStatus1
-	res SUBSTATUS_IN_LOVE, [hl]
-	ld hl, wPlayerSubStatus5
-
-	ld a, BATTLE_VARS_SUBSTATUS5
-	call GetBattleVarAddr
-	res SUBSTATUS_TRANSFORMED, [hl]
-	res SUBSTATUS_ENCORED, [hl]
-
+.common
+    farcall BreakAttraction
 	; New mon hasn't used a move yet.
 	ld a, BATTLE_VARS_LAST_MOVE
 	call GetBattleVarAddr
 	ld [hl], 0
 
-	xor a
-	ld [wPlayerWrapCount], a
-	ld [wEnemyWrapCount], a
-	ret
-
-CheckAnyOtherAlivePartyMons:
-	ld hl, wPartyMon1HP
-	ld a, [wPartyCount]
-	ld d, a
-	ld a, [wCurBattleMon]
-	ld e, a
-	jr CheckAnyOtherAliveMons
-
-CheckAnyOtherAliveEnemyMons:
-	ld hl, wOTPartyMon1HP
-	ld a, [wOTPartyCount]
-	ld d, a
-	ld a, [wCurOTMon]
-	ld e, a
-
-	; fallthrough
-
-CheckAnyOtherAliveMons:
-; Check for nonzero HP starting from partymon
-; HP at hl for d partymons, besides current mon e.
-
-; Return nz if any are alive.
-
-	xor a
-	ld b, a
-	ld c, a
-.loop
-	ld a, c
-	cp d
-	jr z, .done
-	cp e
-	jr z, .next
-
-	ld a, [hli]
-	or b
-	ld b, a
-	ld a, [hld]
-	or b
-	ld b, a
-
-.next
-	push bc
-	ld bc, PARTYMON_STRUCT_LENGTH
-	add hl, bc
-	pop bc
-	inc c
-	jr .loop
-
-.done
-	ld a, b
-	and a
 	ret
