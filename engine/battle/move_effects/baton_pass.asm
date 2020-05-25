@@ -11,6 +11,8 @@ BattleCommand_BatonPass:
 
 	call UpdateBattleMonInParty
 	call AnimateCurrentMove
+	ld hl, BattleText_UserReturnedToPlayer
+	call StdBattleTextbox
 
 	ld c, 50
 	call DelayFrames
@@ -41,6 +43,10 @@ BattleCommand_BatonPass:
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
 
+	farcall SendOutMonText
+	ld c, 50
+	call DelayFrames
+
 	call ResetBatonPassStatus
 	ret
 
@@ -55,6 +61,8 @@ BattleCommand_BatonPass:
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
+	ld hl, BattleText_UserReturnedToEnemy
+	call StdBattleTextbox
 	call BatonPass_LinkEnemySwitch
 
 ; Mobile link battles handle entrances differently
@@ -68,6 +76,8 @@ BattleCommand_BatonPass:
 	call CallBattleCore
 	ld hl, ResetBattleParticipants
 	call CallBattleCore
+	ld hl, BattleText_EnemySentOut
+	call StdBattleTextbox
 	ld a, TRUE
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	ld hl, ApplyStatLevelMultiplierOnAllStats

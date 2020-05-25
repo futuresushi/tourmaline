@@ -13,6 +13,8 @@ BattleCommand_SwitchOut:
 
 	call UpdateBattleMonInParty
 	call AnimateCurrentMove
+	ld hl, BattleText_UserReturnedToPlayer
+	call StdBattleTextbox
 
 	ld c, 50
 	call DelayFrames
@@ -43,6 +45,10 @@ BattleCommand_SwitchOut:
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
 
+	farcall SendOutMonText
+	ld c, 50
+	call DelayFrames
+	
 	call ResetSwitchOutStatus
 	ret
 
@@ -57,6 +63,8 @@ BattleCommand_SwitchOut:
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
+	ld hl, BattleText_UserReturnedToEnemy
+	call StdBattleTextbox
 	call SwitchOut_LinkEnemySwitch
 
 ; Mobile link battles handle entrances differently
@@ -70,6 +78,8 @@ BattleCommand_SwitchOut:
 	call CallBattleCore
 	ld hl, ResetBattleParticipants
 	call CallBattleCore
+	ld hl, BattleText_EnemySentOut
+	call StdBattleTextbox
 	ld a, TRUE
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	ld hl, ApplyStatLevelMultiplierOnAllStats
