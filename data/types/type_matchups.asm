@@ -127,6 +127,7 @@ TypeMatchups:
 	db SOUND,        BUG,          NOT_VERY_EFFECTIVE
 	db SOUND,        GHOST,        SUPER_EFFECTIVE
 	db SOUND,        STEEL,        SUPER_EFFECTIVE
+	db SOUND,	 WATER,        SUPER_EFFECTIVE
 	db SOUND,        SOUND,        NO_EFFECT
 
 	db -2 ; end (with Foresight)
