@@ -10,8 +10,8 @@ JohtoGrassWildMons:
 	db 5, RATTATA
 	db 3, RATTATA
 	db 6, RATTATA
-	db 5, RATTATA
-	db 5, RATTATA
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
 	; day
 	db 3, RATTATA
 	db 4, RATTATA
@@ -37,8 +37,8 @@ JohtoGrassWildMons:
 	db 5, RATTATA
 	db 3, RATTATA
 	db 6, RATTATA
-	db 5, RATTATA
-	db 5, RATTATA
+	db 5, BELLSPROUT
+	db 5, BELLSPROUT
 	; day
 	db 3, RATTATA
 	db 4, RATTATA
